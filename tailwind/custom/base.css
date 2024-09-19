@@ -12,16 +12,16 @@
  * editor.
 */
 body {
-	@apply bg-background text-foreground font-sans;
+	@apply bg-background text-foreground font-pp-mori;
 }
 
 .c-container {
-	@apply md:px-16 mx-auto max-w-desk wide:max-w-wide-desk;
+	@apply mx-auto md:px-16 max-w-desk wide:max-w-wide-desk;
 }
 
-a:hover {
+/* a:hover {
 	@apply text-custom-secondary;
-}
+} */
 
 .wordpress-pages-container > *:not(div):not(article):not(section) {
 	@apply max-w-[73rem] px-8;
@@ -76,44 +76,46 @@ h3,
 h4,
 h5,
 h6 {
-	@apply font-bold !mb-4 scroll-mt-[80px] md:scroll-mt-[110px];
-	@apply leading-[1.2];
+	@apply !mb-4 scroll-mt-[80px] md:scroll-mt-[110px]; /* Set here header height once it's done */
+	@apply text-black;
 }
 h1,
 .h1 {
-	@apply leading-[1.2] text-4xl lg:text-[3rem];
+	@apply leading-[100%] tracking-[-2%] text-[55px] lg:text-[92px];
 }
 h2,
 .h2 {
-	@apply text-[2rem] lg:text-4xl;
+	@apply leading-[110%] tracking-[-2%] text-[44px] font-semibold lg:text-[50px];
 }
 h3,
 .h3 {
-	@apply text-3xl lg:text-[2rem];
+	@apply leading-[110%] tracking-[0%] text-[40px] font-light lg:text-[46px];
 }
 h4,
 .h4 {
-	@apply text-2xl lg:text-3xl;
+	@apply leading-[110%] tracking-[0%] text-[32px] font-semibold lg:text-[40px];
 }
 h5,
-.h5,
+.h5 {
+	@apply leading-[120%] tracking-[0%] text-[26px] font-medium lg:text-[32px];
+}
 h6,
 .h6 {
-	@apply text-xl lg:text-2xl;
+	@apply leading-[120%] tracking-[0%] text-[22px] font-semibold lg:text-[26px];
 }
 
 .body,
 p {
 	@apply text-lg lg:text-xl leading-[150%];
-	@apply font-light my-4;
+	@apply my-4 font-light;
 }
 #main article ol {
 	padding-left: 2rem;
-	@apply list-outside list-decimal mb-8 mx-auto pl-8;
+	@apply pl-8 mx-auto mb-8 list-decimal list-outside;
 }
 #main article ul {
 	padding-left: 2rem;
-	@apply list-outside list-disc mb-8 mx-auto pl-8;
+	@apply pl-8 mx-auto mb-8 list-disc list-outside;
 }
 #main article li {
 	@apply text-lg lg:text-xl leading-[150%];
