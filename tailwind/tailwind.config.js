@@ -3,24 +3,32 @@ const includePreflight = 'editor' === process.env._TW_TARGET ? false : true;
 
 module.exports = {
 	presets: [
-		// Manage Tailwind Typography's configuration in a separate file.
 		require('./tailwind-typography.config.js'),
 	],
 	content: [
-		// Ensure changes to PHP files and `theme.json` trigger a rebuild.
 		'./theme/**/*.php',
 		'./theme/theme.json',
 	],
 	theme: {
-		// Extend the default Tailwind theme.
 		extend: {
+			fontFamily: {
+				'pp-mori': ['"Mori", sans-serif'],
+			},
 			colors: {
-				'custom-primary': '#062f6e', // Custom primary color
-				'custom-secondary': '#00943a', // Custom secondary color
-				'custom-tertiary': '#945400', // Custom tertiary color
-				'custom-accent': '#940000', // Custom accent color
-				'custom-accent2': '#869400', // Custom accent color
-				'custom-accent3': '#00877f', // Custom accent color
+				// primary
+				cherry: '#D53538',
+				salt: '#ECEAF2',
+				ice: '#DBFCFC',
+				black: '#221F20',
+
+				// secondary
+				pickle: '#65844D',
+				yam: '#D36839',
+				'granny-smith': '#BAF146',
+				eggplant: '#77698E',
+				sashimi: '#FFBD98',
+				naners: '#FFEA7B'
+
 			},
 			maxWidth: {
 				'content': '90rem', // Change the default max-width value for max-w-content
