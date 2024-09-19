@@ -3,3 +3,31 @@
  *
  * These will be added immediately before Tailwind’s `base` layer.
  */
+
+@font-face {
+	font-family: 'Mori';
+	font-style: normal;
+	font-weight: 300;
+	src: url('./pp_mori/PPMori-Light.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Mori';
+	font-style: normal;
+	font-weight: 400;
+	src: url('./pp_mori/PPMori-Regular.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Mori';
+	font-style: normal;
+	font-weight: 600;
+	src: url('./pp_mori/PPMori-SemiBold.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Mori';
+	font-style: normal;
+	font-weight: 700;
+	src: url('./pp_mori/PPMori-Bold.woff') format('woff');
+}
