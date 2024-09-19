@@ -1,0 +1,40 @@
+
+.blog-articles .entry-title {
+    @apply mb-0;
+}
+
+.blog-articles .entry-footer  {
+    @apply flex gap-3 mb-6;
+}
+.blog-articles .post {
+    @apply flex flex-col md:flex-row;
+}
+
+.blog-articles .post .content a {
+    @apply underline;
+}
+
+.blog-articles .post .content {
+    @apply w-full md:pr-4;
+}
+
+.blog-articles .post .content .entry-title a,
+.blog-articles .post .content .entry-footer a{
+    @apply no-underline;
+}
+
+.blog-articles .post .content .entry-content {
+    @apply mb-4;
+}	
+
+.blog-articles .post .content .entry-content a {
+    @apply px-4 font-semibold;
+}
+
+.blog-articles .post figure {
+    @apply md:w-3/4;
+}
+
+.blog-articles .post figure img {
+    @apply rounded-lg w-full;
+}

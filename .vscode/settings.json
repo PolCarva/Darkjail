@@ -1,0 +1,7 @@
+{
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"prettier.configPath": ".prettierrc.json",
+		"prettier.requireConfig": true
+	},
+}

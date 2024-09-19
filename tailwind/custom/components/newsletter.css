@@ -1,0 +1,66 @@
+.newsletter .wpcf7 {
+    width: 100%;
+}
+
+.newsletter .wpcf7 form {
+    display: flex;
+    flex-direction: column;
+    background-color: #cdd3da;
+    border-radius: 24px;
+    width: 100%;
+    padding: 25px 15px;
+}
+
+.newsletter .wpcf7 form .fields {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+    .newsletter .wpcf7 form .fields {
+        flex-direction: column;
+    }
+
+}
+
+.newsletter .wpcf7 form .fields input {
+    border-radius: 42px;
+    height: 42px;
+    padding: 0 29px;
+    width: 95%;
+    display: flex;
+
+}
+
+.newsletter .wpcf7 form .fields .submit {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 12px;
+}
+
+.newsletter .wpcf7 form .fields .submit input {
+    background-color: #062f6e;
+    border-radius: 42px;
+    color: white;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.newsletter .wpcf7 form .fields .submit input:hover {
+    background-color: #00943a;
+}
+
+.newsletter .wpcf7 form .fields .wpcf7-spinner {
+    margin: -33px 11px 10px 82px !important;
+    position: absolute !important;
+}
+
+
+.newsletter .wpcf7 form input {
+    margin: 10px;
+    padding: 5px;
+}

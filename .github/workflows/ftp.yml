@@ -1,0 +1,33 @@
+on:
+  push:
+    branches:
+      - develop
+
+name: 🚀 Deploy website on push
+jobs:
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v4
+
+    - name: 📦 Install dependencies
+      run: npm install
+
+    - name: 🏗️ Build
+      run: npm run build
+
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      with:
+        server: giow1123.siteground.us
+        username: ${{ secrets.ftp_staging_user }}
+        password: ${{ secrets.ftp_staging_password }}
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
+          **/custom-plugins/**
+        local-dir: ./
+        server-dir: themes/dango-acf-tailwind/

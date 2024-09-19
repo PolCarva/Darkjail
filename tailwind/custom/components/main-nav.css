@@ -1,0 +1,186 @@
+/*Styles for the main nav */
+.main-nav .menu-item {
+	@apply relative;
+}
+
+/* Hide submenus by default */
+.main-nav {
+	@apply flex;
+}
+
+.main-nav ul {
+	@apply flex;
+}
+
+.main-nav li {
+	@apply px-4 font-semibold;
+}
+
+  
+.main-nav .sub-menu {
+	@apply hidden absolute top-full left-0 mt-0 w-56  bg-white border border-gray-300 p-2 shadow-lg z-10;
+}
+
+.main-nav .back,
+.main-nav .parent-title {
+	display: none;
+}
+
+/* Show submenus when hovering over the parent menu item */
+.main-nav .menu-item:hover > .sub-menu {
+	@apply block;
+}
+
+.main-nav .menu-item:hover > .sub-menu > li{
+	@apply my-1;
+}
+
+.main-nav .menu-item:hover > .sub-menu > li > a {
+	@apply pl-0 transition-all duration-300 ease-in-out;
+}
+.main-nav .menu-item:hover > .sub-menu > li:hover > a {
+	@apply pl-1 transition-all duration-300 ease-in-out opacity-80; 
+}
+
+
+.main-nav li:last-of-type .sub-menu {
+	@apply right-0 left-auto ;
+}	
+
+.main-nav .menu-item:hover > .sub-menu  .sub-menu {
+	@apply ml-20 -m-4 w-40 bg-slate-100  ;
+}
+
+.main-nav li:last-of-type .menu-item:hover .sub-menu {
+	@apply  mr-20 ;
+}	
+
+
+
+/******************************************************
+ * Mobile Menu
+ ******************************************************/
+
+#menu-toggle:checked + #mobile-menu-button + #mobile-menu {
+	height: 100vh;
+	max-height: max-content;
+	overflow-y: auto; /* Add a vertical scrollbar if necessary */
+    opacity: 1;
+
+}
+
+.hamburger-icon .bar {
+    display: block;
+	width: 30px;
+	height: 3px;
+	margin: 4px 0;
+    background-color: #000;
+    transition: transform 0.3s ease-in-out;
+}
+
+#mobile-menu-button {
+  display: inline-block;
+  cursor: pointer;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+#menu-toggle:checked + #mobile-menu-button .hamburger-icon .bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-4px, 5px);
+}
+
+#menu-toggle:checked + #mobile-menu-button .hamburger-icon .bar:nth-child(2) {
+  opacity: 0;
+}
+
+#menu-toggle:checked + #mobile-menu-button .hamburger-icon .bar:nth-child(3) {
+  transform: rotate(45deg) translate(0px, -2px);
+}
+
+#menu-toggle:checked + #mobile-menu-button .hamburger-icon .bar + .bar {
+  width: 30px;
+  margin-top: -3px;
+}
+
+.mobile-menu {
+	@apply w-full;
+}
+
+.main-nav-mobile {
+	@apply flex flex-col;
+}
+
+ul.main-nav-mobile li{
+	@apply py-3 font-semibold px-2 border-b-2  border-gray-600;
+}
+
+
+ul.main-nav-mobile li li:last-child {
+	@apply border-b-0;
+}
+
+/* Styling for the mobile menu tabs */
+.mobile-menu .menu-item-indicator {
+	display: none;
+}
+.mobile-menu .menu-item-has-children > a:after {
+    content: ">"; 
+    float: right;
+	font-weight: 800;
+    margin-right: 8px;
+}
+
+.mobile-menu .back {
+	font-size: 12px;
+	border: 0;
+	cursor: pointer;
+}
+.mobile-menu .parent-title {
+	background-color: #e1e1e1;
+	text-align: center;
+	color: #303030;
+	padding: 5px 0;
+	border: 0;
+}
+
+
+.mobile-menu .sub-menu  {
+	overflow-y: auto;
+	max-height: none;
+	min-height: calc(100vh + 80px);
+    position: absolute;
+    background: #fff;
+    width: 100%;
+    top: 0;
+	left: 100vw;
+	transition: left 0.3s ease; /* Add a transition for the left property */
+    height: auto;
+}
+
+/* Hide the scrollbar on desktop for elements with the class .submenu */
+/* For Webkit-based browsers (Chrome, Safari) */
+.sub-menu::-webkit-scrollbar {
+    width: 0.5em;
+    background: transparent; /* You can use 'background: #fff;' to match the background color */
+}
+
+.sub-menu::-webkit-scrollbar-thumb {
+    background: transparent; /* You can use 'background: #fff;' to match the background color */
+}
+
+/* For Firefox */
+.sub-menu * {
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent; /* You can use 'scrollbar-color: #fff transparent;' to match the background color */
+}
+
+.left-0 {
+	left: 0 !important;
+	transition: left 0.3s ease; /* Add a transition for the left property */
+
+}
+
+
+/* end mobile menu */
