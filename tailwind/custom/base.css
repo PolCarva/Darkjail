@@ -65,6 +65,7 @@ body {
 	@apply underline;
 }
 
+/* HEADINGS */
 .h1,
 .h2,
 .h3,
@@ -104,11 +105,50 @@ h6,
 	@apply leading-[120%] tracking-[0%] text-[22px] font-semibold lg:text-[26px];
 }
 
-.body,
-p {
-	@apply text-lg lg:text-xl leading-[150%];
-	@apply my-4 font-light;
+/* SubTitles */
+.subtitle1 {
+	@apply leading-[100%] tracking-[0%] font-semibold text-lg lg:text-xl;
 }
+.subtitle2 {
+	@apply leading-[100%] tracking-[0%] font-semibold text-base;
+}
+.subtitle3 {
+	@apply leading-[100%] tracking-[0%] font-normal text-sm;
+}
+
+/* Body text */
+.body1 {
+	@apply leading-[140%] tracking-[0%] text-xl lg:text-2xl font-medium;
+}
+.body2 {
+	@apply leading-[140%] tracking-[0%] text-lg lg:text-xl;
+}
+.body3 {
+	@apply leading-[140%] tracking-[0%] text-base lg:text-lg;
+}
+.body4 {
+	@apply leading-[140%] tracking-[0%] text-sm lg:text-base;
+}
+.body5 {
+	@apply leading-[140%] tracking-[0%] text-xs;
+}
+p,
+span {
+	@apply leading-[140%] tracking-[0%] text-xl lg:text-2xl font-medium;
+	@apply my-4;
+}
+
+/* Navigation links */
+.n1 {
+	@apply leading-[100%] tracking-[0%] text-2xl font-semibold;
+}
+.n2 {
+	@apply leading-[100%] tracking-[0%] text-lg font-semibold;
+}
+.n3 {
+	@apply leading-[100%] tracking-[0%] text-base font-normal;
+}
+
 #main article ol {
 	padding-left: 2rem;
 	@apply pl-8 mx-auto mb-8 list-decimal list-outside;
@@ -118,8 +158,7 @@ p {
 	@apply pl-8 mx-auto mb-8 list-disc list-outside;
 }
 #main article li {
-	@apply text-lg lg:text-xl leading-[150%];
-	@apply font-light;
+	@apply leading-[140%] tracking-[0%] text-xl lg:text-2xl font-medium;
 }
 strong {
 	@apply font-bold;
