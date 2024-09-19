@@ -17,13 +17,13 @@ add_filter('post_class', 'custom_post_classes');
 <section id="primary">
     <main id="main">
 
-        <?php //<h1 class="page-title mb-6 container-mid max-content-inner-big">Welcome to our Blog</h1>
+        <?php //<h1 class="mb-6 page-title container-mid max-content-inner-big">Welcome to our Blog</h1>
         ?>
         <?php
         //show the content of the page
         the_content();
         ?>
-        <section class="flex flex-col items-center  my-12 container-mid max-content-inner-big text-custom-primary">
+        <section class="flex flex-col items-center my-12 text-black container-mid max-content-inner-big">
             <?php
             $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; // Get the current page number
 

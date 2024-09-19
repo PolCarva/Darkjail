@@ -19,7 +19,7 @@
  */
 .page-title,
 .entry-title {
-	@apply max-w-content mx-auto mb-6 text-3xl font-extrabold text-neutral-900;
+	@apply mx-auto mb-6 text-3xl font-extrabold max-w-content text-neutral-900;
 }
 
 /**
@@ -44,7 +44,7 @@
 
 .max-content-inner-big {
 	/* Wide width from the `theme.json` file */
-	@apply max-w-wide m-auto px-8;
+	@apply px-8 m-auto max-w-wide;
 }
 
 .entry-content > .alignwide {
@@ -72,23 +72,23 @@
 	@apply font-semibold underline;
 }
 .post .entry-content > h1 {
-	@apply text-2xl lg:text-4xl text-custom-primary font-bold mb-4;
+	@apply mb-4 text-2xl font-bold text-black lg:text-4xl;
 }
 
 .post .entry-content > h2 {
-	@apply text-[20px] leading-[1.2] lg:text-3xl text-custom-primary font-bold mb-4;
+	@apply text-[20px] leading-[1.2] lg:text-3xl text-black font-bold mb-4;
 }
 
 .post .entry-content > h3 {
-	@apply text-[18px] leading-[1.2] lg:text-2xl text-custom-primary font-bold mb-4;
+	@apply text-[18px] leading-[1.2] lg:text-2xl text-black font-bold mb-4;
 }
 
 .post .entry-content > h4 {
-	@apply text-[16px] leading-[1.2] lg:text-lg text-custom-primary font-bold mb-4;
+	@apply text-[16px] leading-[1.2] lg:text-lg text-black font-bold mb-4;
 }
 
 .banner-container {
-	@apply max-w-wide m-auto p-0 md:p-8 lg:p-16;
+	@apply p-0 m-auto max-w-wide md:p-8 lg:p-16;
 }
 .container-mid {
 	@apply max-w-[73rem] mx-auto px-8 mt-8;
