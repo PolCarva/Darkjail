@@ -1,0 +1,13 @@
+{
+    "name": "acf/our-offerings",
+    "title": "Our Offerings",
+    "description": "A custom Our Offerings block.",
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["our","offerings"],
+    "acf": {
+        "mode": "auto",
+        "renderTemplate": "our-offerings.php"
+    },
+    "align": "full"
+}
