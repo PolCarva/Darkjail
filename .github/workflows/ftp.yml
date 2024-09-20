@@ -19,17 +19,17 @@ jobs:
       run: npm run build
 
     - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      uses: Dylan700/sftp-upload-action@v1.2.3
       with:
         server: pixabilitystg.sftp.wpengine.com
         port: 2222
         username: ${{ secrets.ftp_staging_user }}
         password: ${{ secrets.ftp_staging_password }}
-        exclude: |
+        ignore: |
           **/.git*
           **/.git*/**
           **/.vscode/**
           **/node_modules/**
           **/custom-plugins/**
-        local-dir: ./
-        server-dir: ./wp-content/themes/Pixability-WP/
+        uploads: |
+          ./ => wp-content/themes/Pixability-WP/
