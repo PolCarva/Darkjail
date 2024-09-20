@@ -63,7 +63,7 @@ $offerings = get_field('offerings'); // Repeater field for offerings
     </section>
 </div>
 
-<style type="text/css">
+<style>
     .offerings {
         padding: 60px 0;
         background-color: #DBFCFC;
@@ -85,16 +85,20 @@ $offerings = get_field('offerings'); // Repeater field for offerings
         grid-column-gap: 32px;
         grid-row-gap: 16px;
     }
-    @media (min-width: 1400px) {
-        .offerings-grid {
-            grid-template-columns: repeat(4, 1fr);
-        }
-    }
-
+    	
     .offering-card {
         grid-area: auto;
     }
-    @media (min-width: 1400px) {
+
+    @media screen and (min-width: 1400px) {
+        .offerings-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .featured-card {
+            grid-area: 1 / 1 / 2 / 5;
+        }
+    
         .offering-card:nth-child(1) {
             grid-area: 1 / 1 / 2 / 3;
         }
