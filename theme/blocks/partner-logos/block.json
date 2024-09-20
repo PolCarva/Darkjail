@@ -1,0 +1,13 @@
+{
+    "name": "acf/partner-logos",
+    "title": "Partner logos",
+    "description": "A custom Logos block.",
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["partner","logos"],
+    "acf": {
+        "mode": "auto",
+        "renderTemplate": "partner-logos.php"
+    },
+    "align": "full"
+}

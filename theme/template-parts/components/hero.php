@@ -3,44 +3,86 @@
 Use example: 	
 
 get_template_part('template-parts/components/hero', '', array(
-    'heading' => 'my heading',
-    'subheading' => 'my subheading',
-    'image' => 3,
-    'button' => array(
-        'text' => 'Button Text',
-        'url' => 'https://example.com/button-url',
+    'heading' => "Don’t Youtube without us",
+    'subheading' => "Pixability helps you deliver more of the impressions that matter",
+    'image' => array(
+        'main_image' => 14198,
+        'mobile_image' => false,
     ),
-    'right_align' => true,
+    'content_styles' => array(
+        'text_color' => '#FFEA7B',
+        'mobile_text_color' => '#D53538',
+    ),
     'heading_type' => 'h1',
-    'desktop_full_width' => true,
-));
+);
+
 
 */
 // Extract the variables from the array
 extract($args);
 
+$heading_words = explode(' ', $heading);
+
+$first_line_count = ceil(count($heading_words) / 2);
+
+$first_line = implode(' ', array_slice($heading_words, 0, $first_line_count));
+$second_line = implode(' ', array_slice($heading_words, $first_line_count));
+
+
+$main_image = $image['main_image'];
+$mobile_image = $image['mobile_image'];
+
+$content_styles = $content_styles ?? array(
+    'text_color' => '#FFEA7B',
+    'mobile_text_color' => '#D53538',
+);
+$text_color = $content_styles['text_color'];
+$mobile_text_color = $content_styles['mobile_text_color'];
+
+$hero_id = uniqid('hero-');
+
+
 ?>
 
-<section>
-    <div class="bg-center bg-cover py-12 <?php if (!$desktop_full_width) : ?> container-mid <?php endif ?> " style="background-image: url('<?php echo wp_get_attachment_url($image, 'extra-large'); ?>');">
-        <div class="<?php if ($desktop_full_width) : ?> max-content-inner-big <?php endif ?> flex <?php if ($right_align) : ?>
-            justify-end
-        <?php endif; ?>   
-             ">
-            <div class="hero-info bg-white p-8 max-w-lg rounded-lg ">
-                <<?php echo $heading_type ?> class="hero-heading h1"><?php echo esc_html($heading); ?></<? echo $heading_type ?>>
-                <?php
-                if (isset($subheading) && $subheading) :
-                ?>
-                    <p class="hero-subheading text-lg mb-6"><?php echo esc_html($subheading); ?></p>
-                <?php endif; ?>
-                <?php
-                // Button if $button is set, if not prevent warning
-                if (isset($button) && is_array($button) && isset($button['text']) && isset($button['url']) && $button['text'] && $button['url']) {
-                    get_template_part('template-parts/components/button', '', array('type' => 'primary', 'button' => $button));
-                }
+<section id="<?= $hero_id ?>" class="w-full md:h-[90vh] p-5 md:p-10 bg-ice">
+    <div class="relative size-full flex flex-col gap-5">
+        <div class="w-full bg-cover md:absolute inset-0 h-fit md:h-full rounded-2xl overflow-hidden">
+            <?php
+            get_template_part('template-parts/components/image', '', array(
+                'image_id' => $main_image,
+                'mobile_image_id' => $mobile_image,
+                'image_size' => 'extra-large',
+                'image_class' => 'object-cover aspect-[16/9] size-full',
+                'image_position' => 'center'
+            ));
+            ?> </div>
 
-                ?>
-            </div>
+        <div class="md:absolute bottom-10 left-10 flex flex-col">
+            <<?php echo $heading_type ?> class="heading text-5xl md:my-0 md:text-7xl"><?php echo esc_html($first_line); ?> <br class="hidden md:block">
+                <?php echo esc_html($second_line); ?>
+            </<? echo $heading_type ?>>
+            <?php if (isset($subheading) && $subheading) : ?>
+                <p class="subheading text-lg md:text-2xl my-0"><?php echo esc_html($subheading); ?></p>
+            <?php endif; ?>
+
         </div>
+
+
     </div>
+</section>
+
+<style>
+    #<?= $hero_id . " " ?>.heading,
+    #<?= $hero_id . " " ?>.subheading {
+        color: <?= $mobile_text_color ?> !important;
+    }
+
+    @media (min-width: 768px) {
+
+        #<?= $hero_id . " " ?>.heading,
+        #<?= $hero_id . " " ?>.subheading {
+            color: <?= $text_color ?> !important;
+        }
+
+    }
+</style>

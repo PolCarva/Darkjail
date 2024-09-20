@@ -1,0 +1,13 @@
+{
+    "name": "acf/inclusive-media-initiative",
+    "title": "Inclusive Media Initiative",
+    "description": "A custom Inclusive Media Initiative.",
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["inclusive", "media", "initiative"],
+    "acf": {
+        "mode": "auto",
+        "renderTemplate": "inclusive-media-initiative.php"
+    },
+    "align": "full"
+}
