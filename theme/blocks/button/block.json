@@ -1,0 +1,13 @@
+{
+    "name": "acf/button",
+    "title": "Button",
+    "description": "Button component",
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["button", "btn"],
+    "acf": {
+        "mode": "auto",
+        "renderTemplate": "button.php"
+    },
+    "align": "full"
+}

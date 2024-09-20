@@ -4,31 +4,103 @@
  * Button Component
  *
  * @param string $type   The button type (e.g., primary, secondary, etc.).
+ * @param string $size  The button size (e.g., medium, large).
  * @param array  $button An array of button fields.
  */
+
 
 // Extract the variables from the array
 extract($args);
 
-$button_text = $button['text'];
-$button_url = $button['url'];
+$text = $button['text'];
+$url = $button['url'] ?? '';
+$button_type = $button['_type'] ?? 'button';
+$target = $url['target'] ?? '_self';
 
-if (!empty($button_text) && !empty($button_url)) {
-    $classes = 'button my-2 inline-block py-2 px-4 rounded-full border border-3';
+//show_icon should be optional
+$custom_class = $button['custom_class'] ?? '';
+$container_class = $button['container_class'] ?? 'h-fit w-fit';
 
-    if ($type === 'primary') {
-        $classes .= ' border-blue-600 !text-blue-600 hover:!text-blue-800';
-    }
-    // Add more cases for other button types as needed.
+$type ??= 'primary';
+$size ??= 'medium';
 
-?>
-    <a href="<?php echo esc_url($button_url); ?>">
-        <button class="bg-custom-primary rounded-full text-white hover:bg-custom-secondary hover:text-white py-2 px-6 font-semibold uppercase tracking-wider focus:outline-none ">
-            <?php echo esc_html($button_text); ?>
-        </button>
+// bg-primary-blue rounded-full text-white hover:bg-custom-secondary hover:text-white py-2 px-6 font-semibold uppercase tracking-wider focus:outline-none
+$classes = '';
+$svg_color = '';
 
-    </a>
-<?php
+// make a switch case for the button type
+switch ($type) {
+	case 'primary':
+		$classes = '!text-white bg-black hover:bg-[#000] transition-all disabled:opacity-40 rounded-full focus:outline-none';
+		break;
+	case 'icon-text';
+		$classes = '!text-white bg-black hover:bg-[#000] transition-all disabled:opacity-50 rounded-full focus:outline-none inline-flex items-center gap-3';
+		$svg_color = '#FFFFFF';
+		break;
+	case 'secondary':
+		$classes = '!text-black bg-white border border-black hover:border-black/50 transition-all disabled:opacity-50 rounded-full focus:outline-none inline-flex items-center gap-3';
+		$svg_color = '#000000';
+		break;
+	case 'ghost':
+		$classes = "!px-0 mx-6 !text-black bg-white relative  hover:after:w-full after:content-[''] after:absolute after:bottom-[1px] after:h-[1px] after:w-0 after:bg-black after:transition-all disabled:opacity-50 focus:outline-none inline-flex items-center gap-3";
+		$svg_color = '#000000';
+		break;
+	default:
+		$classes = '!text-white bg-black hover:bg-[#000] transition-all disabled:opacity-40 rounded-full focus:outline-none';
+		break;
 }
 
+$classes .= match ($size) {
+	'medium' => ' px-6 py-3 btn_m',
+	'large' => ' px-8 py-[17.5px] btn_l',
+	default => ' px-6 py-3 btn_m',
+};
+
+// Add more cases for other button types as needed.
+
+// if $show_icon add 'flex justify-center items-center' to $classes
+// if ($show_icon) {
+// 	$classes .= ' flex justify-center items-center group min-h-[48px] w-fit ';
+// }
+if (!empty($custom_class)) {
+	$classes .= ' ' . $custom_class;
+}
+
+?>
+
+<?php
+if (!empty($text) && !empty($url)) {
+	?>
+	<div class="<?php echo $container_class ?>">
+		<a href="<?php echo esc_url($url['url']); ?>" target="<?= $target ?>"
+			class="<?php echo $classes ?> !no-underline button-component">
+			<?php if (strpos($type, 'icon') !== false || strpos($type, 'secondary') !== false || strpos($type, 'ghost') !== false): ?>
+				<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M8 3V13" stroke="<?= $svg_color ?>" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+					<path d="M13 8H3" stroke="<?= $svg_color ?>" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+				</svg>
+			<?php endif; ?>
+			<span class="text-center md:whitespace-nowrap">
+				<?php echo esc_html($text); ?>
+			</span>
+		</a>
+	</div>
+	<?php
+} elseif (!empty($text)) {
+	?>
+	<div class="<?php echo $container_class ?>">
+		<button class="<?php echo $classes ?> button-component" type="<?= $button_type ?>">
+			<?php if (strpos($type, 'icon') !== false || strpos($type, 'secondary') !== false || strpos($type, 'ghost') !== false): ?>
+				<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M8 3V13" stroke="<?= $svg_color ?>" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+					<path d="M13 8H3" stroke="<?= $svg_color ?>" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+				</svg>
+			<?php endif; ?>
+			<span class="text-center md:whitespace-nowrap">
+				<?php echo esc_html($text); ?>
+			</span>
+		</button>
+	</div>
+	<?php
+}
 ?>
