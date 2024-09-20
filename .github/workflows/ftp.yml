@@ -21,13 +21,15 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
-        server: giow1123.siteground.us
+        server: pixabilitystg.sftp.wpengine.com
+        port: 2222
         username: ${{ secrets.ftp_staging_user }}
         password: ${{ secrets.ftp_staging_password }}
         exclude: |
           **/.git*
           **/.git*/**
+          **/.vscode/**
           **/node_modules/**
           **/custom-plugins/**
         local-dir: ./
-        server-dir: themes/dango-acf-tailwind/
+        server-dir: ./wp-content/themes/Pixability-WP/
