@@ -18,6 +18,7 @@ if (!empty($block['className'])) {
 
 // Load field(s) value.
 $banner_image = get_field('banner_image');
+$banner_image_mobile = get_field('banner_image_mobile');
 $banner_logo = get_field('banner_logo');
 $description = get_field('description');
 $cta_text = get_field('cta_text');
@@ -30,7 +31,7 @@ $cta_link = get_field('cta_link');
                 <?php
                 get_template_part('template-parts/components/image', '', array(
                     'image_id' => $banner_image['id'],
-                    'mobile_image_id' => $banner_image['id'],
+                    'mobile_image_id' => $banner_image_mobile['id'],
                     'image_size' => 'extra-large',
                     'image_class' => 'object-cover absolute inset-0 w-full h-full',
                     'image_position' => 'center'
@@ -159,9 +160,9 @@ $cta_link = get_field('cta_link');
     }
 
     @media (max-width: 768px) {
-        .pixa-banner-inclusive-media-container {
+        /* .pixa-banner-inclusive-media-container {
             height: 800px;
-        }
+        } */
 
         .pixa-banner-inclusive-media-overlay {
             width: 100%;
