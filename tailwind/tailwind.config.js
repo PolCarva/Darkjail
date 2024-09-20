@@ -13,6 +13,7 @@ module.exports = {
 		extend: {
 			fontFamily: {
 				'pp-mori': ['"Mori", sans-serif'],
+				'manrope': ['"Manrope", sans-serif'],
 			},
 			colors: {
 				// primary
