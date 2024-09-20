@@ -46,7 +46,7 @@ $hero_id = uniqid('hero-');
 
 <section id="<?= $hero_id ?>" class="w-full md:h-[90vh] p-5 md:p-10 bg-ice">
     <div class="relative size-full flex flex-col gap-5">
-        <div class="w-full min-h-[196px] bg-cover md:absolute inset-0 h-fit md:h-full rounded-2xl overflow-hidden">
+        <div class="w-full bg-cover md:absolute inset-0 h-fit md:h-full rounded-2xl overflow-hidden">
             <?php
             get_template_part('template-parts/components/image', '', array(
                 'image_id' => $main_image,
