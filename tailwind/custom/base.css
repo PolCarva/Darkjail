@@ -149,6 +149,25 @@ span {
 	@apply leading-[100%] tracking-[0%] text-base font-normal font-pp-mori;
 }
 
+/* Button text style */
+.btn_m,
+.btn_m span {
+	@apply leading-[100%] tracking-[0%] text-sm font-semibold font-pp-mori m-0 mt-auto cursor-pointer;
+}
+.btn_l,
+.btn_l span {
+	@apply leading-[100%] tracking-[0%] text-lg font-semibold font-pp-mori m-0 mt-auto cursor-pointer;
+}
+
+/* Tags */
+.tag__primary {
+	@apply btn_m text-white bg-cherry hover:bg-yam disabled:bg-sashimi !px-5 py-[11px] rounded-full transition-all;
+}
+.tag__secondary {
+	@apply btn_m text-cherry bg-white border border-cherry hover:bg-cherry hover:text-white disabled:bg-sashimi !px-5 py-[11px] rounded-md transition-all;
+}
+
+
 #main article ol {
 	padding-left: 2rem;
 	@apply pl-8 mx-auto mb-8 list-decimal list-outside;
