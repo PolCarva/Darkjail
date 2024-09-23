@@ -1,0 +1,13 @@
+{
+    "name": "acf/youtube-banner",
+    "title": "YouTube Banner",
+    "description": "A custom YouTube Banner block.",
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["youtube","banner"],
+    "acf": {
+        "mode": "auto",
+        "renderTemplate": "youtube-banner.php"
+    },
+    "align": "full"
+}
