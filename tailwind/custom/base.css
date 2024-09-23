@@ -16,7 +16,7 @@ body {
 }
 
 .c-container {
-	@apply mx-auto px-4 md:px-5 lg:px-10 max-w-[1440px];
+	@apply mx-auto px-4 md:px-5 lg:px-10 max-w-[1690px];
 }
 
 /* a:hover {
