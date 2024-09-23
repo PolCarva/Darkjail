@@ -8,6 +8,18 @@
  * @param array  $button An array of button fields.
  */
 
+/* Usage:
+	get_template_part( 'template-parts/components/button', '', array(
+		'type' => 'secondary',
+		'size' => 'medium',
+		'button' => [
+			'text' => $cta_text,
+			'url' => $cta_link,
+			'target' => '_self',
+		],
+	))
+*/
+
 
 // Extract the variables from the array
 extract($args);
