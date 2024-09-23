@@ -41,35 +41,34 @@ $mobile_text_color = $content_styles['mobile_text_color'];
 
 $hero_id = uniqid('hero-');
 
-
 ?>
-
-<section id="<?= $hero_id ?>" class="w-full md:h-[90vh] p-5 md:p-10 bg-ice">
+<div class="bg-ice">
+<section id="<?= $hero_id ?>" class="w-full py-5 c-container">
     <div class="relative size-full flex flex-col gap-5">
-        <div class="w-full bg-cover md:absolute inset-0 h-fit md:h-full rounded-2xl overflow-hidden">
+        <div class="w-full bg-cover rounded-2xl overflow-hidden aspect-video">
             <?php
             get_template_part('template-parts/components/image', '', array(
                 'image_id' => $main_image,
                 'mobile_image_id' => $mobile_image,
                 'image_size' => 'extra-large',
-                'image_class' => 'object-cover aspect-[16/9] size-full',
+                'image_class' => 'object-cover w-full h-full',
                 'image_position' => 'center'
             ));
-            ?> </div>
+            ?>
+        </div>
 
         <div class="md:absolute bottom-10 left-10 flex flex-col">
             <<?php echo $heading_type ?> class="heading text-5xl md:my-0 md:text-7xl"><?php echo esc_html($first_line); ?> <br class="hidden md:block">
                 <?php echo esc_html($second_line); ?>
-            </<? echo $heading_type ?>>
+            </<?php echo $heading_type ?>>
             <?php if (isset($subheading) && $subheading) : ?>
                 <p class="subheading text-lg md:text-2xl my-0"><?php echo esc_html($subheading); ?></p>
             <?php endif; ?>
-
         </div>
-
-
     </div>
 </section>
+
+</div>
 
 <style>
     #<?= $hero_id . " " ?>.heading,
