@@ -22,11 +22,11 @@ $icon = get_field('icon');
 $offerings = get_field('offerings'); // Repeater field for offerings
 
 ?>
-<div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($class_name); ?>">
-    <section class="px-5 md:px-10 bg-ice">
-        <div class="container-fluid">
+<div id="<?php echo esc_attr($id); ?>" class="bg-ice <?php echo esc_attr($class_name); ?>">
+    <section class="c-container">
+        <div class="">
             <h2><?php echo esc_html($heading); ?></h2>
-            <div class="offerings-grid">
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-x-8 gap-y-4">
                 <?php if ($offerings): ?>
                     <?php foreach ($offerings as $index => $offering): ?>
                         <?php
@@ -37,8 +37,7 @@ $offerings = get_field('offerings'); // Repeater field for offerings
                         $is_featured = $offering['is_featured'] ?? false;
                         $recommended = $offering['recommended'] ?? false;
 
-                        // Class for featured (first) card
-                        $featured_class = ($is_featured && $index === 0) ? 'featured-card' : '';
+                        $featured_class = ($is_featured && $index === 0) ? 'lg:!col-span-2 lg:!row-span-2' : '';
                         ?>
                         <a href="<?php echo esc_url($link); ?>" class="offering-card <?php echo esc_attr($featured_class); ?>">
                             <div class="offering-card-header">
@@ -79,43 +78,9 @@ $offerings = get_field('offerings'); // Repeater field for offerings
         margin-bottom: 48px;
     }
 
-    .offerings-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-column-gap: 32px;
-        grid-row-gap: 16px;
-    }
-    	
-    .offering-card {
-        grid-area: auto;
-    }
-
-    @media screen and (min-width: 1400px) {
-        .offerings-grid {
-            grid-template-columns: repeat(4, 1fr);
-        }
-
-        .featured-card {
-            grid-area: 1 / 1 / 2 / 5;
-        }
-    
-        .offering-card:nth-child(1) {
-            grid-area: 1 / 1 / 2 / 3;
-        }
-
-        .offering-card:nth-child(2) {
-            grid-area: 1 / 3 / 2 / 4;
-        }
-
-        .offering-card:nth-child(3) {
-            grid-area: 1 / 4 / 2 / 5;
-        }
-    }
-
     .offering-card {
         width: 100%;
         height: 289px;
-        flex-shrink: 0;
         border: 1px solid #D53538;
         padding: 30px;
         border-radius: 10px;

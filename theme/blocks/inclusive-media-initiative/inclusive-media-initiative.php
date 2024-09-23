@@ -25,7 +25,7 @@ $cta_text = get_field('cta_text');
 $cta_link = get_field('cta_link');
 ?>
 <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($class_name); ?> pixa_inclusive_media_initiative inclusive-media-initiative">
-    <div class="container-fluid px-5 md:px-10">
+    <div class="container-fluid c-container">
         <div class="pixa-banner-inclusive-media-container relative">
             <?php if ($banner_image) : ?>
                 <?php
