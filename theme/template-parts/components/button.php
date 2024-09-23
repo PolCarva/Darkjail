@@ -33,11 +33,14 @@ switch ($type) {
 	case 'primary':
 		$classes = '!text-white bg-black hover:bg-[#000] transition-all disabled:opacity-40 rounded-full focus:outline-none';
 		break;
+	case 'secondary';
+		$classes = '!text-black bg-white border border-black hover:border-black/50 transition-all disabled:opacity-50 rounded-full focus:outline-none inline-flex items-center gap-3';
+		break;
 	case 'icon-text';
 		$classes = '!text-white bg-black hover:bg-[#000] transition-all disabled:opacity-50 rounded-full focus:outline-none inline-flex items-center gap-3';
 		$svg_color = '#FFFFFF';
 		break;
-	case 'secondary':
+	case 'secondary-icon':
 		$classes = '!text-black bg-white border border-black hover:border-black/50 transition-all disabled:opacity-50 rounded-full focus:outline-none inline-flex items-center gap-3';
 		$svg_color = '#000000';
 		break;
@@ -74,7 +77,7 @@ if (!empty($text) && !empty($url)) {
 	<div class="<?php echo $container_class ?>">
 		<a href="<?php echo esc_url($url['url']); ?>" target="<?= $target ?>"
 			class="<?php echo $classes ?> !no-underline button-component">
-			<?php if (strpos($type, 'icon') !== false || strpos($type, 'secondary') !== false || strpos($type, 'ghost') !== false): ?>
+			<?php if (strpos($type, 'icon') !== false || strpos($type, 'ghost') !== false): ?>
 				<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path d="M8 3V13" stroke="<?= $svg_color ?>" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
 					<path d="M13 8H3" stroke="<?= $svg_color ?>" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -90,7 +93,7 @@ if (!empty($text) && !empty($url)) {
 	?>
 	<div class="<?php echo $container_class ?>">
 		<button class="<?php echo $classes ?> button-component" type="<?= $button_type ?>">
-			<?php if (strpos($type, 'icon') !== false || strpos($type, 'secondary') !== false || strpos($type, 'ghost') !== false): ?>
+			<?php if (strpos($type, 'icon') !== false || strpos($type, 'ghost') !== false): ?>
 				<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path d="M8 3V13" stroke="<?= $svg_color ?>" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
 					<path d="M13 8H3" stroke="<?= $svg_color ?>" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
