@@ -22,7 +22,7 @@ $case_studies = get_field('case_studies');
 ?>
 <div id="<?php echo esc_attr($id); ?>" class="bg-ice <?php echo esc_attr($class_name); ?>">
     <section class="case-studies">
-        <div class="c-container">
+        <div class="c-container__sm">
             <h2><?php echo esc_html($heading); ?></h2>
             <div class="case-studies-grid">
                 <?php if ($case_studies): ?>
