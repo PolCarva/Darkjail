@@ -19,9 +19,10 @@ body {
 	@apply mx-auto px-4 md:px-5 lg:px-10 max-w-[1690px];
 }
 
-/* a:hover {
-	@apply text-custom-secondary;
-} */
+.c-container__sm {
+	@apply mx-auto px-4 md:px-5 lg:px-[84px] max-w-[1690px];
+}
+
 
 .wordpress-pages-container > *:not(div):not(article):not(section) {
 	@apply max-w-[73rem] px-8;
