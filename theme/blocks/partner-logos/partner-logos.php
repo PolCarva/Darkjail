@@ -20,8 +20,8 @@ $logos = get_field('logos');
 $black_logos = get_field('black_logos');
 ?>
 
-<div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($class_name); ?>">
-<div class="bg-ice py-12 px-5 md:px-10">
+<div id="<?php echo esc_attr($id); ?>" class="bg-ice <?php echo esc_attr($class_name); ?>">
+<div class=" py-12 c-container">
     <div class="md:w-fit w-full h-fit mx-auto md:h-fit flex flex-wrap flex-col md:flex-row gap-5 items-center justify-center">
         <?php foreach ($logos as $logo) : ?>
             <?php

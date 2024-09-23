@@ -31,8 +31,8 @@ $block_id = esc_attr($id);
     }
 }
 </style>
-<div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($class_name); ?>">
-    <section class="py-16 px-5 md:px-10 bg-ice">
+<div id="<?php echo esc_attr($id); ?>" class="bg-ice <?php echo esc_attr($class_name); ?>">
+    <section class="py-16 c-container ">
         <div class="container-fluid ">
             <div class="pixa-outcomes-platform__banner-container">
                 <h1 class="pixa-outcomes-platform__title">The YouTube <br>Outcome Platform</h1>
