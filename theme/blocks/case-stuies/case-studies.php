@@ -33,9 +33,10 @@ $case_studies = get_field('case_studies');
                         $tag = $case_study['tag'];
                         $image_id = $case_study['image'];
                         $image_url = wp_get_attachment_image_url($image_id, 'full');
+                        $link = $case_study['link'] ?? '#';
                         ?>
                         <div class="column <?php echo ($index === 0) ? 'column-large' : 'column-small'; ?>">
-                            <a class="case-study-card <?php echo ($index === 0) ? 'large' : 'small'; ?>" href="#">
+                            <a class="case-study-card <?php echo ($index === 0) ? 'large' : 'small'; ?>" href="<?= $link ?>">
                                 <img src="<?php echo esc_url($image_url); ?>" alt="">
                                 <div class="card-content">
                                     <?php if ($tag): ?>
