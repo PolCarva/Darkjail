@@ -40,7 +40,7 @@ $cta_link = get_field('cta_link');
                 ?>
             <?php endif; ?>
             <div class="absolute top-0 left-0 w-full md:max-w-[38%] z-10 flex flex-col justify-center items-start gap-5 p-[24px] md:p-16">
-                <div class="flex flex-col justify-center items-start gap-6">
+                <div class="flex flex-col items-start justify-center gap-6">
                     <?php if ($banner_logo): ?>
                         <img src="<?php echo esc_url($banner_logo['url']); ?>"
                             alt="<?php echo esc_attr($banner_logo['alt']); ?>"
@@ -55,7 +55,7 @@ $cta_link = get_field('cta_link');
                     <?php
                     if (isset($cta_text) && isset($cta_link)) {
                         get_template_part('template-parts/components/button', '', array(
-                            'type' => 'secondary',
+                            'type' => 'secondary-white',
                             'size' => 'medium',
                             'button' => [
                                 'text' => $cta_text,
