@@ -24,7 +24,7 @@ $case_studies = get_field('case_studies');
     <section class="py-[60px]">
         <div class="c-container__sm">
             <h2 class="text-[32px] mb-[16px] md:mb-[48px] font-[600] md:text-[40px] leading-[110%]"><?php echo esc_html($heading); ?></h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 grid-rows-[auto] md:grid-rows-2 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 grid-rows-[auto] md:grid-rows-2 gap-4 md:gap-y-[50px] md:gap-x-[54px]">
                 <?php if ($case_studies): ?>
                     <?php foreach ($case_studies as $index => $case_study): ?>
                         <?php
