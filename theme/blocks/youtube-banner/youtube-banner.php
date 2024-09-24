@@ -38,8 +38,8 @@ $button_text = get_field('button_text');
 			?>
 
 			<div class="absolute inset-0 flex flex-col gap-8 justify-center items-center text-center">
-				<div class="flex flex-col gap-8 justify-center items-center text-center max-w-[50%] mx-auto">
-					<h2 class="text-white text-[92px] font-normal leading-none tracking-[-1.84px]">
+				<div class="flex flex-col gap-[48px] justify-center items-center text-center max-w-[50%] mx-auto">
+					<h2 class="text-white !my-0 text-[92px] font-normal leading-none tracking-[-1.84px]">
 						<?php echo esc_html($heading); ?>
 					</h2>
 					<?php
