@@ -124,7 +124,6 @@ $block_id = esc_attr($id);
         padding: 64px 40px;
     }
     .pixa-outcomes-platform__title {
-        font-family: 'Manrope';
         font-weight: 600;
         font-size: 32px;
         position: absolute;
@@ -211,7 +210,6 @@ $block_id = esc_attr($id);
     }
     .pixa-outcomes-platform__card-title {
         color: #221F20;
-        font-family: "PP Mori";
         font-size: 50px;
         font-style: normal;
         font-weight: 600;
@@ -220,7 +218,6 @@ $block_id = esc_attr($id);
     }
     .pixa-outcomes-platform__card-subtitle {
         color: #221F20;
-        font-family: Manrope;
         font-size: 32px;
         font-style: normal;
         font-weight: 500;
@@ -228,14 +225,12 @@ $block_id = esc_attr($id);
         margin-bottom: 10px;
     }
     .pixa-outcomes-platform__card-title {
-        font-family: 'PP Mori';
         font-weight: 600;
         font-size: 50px;
     }
     .pixa-outcomes-platform__card-description {
         max-width: 70%;
         color: #221F20;
-        font-family: Manrope;
         font-size: 20px;
         font-style: normal;
         font-weight: 400;
