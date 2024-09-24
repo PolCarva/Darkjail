@@ -46,7 +46,7 @@ switch ($type) {
 		$classes = '!text-white bg-black hover:bg-[#000] transition-all disabled:opacity-40 rounded-full focus:outline-none';
 		break;
 	case 'secondary';
-		$classes = '!text-black bg-white border border-black hover:border-black/50 transition-all disabled:opacity-50 rounded-full focus:outline-none inline-flex items-center gap-3';
+		$classes = '!text-black bg-white border border-white hover:border-black transition-all disabled:opacity-50 rounded-full focus:outline-none inline-flex items-center gap-3';
 		break;
 	case 'icon-text';
 		$classes = '!text-white bg-black hover:bg-[#000] transition-all disabled:opacity-50 rounded-full focus:outline-none inline-flex items-center gap-3';
