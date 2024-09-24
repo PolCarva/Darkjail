@@ -23,7 +23,7 @@ $offerings = get_field('offerings'); // Repeater field for offerings
 
 ?>
 <div id="<?php echo esc_attr($id); ?>" class="bg-ice <?php echo esc_attr($class_name); ?>">
-	<section class="c-container">
+	<section class="c-container__sm">
 		<div>
 			<h2 class="text-black font-semibold text-[40px] leading-[110%] mb-12"><?php echo esc_html($heading); ?></h2>
 			<div class="grid grid-cols-1 lg:grid-cols-4 gap-x-8 gap-y-4">
