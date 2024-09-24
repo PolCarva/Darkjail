@@ -39,7 +39,7 @@ $cta_link = get_field('cta_link');
                 ));
                 ?>
             <?php endif; ?>
-            <div class="absolute top-0 left-0 w-full md:max-w-[30%] z-10 flex flex-col justify-center items-start gap-6 p-16">
+            <div class="absolute top-0 left-0 w-full md:max-w-[38%] z-10 flex flex-col justify-center items-start gap-6 p-16">
                 <div class="flex flex-col justify-center items-start gap-6">
                     <?php if ($banner_logo): ?>
                         <img src="<?php echo esc_url($banner_logo['url']); ?>"
@@ -47,7 +47,7 @@ $cta_link = get_field('cta_link');
                             class="w-64 h-16">
                     <?php endif; ?>
                     <?php if ($description): ?>
-                        <p class="text-white font-sans text-base font-normal leading-[1.4]">
+                        <p class="text-white !my-0 text-[16px] font-normal leading-[140%]">
                             <?php echo $description; ?>
                         </p>
                     <?php endif; ?>

@@ -47,7 +47,7 @@ $hero_id = uniqid('hero-');
 <div class="bg-ice">
     <section id="<?= $hero_id ?>" class="w-full py-5 c-container">
         <div class="relative size-full flex flex-col gap-5">
-            <div class="w-full bg-cover rounded-2xl overflow-hidden aspect-video">
+            <div class="w-full bg-cover rounded-2xl overflow-hidden aspect-[16/9]">
                 <?php if (!empty($background_video)) : ?>
                     <?php
                     $video_url = wp_get_attachment_url($background_video);
