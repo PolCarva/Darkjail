@@ -43,7 +43,7 @@ $offerings = get_field('offerings'); // Repeater field for offerings
 							<div class="flex justify-between items-start">
 								<h3 class="text-black font-semibold text-[26px] md:text-[32px] leading-[120%] mb-8"><?php echo esc_html($title); ?></h3>
 								<?php if ($recommended): ?>
-									<span class="bg-cherry text-white px-4 py-1 rounded-full text-[14px] font-semibold">Recommended</span>
+									<span class="bg-cherry text-white px-4 py-1 rounded-full text-[14px] !my-0 font-semibold">Recommended</span>
 								<?php endif; ?>
 							</div>
 							<p class="text-black text-[18px] leading-[140%] max-w-[70%]"><?php echo esc_html($description); ?></p>
