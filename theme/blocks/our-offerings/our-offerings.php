@@ -39,17 +39,17 @@ $offerings = get_field('offerings'); // Repeater field for offerings
 
 						$featured_class = ($is_featured && $index === 0) ? 'lg:col-span-2 lg:row-span-2' : '';
 						?>
-						<a href="<?php echo esc_url($link); ?>" class="block !no-underline w-full h-[289px] border border-cherry p-8 rounded-[10px] relative transition-all duration-300 hover:bg-white hover:border-white hover:scale-[1.03] <?php echo esc_attr($featured_class); ?>">
+						<a href="<?php echo esc_url($link); ?>" class="block !no-underline w-full h-[289px] border border-cherry p-8 rounded-[10px] relative transition-all duration-300 group <?php echo esc_attr($featured_class); ?>">
 							<div class="flex justify-between items-start">
-								<h3 class="text-black font-semibold text-[26px] md:text-[32px] leading-[120%] mb-8"><?php echo esc_html($title); ?></h3>
+								<h3 class="text-black group-hover:underline font-semibold text-[26px] md:text-[32px] leading-[120%] mb-8"><?php echo esc_html($title); ?></h3>
 								<?php if ($recommended): ?>
-									<span class="bg-cherry text-white px-4 py-1 rounded-full text-[14px] !my-0 font-semibold">Recommended</span>
+									<span class="bg-cherry text-white px-[20px] py-[10px] leading-none rounded-full text-[14px] !my-0 font-semibold">Recommended</span>
 								<?php endif; ?>
 							</div>
-							<p class="text-black text-[18px] leading-[140%] max-w-[70%]"><?php echo esc_html($description); ?></p>
-							<span class="absolute bottom-6 right-6 w-fit h-fit" aria-label="Learn more about <?php echo esc_attr($title); ?>">
+							<p class="text-black/50 text-[18px] leading-[140%] max-w-[70%]"><?php echo esc_html($description); ?></p>
+							<span class="absolute group-hover:text-cherry transition bottom-6 right-6 w-fit h-fit" aria-label="Learn more about <?php echo esc_attr($title); ?>">
 								<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M1 1H28.6607V28.6607M1 28.6631L18.2656 11.3975" stroke="#221F20" stroke-width="2"
+									<path d="M1 1H28.6607V28.6607M1 28.6631L18.2656 11.3975" stroke="currentColor" stroke-width="2"
 										stroke-linecap="round" stroke-linejoin="round" />
 								</svg>
 							</span>
