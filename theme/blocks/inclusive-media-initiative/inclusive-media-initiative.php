@@ -25,7 +25,7 @@ $cta_text = get_field('cta_text');
 $cta_link = get_field('cta_link');
 ?>
 <section id="<?php echo esc_attr($id); ?>"
-    class="<?php echo esc_attr($class_name); ?> bg-teal-100 py-16">
+    class="<?php echo esc_attr($class_name); ?> bg-ice py-16">
     <div class="c-container">
         <div class="relative rounded-lg overflow-hidden bg-white h-[540px]">
             <?php if ($banner_image): ?>
