@@ -9,40 +9,34 @@ export default function MainNav() {
 	})
 
 	// Toggle submenus when clicking on menu items with children
-	const menuItems = document.querySelectorAll('.mobile-menu .menu-item')
+	const menuItems = document.querySelectorAll('.main-nav-mobile > .menu-item.menu-item-has-children')
 
-	// biome-ignore lint/complexity/noForEach: <explanation>
-	menuItems.forEach((menuItem) => {
+	console.log({ menuItems })
+
+	for (const menuItem of menuItems) {
 		const submenu = menuItem.querySelector('.sub-menu')
 		menuItem.addEventListener('click', (e) => {
 			e.stopPropagation() // Prevent parent item from toggling
 
+			// Close all other menus
+			for (const item of menuItems) {
+				if (item !== menuItem) {
+					item.querySelector('.sub-menu').classList.remove('opened')
+				}
+			}
+
 			// Toggle the class 'left-0' on the submenu
-			if (submenu.classList.contains('left-0')) {
-				submenu.classList.remove('left-0')
+			if (submenu.classList.contains('opened')) {
+				submenu.classList.remove('opened')
 			} else {
-				submenu.classList.add('left-0') // Add the class 'left-0' for smooth transition
+				submenu.classList.add('opened') // Add the class 'left-0' for smooth transition
 			}
 
 			const firstParagraph = submenu.querySelector('.back')
 			firstParagraph.addEventListener('click', (s) => {
-				submenu.classList.remove('left-0')
+				submenu.classList.remove('opened')
 				s.stopPropagation() // Prevent parent item from toggling
 			})
-
-			// Get the title of the menu item
-			const title = menuItem.querySelector('.menu-item-link').innerHTML
-			//remove elements with class "parent-title" if they exist
-			const parentTitles = document.querySelectorAll('.parent-title')
-			// biome-ignore lint/complexity/noForEach: <explanation>
-			parentTitles.forEach((parentTitle) => {
-				parentTitle.remove()
-			})
-			// create a li with a class "parent-title" after the "back" li and add the title to it
-			const parentTitle = document.createElement('li')
-			parentTitle.classList.add('parent-title')
-			parentTitle.innerHTML = title
-			submenu.insertBefore(parentTitle, firstParagraph)
 		})
-	})
+	}
 }
