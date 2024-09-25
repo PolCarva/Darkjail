@@ -37,7 +37,7 @@ $button_text = get_field('button_text');
 			));
 			?>
 
-			<div class="absolute inset-0 flex flex-col gap-8 justify-center items-center text-center">
+			<div class="absolute inset-0 flex flex-col items-center justify-center gap-8 text-center">
 				<div class="flex flex-col gap-[48px] justify-center items-center text-center max-w-[50%] mx-auto">
 					<h2 class="text-white !my-0 text-[92px] font-normal leading-none tracking-[-1.84px]">
 						<?php echo esc_html($heading); ?>
@@ -45,7 +45,7 @@ $button_text = get_field('button_text');
 					<?php
 					if (isset($button_text) && isset($button_link)) {
 						get_template_part('template-parts/components/button', '', array(
-							'type' => 'secondary',
+							'type' => 'secondary-white',
 							'size' => 'medium',
 							'button' => [
 								'text' => $button_text,

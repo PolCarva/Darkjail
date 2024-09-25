@@ -46,7 +46,10 @@ switch ($type) {
 		$classes = '!text-white bg-black hover:bg-[#000] transition-all disabled:opacity-40 rounded-full focus:outline-none';
 		break;
 	case 'secondary';
-		$classes = '!text-black bg-white border border-white hover:border-black transition-all disabled:opacity-50 rounded-full focus:outline-none inline-flex items-center gap-3';
+		$classes = '!text-black bg-transparent border border-black hover:border-black/50 transition-all disabled:opacity-50 rounded-full focus:outline-none inline-flex items-center gap-3';
+		break;
+	case 'secondary-white';
+		$classes = '!text-black bg-white border border-white hover:border-black/50 transition-all disabled:opacity-50 rounded-full focus:outline-none inline-flex items-center gap-3';
 		break;
 	case 'icon-text';
 		$classes = '!text-white bg-black hover:bg-[#000] transition-all disabled:opacity-50 rounded-full focus:outline-none inline-flex items-center gap-3';
@@ -57,7 +60,7 @@ switch ($type) {
 		$svg_color = '#000000';
 		break;
 	case 'ghost':
-		$classes = "!px-0 mx-6 !text-black bg-white relative  hover:after:w-full after:content-[''] after:absolute after:bottom-[1px] after:h-[1px] after:w-0 after:bg-black after:transition-all disabled:opacity-50 focus:outline-none inline-flex items-center gap-3";
+		$classes = "!px-0 mx-6 !text-black bg-white relative hover:after:w-full after:content-[''] after:absolute after:bottom-[1px] after:h-[1px] after:w-0 after:bg-black after:transition-all disabled:opacity-50 focus:outline-none inline-flex items-center gap-3";
 		$svg_color = '#000000';
 		break;
 	default:

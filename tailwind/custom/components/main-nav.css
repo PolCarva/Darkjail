@@ -3,9 +3,8 @@
 	@apply relative;
 }
 
-/* Hide submenus by default */
 .main-nav {
-	@apply flex;
+	@apply flex items-center h-full gap-8 min-w-[580px];
 }
 
 .main-nav ul {
@@ -13,12 +12,29 @@
 }
 
 .main-nav li {
-	@apply px-4 font-semibold;
+	@apply btn_m !my-auto;
 }
 
-  
-.main-nav .sub-menu {
-	@apply hidden absolute top-full left-0 mt-0 w-56  bg-white border border-gray-300 p-2 shadow-lg z-10;
+.sub-menu > .menu-item > a,
+.main-nav > .menu-item {
+	@apply relative after:content-[''] after:absolute after:bottom-[-4px] after:h-[1px] after:w-0 after:bg-black after:transition-all disabled:opacity-50 focus:outline-none inline-flex items-center hover:text-cherry;
+}
+.sub-menu > .menu-item > a {
+	@apply after:bottom-[1px] hover:text-black;
+}
+.main-nav > .menu-item:hover svg {
+	@apply rotate-180;
+}
+.main-nav > .menu-item:hover svg path {
+	@apply fill-cherry;
+}
+.sub-menu.child > .menu-item:hover > a::after,
+.main-nav > .menu-item:hover::after {
+	@apply w-full;
+}
+
+.main-nav .sub-menu:not(.child) {
+	@apply absolute block right-1/2 translate-x-1/2 z-10 invisible opacity-0 w-max max-w-[205px] p-[22px] rounded-[14px] mt-0 bg-salt top-5 transition-all duration-500 text-black;
 }
 
 .main-nav .back,
@@ -28,34 +44,46 @@
 
 /* Show submenus when hovering over the parent menu item */
 .main-nav .menu-item:hover > .sub-menu {
-	@apply block;
+	@apply visible transition-all duration-1000 opacity-100;
 }
 
-.main-nav .menu-item:hover > .sub-menu > li{
-	@apply my-1;
+.main-nav .menu-item > .sub-menu:not(.child) > li:not(:last-of-type) {
+	@apply !mb-8;
+}
+.main-nav .menu-item > .sub-menu:not(.child) > li {
+	@apply gap-[14px];
+}
+.main-nav .menu-item > .sub-menu:not(.child) > .menu-item {
+	@apply flex flex-col items-start;
 }
 
-.main-nav .menu-item:hover > .sub-menu > li > a {
-	@apply pl-0 transition-all duration-300 ease-in-out;
+.main-nav .menu-item .sub-menu:not(.child) > .menu-item > .menu-item-link {
+	@apply n2;
 }
-.main-nav .menu-item:hover > .sub-menu > li:hover > a {
-	@apply pl-1 transition-all duration-300 ease-in-out opacity-80; 
+.main-nav
+	.menu-item
+	.sub-menu:not(.child)
+	> .menu-item
+	> .sub-menu.child
+	.menu-item-link {
+	@apply n3;
 }
-
+/*
+	.main-nav .menu-item:hover > .sub-menu > li:hover > a {
+	@apply pl-1 transition-all duration-300 ease-in-out opacity-80;
+} */
 
 .main-nav li:last-of-type .sub-menu {
-	@apply right-0 left-auto ;
-}	
+	@apply right-0 left-auto;
+}
 
-.main-nav .menu-item:hover > .sub-menu  .sub-menu {
-	@apply ml-20 -m-4 w-40 bg-slate-100  ;
+.main-nav .menu-item > .sub-menu .sub-menu.child {
+	@apply flex flex-col gap-[14px];
 }
 
 .main-nav li:last-of-type .menu-item:hover .sub-menu {
-	@apply  mr-20 ;
-}	
-
-
+	@apply mr-20;
+}
 
 /******************************************************
  * Mobile Menu
@@ -65,43 +93,42 @@
 	height: 100vh;
 	max-height: max-content;
 	overflow-y: auto; /* Add a vertical scrollbar if necessary */
-    opacity: 1;
-
+	opacity: 1;
 }
 
 .hamburger-icon .bar {
-    display: block;
+	display: block;
 	width: 30px;
 	height: 3px;
 	margin: 4px 0;
-    background-color: #000;
-    transition: transform 0.3s ease-in-out;
+	background-color: #000;
+	transition: transform 0.3s ease-in-out;
 }
 
 #mobile-menu-button {
-  display: inline-block;
-  cursor: pointer;
+	display: inline-block;
+	cursor: pointer;
 }
 
 #menu-toggle {
-  display: none;
+	display: none;
 }
 
 #menu-toggle:checked + #mobile-menu-button .hamburger-icon .bar:nth-child(1) {
-  transform: rotate(-45deg) translate(-4px, 5px);
+	transform: rotate(-45deg) translate(-4px, 5px);
 }
 
 #menu-toggle:checked + #mobile-menu-button .hamburger-icon .bar:nth-child(2) {
-  opacity: 0;
+	opacity: 0;
 }
 
 #menu-toggle:checked + #mobile-menu-button .hamburger-icon .bar:nth-child(3) {
-  transform: rotate(45deg) translate(0px, -2px);
+	transform: rotate(45deg) translate(0px, -2px);
 }
 
 #menu-toggle:checked + #mobile-menu-button .hamburger-icon .bar + .bar {
-  width: 30px;
-  margin-top: -3px;
+	width: 30px;
+	margin-top: -3px;
 }
 
 .mobile-menu {
@@ -112,10 +139,9 @@
 	@apply flex flex-col;
 }
 
-ul.main-nav-mobile li{
-	@apply py-3 font-semibold px-2 border-b-2  border-gray-600;
+ul.main-nav-mobile li {
+	@apply px-2 py-3 font-semibold border-b-2 border-gray-600;
 }
-
 
 ul.main-nav-mobile li li:last-child {
 	@apply border-b-0;
@@ -126,10 +152,10 @@ ul.main-nav-mobile li li:last-child {
 	display: none;
 }
 .mobile-menu .menu-item-has-children > a:after {
-    content: ">"; 
-    float: right;
+	content: ">";
+	float: right;
 	font-weight: 800;
-    margin-right: 8px;
+	margin-right: 8px;
 }
 
 .mobile-menu .back {
@@ -145,42 +171,39 @@ ul.main-nav-mobile li li:last-child {
 	border: 0;
 }
 
-
-.mobile-menu .sub-menu  {
+.mobile-menu .sub-menu {
 	overflow-y: auto;
 	max-height: none;
 	min-height: calc(100vh + 80px);
-    position: absolute;
-    background: #fff;
-    width: 100%;
-    top: 0;
+	position: absolute;
+	background: #fff;
+	width: 100%;
+	top: 0;
 	left: 100vw;
 	transition: left 0.3s ease; /* Add a transition for the left property */
-    height: auto;
+	height: auto;
 }
 
 /* Hide the scrollbar on desktop for elements with the class .submenu */
 /* For Webkit-based browsers (Chrome, Safari) */
 .sub-menu::-webkit-scrollbar {
-    width: 0.5em;
-    background: transparent; /* You can use 'background: #fff;' to match the background color */
+	width: 0.5em;
+	background: transparent; /* You can use 'background: #fff;' to match the background color */
 }
 
 .sub-menu::-webkit-scrollbar-thumb {
-    background: transparent; /* You can use 'background: #fff;' to match the background color */
+	background: transparent; /* You can use 'background: #fff;' to match the background color */
 }
 
 /* For Firefox */
 .sub-menu * {
-    scrollbar-width: thin;
-    scrollbar-color: transparent transparent; /* You can use 'scrollbar-color: #fff transparent;' to match the background color */
+	scrollbar-width: thin;
+	scrollbar-color: transparent transparent; /* You can use 'scrollbar-color: #fff transparent;' to match the background color */
 }
 
 .left-0 {
 	left: 0 !important;
 	transition: left 0.3s ease; /* Add a transition for the left property */
-
 }
-
 
 /* end mobile menu */
