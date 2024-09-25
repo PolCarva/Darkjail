@@ -32,11 +32,6 @@ export default function MainNav() {
 				submenu.classList.add('opened') // Add the class 'left-0' for smooth transition
 			}
 
-			const firstParagraph = submenu.querySelector('.back')
-			firstParagraph.addEventListener('click', (s) => {
-				submenu.classList.remove('opened')
-				s.stopPropagation() // Prevent parent item from toggling
-			})
 		})
 	}
 }
