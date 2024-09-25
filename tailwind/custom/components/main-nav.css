@@ -15,11 +15,11 @@
 	@apply btn_m !my-auto;
 }
 
-.sub-menu > .menu-item > a,
+.main-nav .sub-menu > .menu-item > a,
 .main-nav > .menu-item {
 	@apply relative after:content-[''] after:absolute after:bottom-[-4px] after:h-[1px] after:w-0 after:bg-black after:transition-all disabled:opacity-50 focus:outline-none inline-flex items-center hover:text-cherry;
 }
-.sub-menu > .menu-item > a {
+.main-nav .sub-menu > .menu-item > a {
 	@apply after:bottom-[1px] hover:text-black;
 }
 .main-nav > .menu-item:hover svg {
@@ -28,7 +28,7 @@
 .main-nav > .menu-item:hover svg path {
 	@apply fill-cherry;
 }
-.sub-menu.child > .menu-item:hover > a::after,
+.main-nav .sub-menu.child > .menu-item:hover > a::after,
 .main-nav > .menu-item:hover::after {
 	@apply w-full;
 }
@@ -90,8 +90,8 @@
  ******************************************************/
 
 #menu-toggle:checked + #mobile-menu-button + #mobile-menu {
-	height: 100vh;
-	max-height: max-content;
+	height: 90dvh;
+	max-height: 100dvh;
 	overflow-y: auto; /* Add a vertical scrollbar if necessary */
 	opacity: 1;
 }
@@ -136,52 +136,38 @@
 }
 
 .main-nav-mobile {
-	@apply flex flex-col;
+	@apply flex flex-col justify-center items-center gap-[46px];
 }
 
-ul.main-nav-mobile li {
-	@apply px-2 py-3 font-semibold border-b-2 border-gray-600;
+.main-nav-mobile .menu-item {
+	@apply w-full text-center n1;
+}
+.main-nav-mobile .menu-item .sub-menu > .menu-item {
+	@apply n2 text-start;
+}
+.main-nav-mobile .menu-item .sub-menu.child > .menu-item {
+	@apply n3;
+}
+.main-nav-mobile .menu-item .sub-menu {
+	@apply flex flex-col gap-8;
+}
+.main-nav-mobile .menu-item .sub-menu.child {
+	@apply gap-4 mt-4;
 }
 
-ul.main-nav-mobile li li:last-child {
-	@apply border-b-0;
-}
-
-/* Styling for the mobile menu tabs */
-.mobile-menu .menu-item-indicator {
-	display: none;
-}
-.mobile-menu .menu-item-has-children > a:after {
-	content: ">";
+.mobile-menu .main-nav-mobile > .menu-item.menu-item-has-children > a:after {
+	content: " >";
 	float: right;
-	font-weight: 800;
-	margin-right: 8px;
+	font-weight: normal;
+	margin-left: 8px;
 }
-
-.mobile-menu .back {
-	font-size: 12px;
-	border: 0;
-	cursor: pointer;
+.mobile-menu .sub-menu:not(.child) {
+	@apply mx-auto w-[calc(100%-32px)] overflow-hidden max-h-0 bg-salt rounded-[14px];
+	transition: max-height 0.3s ease-in-out;
 }
-.mobile-menu .parent-title {
-	background-color: #e1e1e1;
-	text-align: center;
-	color: #303030;
-	padding: 5px 0;
-	border: 0;
-}
-
-.mobile-menu .sub-menu {
-	overflow-y: auto;
-	max-height: none;
-	min-height: calc(100vh + 80px);
-	position: absolute;
-	background: #fff;
-	width: 100%;
-	top: 0;
-	left: 100vw;
-	transition: left 0.3s ease; /* Add a transition for the left property */
-	height: auto;
+.opened {
+	@apply !max-h-[500px] p-[22px]; /* Set a specific max-height value for animation */
+	transition: max-height 0.3s ease-in-out;
 }
 
 /* Hide the scrollbar on desktop for elements with the class .submenu */
@@ -200,10 +186,4 @@ ul.main-nav-mobile li li:last-child {
 	scrollbar-width: thin;
 	scrollbar-color: transparent transparent; /* You can use 'scrollbar-color: #fff transparent;' to match the background color */
 }
-
-.left-0 {
-	left: 0 !important;
-	transition: left 0.3s ease; /* Add a transition for the left property */
-}
-
 /* end mobile menu */
