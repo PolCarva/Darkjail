@@ -31,4 +31,4 @@
 
 		<?php get_template_part('template-parts/layout/header', 'content'); ?>
 
-		<div id="content" class="pt-[80px] lg:pt-[109px]">
+		<div id="content" class="pt-[80px] lg:pt-[103px]">
