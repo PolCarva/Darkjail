@@ -38,12 +38,12 @@ $case_studies = get_field('case_studies');
                         <div class="<?php echo ($index === 0) ? 'col-auto md:col-[1_/_2] md:row-[1_/_3] h-full' : 'col-auto md:col-[2_/_3]'; ?>  row-auto">
                             <a class="group hover:z-[1] hover:scale-[1.03] relative overflow-hidden !no-underline text-inherit block transition-transform duration-[0.3s] ease-[ease] rounded-[10px] 
                             <?php echo ($index === 0) ? '' : 'flex flex-col h-full'; ?>" href="<?= $link ?>">
-                                <img class="<?php echo ($index === 0) ? 'aspect-[3/4] md:aspect-[608/690]' : 'aspect-[608/234]'; ?> group-hover:scale-[1.03] w-full h-full object-cover block transition-transform duration-[0.3s] ease-[ease]" src="<?php echo esc_url($image_url); ?>" alt="">
-                                <div class="flex flex-col gap-4 transition-all duration-300 ease-[ease] p-4 md:px-8 md:py-6 bottom-0 inset-x-0 bg-white">
+                                <img class="<?php echo ($index === 0) ? 'aspect-[3/4] md:aspect-[608/690] max-h-[690px]' : 'aspect-[608/234] max-h-[234px]'; ?> group-hover:scale-[1.03] w-full h-full object-cover block transition-transform duration-[0.3s] ease-[ease]" src="<?php echo esc_url($image_url); ?>" alt="">
+                                <div class="flex flex-col gap-4 transition-all duration-300 ease-[ease] p-4 md:px-[26px] md:py-[22px] bottom-0 inset-x-0 bg-white">
                                     <?php if ($tag): ?>
-                                        <span class="text-cherry text-base not-italic font-semibold leading-[100%] !my-0"><?php echo esc_html($tag); ?></span>
+                                        <span class="text-cherry subtitle2  !my-0"><?php echo esc_html($tag); ?></span>
                                     <?php endif; ?>
-                                    <h3 class="text-black text-[20px] !my-0 leading-[140%] md:text-2xl not-italic font-medium md:leading-[130%] max-w-[80%] m-0"><?php echo esc_html($title); ?></h3>
+                                    <h3 class="text-black body1 !my-0 <?php echo ($index === 0) ? '' : 'lg:max-w-[80%]'; ?>"><?php echo esc_html($title); ?></h3>
                                 </div>
                             </a>
                         </div>
