@@ -45,9 +45,9 @@ $hero_id = uniqid('hero-');
 
 ?>
 <div class="bg-ice">
-    <section id="<?= $hero_id ?>" class="w-full py-5 c-container">
+    <section id="<?= $hero_id ?>" class="w-full py-5 md:h-[675px] lg:max-h-[calc(96svh-103px)] c-container">
         <div class="relative size-full flex flex-col gap-5">
-            <div class="w-full bg-cover rounded-2xl overflow-hidden aspect-[16/9]">
+            <div class="w-full bg-cover rounded-2xl overflow-hidden aspect-video">
                 <?php if (!empty($background_video)) : ?>
                     <?php
                     $video_url = wp_get_attachment_url($background_video);
@@ -73,11 +73,11 @@ $hero_id = uniqid('hero-');
             </div>
 
             <div class="md:absolute bottom-10 left-10 flex flex-col">
-                <<?php echo $heading_type ?> class="heading text-5xl md:my-0 md:text-7xl"><?php echo esc_html($first_line); ?> <br class="hidden md:block">
+                <<?php echo $heading_type ?> class="heading h1 md:my-0"><?php echo esc_html($first_line); ?> <br class="hidden md:block">
                     <?php echo esc_html($second_line); ?>
                 </<?php echo $heading_type ?>>
                 <?php if (isset($subheading) && $subheading) : ?>
-                    <p class="subheading text-lg md:text-2xl my-0"><?php echo esc_html($subheading); ?></p>
+                    <p class="subheading my-0"><?php echo esc_html($subheading); ?></p>
                 <?php endif; ?>
             </div>
         </div>

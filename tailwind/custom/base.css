@@ -83,11 +83,11 @@ h6 {
 }
 h1,
 .h1 {
-	@apply leading-[100%] tracking-[-2%] text-[55px] lg:text-[92px] font-pp-mori font-normal;
+	@apply leading-[100%] tracking-[-0.05em] text-[55px] lg:text-[92px] font-pp-mori font-normal;
 }
 h2,
 .h2 {
-	@apply leading-[110%] tracking-[-2%] text-[44px] font-semibold font-pp-mori lg:text-[50px];
+	@apply leading-[110%] tracking-[-0.05em] text-[44px] font-semibold font-pp-mori lg:text-[50px];
 }
 h3,
 .h3 {

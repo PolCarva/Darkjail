@@ -39,7 +39,7 @@ $button_text = get_field('button_text');
 
 			<div class="absolute inset-0 flex flex-col items-center justify-center gap-8 text-center">
 				<div class="flex flex-col gap-[48px] justify-center items-center text-center max-w-[50%] mx-auto">
-					<h2 class="text-white !my-0 text-[92px] font-normal leading-none tracking-[-1.84px]">
+					<h2 class="!text-white !my-0 h1">
 						<?php echo esc_html($heading); ?>
 					</h2>
 					<?php
