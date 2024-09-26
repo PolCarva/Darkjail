@@ -28,7 +28,7 @@
 .main-nav > .menu-item:hover svg path {
 	@apply fill-cherry;
 }
-.main-nav .sub-menu.child > .menu-item:hover > a::after,
+.main-nav .sub-menu > .menu-item > a:hover::after,
 .main-nav > .menu-item:hover::after {
 	@apply w-full;
 }
