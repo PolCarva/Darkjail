@@ -18,14 +18,13 @@ if (!empty($block['className'])) {
 
 // Load field(s) value.
 $heading = get_field('heading') ?? 'Our Offerings';
-$icon = get_field('icon');
 $offerings = get_field('offerings'); // Repeater field for offerings
 
 ?>
 <div id="<?php echo esc_attr($id); ?>" class="bg-ice <?php echo esc_attr($class_name); ?>">
 	<section class="c-container__sm">
 		<div>
-			<h2 class="h4 pb-[50px] !mb-0"><?php echo esc_html($heading); ?></h2>
+			<h2 class="h4 pb-4 lg:pb-[50px] !mb-0"><?php echo esc_html($heading); ?></h2>
 			<div class="grid grid-cols-1 lg:flex gap-x-8 gap-y-4">
 				<?php if ($offerings): ?>
 					<?php foreach ($offerings as $index => $offering): ?>
@@ -61,17 +60,3 @@ $offerings = get_field('offerings'); // Repeater field for offerings
 	</section>
 </div>
 
-<?php if (isset($icon) && !empty($icon)): ?>
-	<style>
-		#<?php echo $id; ?> h2::before {
-			content: '';
-			background-image: url('<?php echo $icon; ?>');
-			background-repeat: no-repeat;
-			background-size: contain;
-			display: block;
-			height: 25px;
-			margin: .5rem auto 1rem;
-			width: 30px;
-		}
-	</style>
-<?php endif; ?>
