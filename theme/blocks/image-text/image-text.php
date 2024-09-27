@@ -10,7 +10,7 @@ $invert_image = get_field('invert_image');
 ?>
 
 
-<section class="c-container__sm pb-[62px] lg:pb-[80px] flex flex-col <?php if ($invert_image) : ?>md:flex-row-reverse<?php else : ?>md:flex-row<?php endif; ?> gap-11">
+<section class="c-container__sm pb-[62px] lg:pb-[80px] flex flex-col <?php if ($invert_image) : ?>md:flex-row-reverse<?php else : ?>md:flex-row<?php endif; ?> gap-[54px] md:gap-11">
     <div class="md:w-1/2">
         <?php get_template_part('template-parts/components/image', '', array(
             'image_size' => 'large',
