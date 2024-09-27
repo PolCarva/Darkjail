@@ -15,7 +15,7 @@ $invert_image = get_field('invert_image');
         <?php get_template_part('template-parts/components/image', '', array(
             'image_size' => 'large',
             'image_id' => $image,
-            'image_class' => 'rounded-lg aspect-[1.36] object-cover'
+            'image_class' => 'rounded-lg aspect-[1.36] object-cover w-full'
         )); ?>
     </div>
     <div class="md:w-1/2 grid place-content-center">
