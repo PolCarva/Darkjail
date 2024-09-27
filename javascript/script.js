@@ -19,4 +19,20 @@ import MainNav from './scripts/main-nav'
 
 MainNav()
 
+Alpine.data('logoSlider', () => ({
+	initSlider() {
+		const container = this.$el
+		new Swiper(container, {
+			slidesPerView: "auto",
+			spaceBetween: 0,
+			loop: true,
+			speed: 5000,
+			autoplay: {
+				delay: 0,
+				disableOnInteraction: false,
+			},
+		})
+	},
+}))
+
 Alpine.start()
