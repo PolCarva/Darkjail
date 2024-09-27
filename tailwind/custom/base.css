@@ -66,6 +66,10 @@ body {
 	@apply underline;
 }
 
+#main .page .entry-content {
+	@apply flex flex-col gap-[100px]  lg:gap-[80px];
+}
+
 /* HEADINGS */
 .h1,
 .h2,
