@@ -21,7 +21,7 @@ $heading = get_field('pixa_heading');
 $case_studies = get_field('case_studies');
 ?>
 <div id="<?php echo esc_attr($id); ?>" class="bg-ice <?php echo esc_attr($class_name); ?>">
-    <section class="py-[60px]">
+    <section>
         <div class="c-container__sm">
             <h2 class="h4 pb-4 lg:pb-[50px] !mb-0"><?php echo esc_html($heading); ?></h2>
             <div class="grid grid-cols-1 md:grid-cols-2 grid-rows-[auto] md:grid-rows-2 gap-4 md:gap-y-[50px] md:gap-x-[54px]">
