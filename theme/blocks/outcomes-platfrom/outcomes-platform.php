@@ -46,7 +46,7 @@ if ($section_title) {
         }
     }
 </style>
-<div id="<?php echo esc_attr($id); ?>" class="bg-ice <?php echo esc_attr($class_name); ?>">
+<div id="<?php echo esc_attr($id); ?>" class="bg-ice pb-[100px] lg:pb-[155px] <?php echo esc_attr($class_name); ?>">
     <section class="c-container">
         <div class="">
             <div class="relative lg:h-[632px] h-auto bg-white w-full overflow-hidden rounded-[14px]">

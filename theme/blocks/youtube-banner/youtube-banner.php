@@ -24,7 +24,7 @@ $button_link = get_field('button_link');
 $button_text = get_field('button_text');
 
 ?>
-<div id="<?php echo esc_attr($id); ?>" class="bg-ice hidden md:block <?php echo esc_attr($class_name); ?>">
+<div id="<?php echo esc_attr($id); ?>" class="bg-ice pb-[40px] hidden md:block <?php echo esc_attr($class_name); ?>">
 	<section class="c-container">
 		<div class="relative h-[540px] rounded-[14px] overflow-hidden">
 			<?php

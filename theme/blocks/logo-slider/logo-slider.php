@@ -19,7 +19,7 @@ if (!empty($block['className'])) {
 $logos = get_field('logos');
 
 ?>
-<div id="<?php echo esc_attr($id); ?>" class="bg-ice <?php echo esc_attr($class_name); ?>">
+<div id="<?php echo esc_attr($id); ?>" class="bg-ice pb-[60px] lg:pb-[80px] <?php echo esc_attr($class_name); ?>">
     <section class="c-container"
         x-data="logoSlider"
         x-init="initSlider(1000, 2)">

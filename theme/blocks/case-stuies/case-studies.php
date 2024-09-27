@@ -20,7 +20,7 @@ if (!empty($block['className'])) {
 $heading = get_field('pixa_heading');
 $case_studies = get_field('case_studies');
 ?>
-<div id="<?php echo esc_attr($id); ?>" class="bg-ice <?php echo esc_attr($class_name); ?>">
+<div id="<?php echo esc_attr($id); ?>" class="bg-ice pb-[100px] lg:pb-[90px] <?php echo esc_attr($class_name); ?>">
     <section>
         <div class="c-container__sm">
             <h2 class="h4 pb-4 lg:pb-[50px] !mb-0"><?php echo esc_html($heading); ?></h2>
