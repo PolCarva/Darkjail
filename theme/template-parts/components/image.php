@@ -23,6 +23,7 @@ $image_size = $image_size ?? 'large';
 $image_class = $image_class ?? '';
 $image_width = $image_width ?? 'unset';
 $image_height = $image_height ?? 'unset';
+$loading = $loading ?? 'lazy';
 ?>
 
 
@@ -36,11 +37,13 @@ $image_height = $image_height ?? 'unset';
 	<?php if (isset($mobile_image_url[0], $mobile_image_url[1])) : ?>
 		<!-- // Mostrar la imagen móvil solo si $mobile_image_url está definido -->
 		<img
+			loading="<?= esc_attr($loading); ?>"
 			src="<?= esc_url($mobile_image_url[0]); ?>" class="<?= esc_attr($image_class); ?> block md:hidden"
 			alt="<?= esc_attr($alt_text); ?>" width="<?= esc_attr($mobile_image_url[1]); ?>"
 			height="<?= esc_attr($mobile_image_url[2]); ?>" style="object-position: <? echo $image_position; ?>";
 		>
 		<img
+			loading="<?= esc_attr($loading); ?>"
 			src="<?= esc_url($image_url[0]); ?>" class="<?= esc_attr($image_class); ?> hidden md:block"
 			alt="<?= esc_attr($alt_text); ?>" width="<?= esc_attr($image_url[1]); ?>"
 			height="<?= esc_attr($image_url[2]); ?>" style="object-position: <?= $image_position; ?>";
@@ -48,6 +51,7 @@ $image_height = $image_height ?? 'unset';
 	<?php else : ?>
 		<!-- Mostrar la imagen de escritorio si no hay imagen móvil -->
 		<img
+			loading="<?= esc_attr($loading); ?>"
 			src="<?= esc_url($image_url[0]); ?>" class="<?= esc_attr($image_class); ?> block"
 			alt="<?= esc_attr($alt_text); ?>" width="<?= esc_attr($image_url[1]); ?>"
 			height="<?= esc_attr($image_url[2]); ?>" style="object-position: <?= $image_position; ?>";
