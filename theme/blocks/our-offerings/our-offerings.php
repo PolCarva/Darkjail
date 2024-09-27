@@ -38,14 +38,14 @@ $offerings = get_field('offerings'); // Repeater field for offerings
 
 						$featured_class = ($is_featured && $index === 0) ? 'lg:flex-grow' : 'lg:flex-shrink lg:max-w-[341px]';
 						?>
-						<a href="<?php echo esc_url($link); ?>" class="block !no-underline w-full h-[289px] border border-cherry p-8 rounded-[10px] relative transition-all duration-300 group <?php echo esc_attr($featured_class); ?>">
-							<div class="flex justify-between items-start">
+						<a href="<?php echo esc_url($link); ?>" class="flex flex-col justify-between lg:justify-start items-start !no-underline w-full lg:h-[289px] border border-cherry p-[24px] lg:p-8 rounded-[10px] relative transition-all duration-300 group <?php echo esc_attr($featured_class); ?>">
+							<div class="flex justify-between self-stretch items-start">
 								<h3 class="!mb-[36px] h-[2.2em] text-black underline-offset-[1.8px] decoration-1 group-hover:underline font-semibold text-[26px] md:text-[32px] leading-[120%]"><?php echo esc_html($title); ?></h3>
 								<?php if ($recommended): ?>
 									<span class="bg-cherry text-white px-[20px] py-[10px] leading-none rounded-full text-[14px] !my-0 font-semibold">Recommended</span>
 								<?php endif; ?>
 							</div>
-							<p class="my-0 text-black/50 body3 line-clamp-4 lg:max-w-[calc(100%-32px)]"><?php echo esc_html($description); ?></p>
+							<p class="my-0 text-black/50 body3 line-clamp-4 max-w-[calc(100%-42px)]"><?php echo esc_html($description); ?></p>
 							<span class="absolute group-hover:text-cherry transition bottom-6 right-6 w-fit h-fit" aria-label="Learn more about <?php echo esc_attr($title); ?>">
 								<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path d="M1 1H28.6607V28.6607M1 28.6631L18.2656 11.3975" stroke="currentColor" stroke-width="2"
