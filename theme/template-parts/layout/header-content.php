@@ -8,8 +8,9 @@
  * @package dango_acf_tailwind
  */
 
-$dango_acf_tailwind_logo = get_field('site_logo', 'option');
-$background_image_mobile = get_field('mobile_nav_background', 'option');
+$header_settings = get_field('header_footer', 'option');
+$dango_acf_tailwind_logo = $header_settings['site_logo'];
+$background_image_mobile = $header_settings['mobile_nav_background'];
 
 // echo '<pre>';
 // print_r($background_image_mobile);
@@ -19,7 +20,7 @@ $background_image_mobile = get_field('mobile_nav_background', 'option');
 
 <style>
 	#mobile-menu {
-		background-image: url(<?php echo $background_image_mobile['url']; ?>);
+		background-image: url(<?= $background_image_mobile['url']; ?>);
 		background-size: cover;
 		background-position: center;
 	}
@@ -86,7 +87,6 @@ $background_image_mobile = get_field('mobile_nav_background', 'option');
 
 
 		<?php //logo
-		$dango_acf_tailwind_logo = get_field('site_logo', 'option');
 
 		if ($dango_acf_tailwind_logo):
 			?>
