@@ -1,0 +1,23 @@
+.footer-menu {
+	@apply grid grid-cols-[repeat(auto-fill,minmax(135px,150px))] gap-14 gap-y-7 lg:gap-20;
+}
+.footer-menu > li {
+	@apply w-full max-w-[150px];
+}
+
+.footer-menu > li > a {
+	@apply n2;
+}
+.footer-menu > li .sub-menu {
+	@apply n3 flex flex-col gap-[22px];
+}
+
+#colophon .disclaimer * {
+	@apply m-0 n3;
+}
+
+@media (width >= 768px) {
+	#colophon .disclaimer * {
+		@apply body5;
+	}
+}
