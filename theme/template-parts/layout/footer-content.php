@@ -57,7 +57,7 @@ $disclaimer = $footer_settings['footer_disclaimer'];
 						<?php if (!empty($social_links)): ?>
 							<?php foreach ($social_links["links"] as $social_link): ?>
 								<?php if (isset($social_link['icon']) && $social_link['icon']): ?>
-									<a href="<?php echo esc_url($social_link['url']); ?>">
+									<a href="<?php echo esc_url($social_link['url']); ?>" aria-label="Social media link">
 										<?php get_template_part('template-parts/components/image', '', array('image_size' => 'medium', 'image_id' => $social_link['icon'], 'image_class' => '')); ?>
 									</a>
 								<?php endif; ?>
