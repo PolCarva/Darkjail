@@ -104,7 +104,7 @@ if (!defined('DANGO_ACF_TAILWIND_TYPOGRAPHY_CLASSES')) {
 	 */
 	define(
 		'DANGO_ACF_TAILWIND_TYPOGRAPHY_CLASSES',
-		'prose-a:text-primary'
+		'prose-a:text-primary bg-ice'
 	);
 }
 
