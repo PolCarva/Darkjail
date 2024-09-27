@@ -37,7 +37,7 @@ $disclaimer = $footer_settings['footer_disclaimer'];
 <footer id="colophon" class="flex flex-col gap-8 py-8 text-black bg-ice">
 	<div class="w-full c-container">
 		<div
-			class="flex flex-col items-start justify-between w-full gap-12 p-4 bg-image md:flex-row md:p-12 rounded-[14px]">
+			class="flex flex-col items-start justify-between w-full gap-12 lg:gap-[90px] p-4 bg-image md:flex-row md:p-12 rounded-[14px]">
 			<picture class="md:flex-[1_0_165px] h-fit w-fit max-w-[165px]">
 				<?php get_template_part('template-parts/components/image', '', array('image_size' => 'medium', 'image_id' => $footer_logo, 'image_class' => 'object-contain')); ?>
 			</picture>
