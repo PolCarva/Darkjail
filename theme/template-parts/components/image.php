@@ -18,12 +18,12 @@ extract($args);
 $image_id = $image_id;
 $mobile_image_id = $mobile_image_id ?? '';
 $image_position = $image_position ?? 'center';
-$alt_text = $image_alt ?? get_post_meta($image_id, '_wp_attachment_image_alt', true);
-$image_size = $image_size ?? 'large';
-$image_class = $image_class ?? '';
-$image_width = $image_width ?? 'unset';
-$image_height = $image_height ?? 'unset';
-$loading = $loading ?? 'lazy';
+$alt_text 	  ??= get_post_meta($image_id, '_wp_attachment_image_alt', true);
+$image_size   ??= 'large';
+$image_class  ??= '';
+$image_width  ??= 'unset';
+$image_height ??= 'unset';
+$loading 			??= 'lazy';
 ?>
 
 
