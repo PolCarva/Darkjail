@@ -34,13 +34,13 @@
  */
 
 .entry-content {
-	}
+}
 
-/* .page-content > *,
+.page-content > *,
 .entry-content > * {
-	Content width from the `theme.json` file
+	/* Content width from the `theme.json` file */
 	@apply m-auto;
-} */
+}
 
 .max-content-inner-big {
 	/* Wide width from the `theme.json` file */
