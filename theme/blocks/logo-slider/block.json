@@ -1,0 +1,13 @@
+{
+    "name": "acf/logo-slider",
+    "title": "Logo Slider",
+    "description": "A custom Logo Slider block.",
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["logo","slider"],
+    "acf": {
+        "mode": "auto",
+        "renderTemplate": "logo-slider.php"
+    },
+    "align": "full"
+}

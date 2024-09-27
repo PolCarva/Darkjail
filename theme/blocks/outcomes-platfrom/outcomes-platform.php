@@ -46,8 +46,8 @@ if ($section_title) {
         }
     }
 </style>
-<div id="<?php echo esc_attr($id); ?>" class="bg-ice <?php echo esc_attr($class_name); ?>">
-    <section class="py-16 c-container">
+<div id="<?php echo esc_attr($id); ?>" class="bg-ice pb-[100px] lg:pb-[155px] <?php echo esc_attr($class_name); ?>">
+    <section class="c-container">
         <div class="">
             <div class="relative lg:h-[632px] h-auto bg-white w-full overflow-hidden rounded-[14px]">
                 <h2 class="h4 absolute z-10 m-0 left-5 lg:left-11 top-[34px]"><?= esc_html($first_half ?? "") ?> <br> <?= esc_html($second_half ?? "") ?></h2>

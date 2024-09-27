@@ -44,7 +44,7 @@ $mobile_text_color = $content_styles['mobile_text_color'];
 $hero_id = uniqid('hero-');
 
 ?>
-<div class="bg-ice">
+<div class="bg-ice pb-[30px] lg:pb-[80px]">
     <section id="<?= $hero_id ?>" class="w-full lg:h-[675px] lg:max-h-[calc(95svh-113px)] c-container">
         <div class="relative size-full flex flex-col gap-5">
             <div class="w-full bg-cover rounded-2xl overflow-hidden aspect-video">

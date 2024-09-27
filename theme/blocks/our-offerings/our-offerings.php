@@ -21,7 +21,7 @@ $heading = get_field('heading') ?? 'Our Offerings';
 $offerings = get_field('offerings'); // Repeater field for offerings
 
 ?>
-<div id="<?php echo esc_attr($id); ?>" class="bg-ice <?php echo esc_attr($class_name); ?>">
+<div id="<?php echo esc_attr($id); ?>" class="bg-ice pb-[100px] lg:pb-[120px] <?php echo esc_attr($class_name); ?>">
 	<section class="c-container__sm">
 		<div>
 			<h2 class="h4 pb-4 lg:pb-[50px] !mb-0"><?php echo esc_html($heading); ?></h2>
