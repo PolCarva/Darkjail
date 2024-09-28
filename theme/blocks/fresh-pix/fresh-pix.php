@@ -43,7 +43,7 @@ $section_title = get_field('section_title') ?? 'Fresh Pix';
                         <div class="h-full flex flex-col justify-between min-h-[264px] p-5 lg:p-[33px] lg:pt-[24px] items-start">
                             <div class='flex flex-col items-start'>
                                 <p class="subtitle2 text-cherry"><?php echo esc_html($post_type); ?> | <?php echo get_the_date('F j, Y', $post->ID); ?></p>
-                                <h3 class="body1 line-clamp-4"><?php echo esc_html($post->post_title); ?></h3>
+                                <h3 class="body1 decoration-1 underline-offset-[1.8px] group-hover:underline under line-clamp-4"><?php echo esc_html($post->post_title); ?></h3>
                             </div>
                             <div class="w-full flex justify-between items-center">
                                 <?php
