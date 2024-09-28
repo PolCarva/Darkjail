@@ -19,7 +19,7 @@ $section_title = get_field('section_title') ?? 'Fresh Pix';
 
 <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($class_name); ?> pb-[102px] bg-ice">
     <div class="c-container__sm">
-        <h2 class="h4 mb-[16px] lg:mb-[48px]"><?= $section_title ?></h2>
+        <h2 class="h4 !my-0 !pb-[16px] lg:!pb-[48px]"><?= $section_title ?></h2>
         <div class="flex flex-col justify-between md:flex-row gap-[44px]">
             <?php
             if (have_rows('pixa_fp_posts')) :
