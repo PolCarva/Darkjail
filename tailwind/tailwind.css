@@ -29,6 +29,7 @@
 @import-glob "./custom/components/**/!(components).css";
 @import "./custom/components/components.css";
 @import "./custom/components/main-nav.css";
+@import "./custom/components/main-footer.css";
 @import "./custom/components/newsletter.css";
 @import "./custom/components/post-excerpt.css";
 @import "swiper/swiper-bundle.min.css";

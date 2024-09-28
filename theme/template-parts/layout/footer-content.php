@@ -8,129 +8,121 @@
  * @package dango_acf_tailwind
  */
 
-$footer_logo = get_field('footer_logo', 'option');
-$footer_description = get_field('footer_description', 'option');
-$footer_contact = get_field('footer_contact', 'option');
-$social_links = get_field('social_links', 'option') ?: array();
+$footer_settings = get_field('header_footer', 'option');
+$footer_logo = $footer_settings['footer_logo'];
+$footer_background = $footer_settings['footer_image'];
+$footer_background__mobile = $footer_settings['footer_image__mobile'];
+$social_links = $footer_settings['social_links'] ?: array();
+$disclaimer = $footer_settings['footer_disclaimer'];
 
 // get_template_part('template-parts/layout/newsletter', 'content');
 
 ?>
 
-<footer id="colophon" class="flex flex-col gap-8 py-8 text-white bg-black">
-	<div class="flex flex-col justify-between w-full gap-12 md:flex-row max-content-inner-big">
-		<ul class="flex flex-col justify-start  max-w-[400px]">
-			<li class="mb-4 ">
-				<?php get_template_part('template-parts/components/image', '', array('image_size' => 'medium', 'image_id' => $footer_logo, 'image_class' => '')); ?>
-			</li>
-			<li class="mb-4">
-				<?php echo $footer_description; ?>
-			</li>
-			<li class="mb-4">
-				<?php echo $footer_contact; ?>
-			</li>
-		</ul>
-		<div class="flex flex-col gap-16 md:flex-row">
-			<ul>
-				<li>
-					<?php
-					// Call the menu function with the location name
-					menu('menu-2');
-					?>
-				</li>
-			</ul>
-			<ul>
-				<li>
-					<?php
-					// Call the menu function with the location name
-					menu('menu-3');
-					?>
-				</li>
-			</ul>
-			<div class="">
-				<h4 class="font-bold">Follow us</h4>
-				<div class="flex ml-[-15px]">
-					<?php if (!empty($social_links)) : ?>
-						<?php foreach ($social_links[""] as $social_link) : ?>
-							<?php if (isset($social_link['icon']) && $social_link['icon']) : ?>
-								<a href="<?php echo esc_url($social_link['url']); ?>">
-									<?php get_template_part('template-parts/components/image', '', array('image_size' => 'medium', 'image_id' => $social_link['icon'], 'image_class' => 'invert')); ?>
-								</a>
-							<?php endif; ?>
-						<?php endforeach; ?>
-					<?php endif; ?>
-				</div>
+<style>
+	#colophon .bg-image {
+		background-image: url('<?= $footer_background__mobile['url']; ?>');
+		background-size: cover;
+		background-position: bottom;
+	}
 
+	@media (width >=768px) {
+		#colophon .bg-image {
+			background-image: url('<?= $footer_background['url']; ?>');
+			background-position: center;
+		}
+	}
+</style>
+
+<footer id="colophon" class="flex flex-col gap-8 py-8 text-black bg-ice">
+	<div class="w-full c-container">
+		<div
+			class="flex flex-col items-start justify-between w-full gap-12 lg:gap-[90px] p-4 bg-image md:flex-row md:p-12 rounded-[14px]">
+			<picture class="md:flex-[1_0_165px] h-fit w-fit max-w-[165px]">
+				<?php get_template_part('template-parts/components/image', '', array('image_size' => 'medium', 'image_id' => $footer_logo, 'image_class' => 'object-contain')); ?>
+			</picture>
+			<div class="flex flex-col w-full gap-16">
+				<?php
+				// Call the menu function with the location name
+				menu('menu-2');
+				?>
+				<div id="secondary-footer" class="flex flex-wrap-reverse justify-between gap-8">
+					<div class="flex flex-wrap items-center justify-start gap-1 disclaimer">
+						<span>
+							&copy <?= date('Y') ?>
+						</span>
+						<?= $disclaimer ?>
+					</div>
+					<div class="flex items-center justify-center gap-4">
+						<?php if (!empty($social_links)): ?>
+							<?php foreach ($social_links["links"] as $social_link): ?>
+								<?php if (isset($social_link['icon']) && $social_link['icon']): ?>
+									<a href="<?php echo esc_url($social_link['url']); ?>" aria-label="Social media link">
+										<?php get_template_part('template-parts/components/image', '', array('image_size' => 'medium', 'image_id' => $social_link['icon'], 'image_class' => '')); ?>
+									</a>
+								<?php endif; ?>
+							<?php endforeach; ?>
+						<?php endif; ?>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
-	<div id="secondary-footer" class="justify-between w-full gap-12 max-content-inner-big">
-		<p>&copy <?php echo  date('Y') . " " . $site_logo_id = get_theme_mod('custom_company_name'); ?> - All Rights Reserved</p>
-
-		<?php
-
-
-
-		/* translators: 1: WordPress link, 2: WordPress. */
-		/*
-				$dango_acf_tailwind_blog_info = get_bloginfo('name');
-		if (!empty($dango_acf_tailwind_blog_info)) :
-		?>
-			<a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a>,
-		<?php
-		endif;
-		printf(
-			'<a href="%1$s">proudly powered by %2$s</a>.',
-			esc_url(__('https://wordpress.org/', 'dango-acf-tailwind')),
-			'WordPress'
-		);
-		*/
-		?>
-	</div>
-
-
-
-
-
-
-
-</footer><!-- #colophon -->
+</footer>
 
 <?php
 // Define the menu function outside of the footer template
 function menu($menu_location)
 {
-	if (has_nav_menu($menu_location)) :
-?>
-		<nav aria-label="<?php esc_attr_e('Footer Menu', 'dango-acf-tailwind'); ?>">
-			<?php
-
-			// Get the assigned menu ID for the specified theme location
-			$menu_id = get_nav_menu_locations()[$menu_location];
-
-			if ($menu_id) {
-				// Get the menu object based on the menu ID
-				$menu_object = wp_get_nav_menu_object($menu_id);
-
-				if ($menu_object) {
-					$menu_name = $menu_object->name;
-
-					// Output the menu name
-			?>
-					<h4 class="mb-3 font-bold"><?php echo esc_html($menu_name); ?></h4>
-			<?php
-				}
-			}
-
-			wp_nav_menu(
-				array(
-					'theme_location' => $menu_location,
-					'menu_class'     => 'footer-menu',
-					'depth'          => 1,
-				)
-			);
-			?>
-		</nav>
-<?php endif;
+	if (has_nav_menu($menu_location)) {
+		wp_nav_menu(
+			array(
+				'theme_location' => $menu_location,
+				'container' => 'ul',
+				'menu_class' => 'footer-menu',
+				'walker' => new Custom_Walker_Footer_Menu()
+			)
+		);
+	}
 }
+
+class Custom_Walker_Footer_Menu extends Walker_Nav_Menu
+{
+	function start_lvl(&$output, $depth = 0, $args = null)
+	{
+		// Check if the current item has children (sub-menu)
+		if ($args->walker->has_children) {
+			$output .= '<ul class="sub-menu' . ($depth >= 1 ? 'child' : ' mt-[22px]') . '">';
+		}
+	}
+
+	function start_el(&$output, $item, $depth = 0, $args = null, $id = 0)
+	{
+		// Check if the current item has children (sub-menu)
+		$has_children = $args->walker->has_children;
+
+		if ($depth === 0 && $has_children) {
+			$output .= '<li class="flex flex-col menu-item menu-item-has-children">';
+			$output .= '<a href="' . esc_url($item->url) . '" class="menu-item-link">' . esc_html($item->title) . '</a>';
+			$this->current_parent_title = $item->title; // Store the parent item's title
+		}
+
+		if ($depth > 0 && $has_children) {
+			$output .= '<li class="menu-item menu-item-has-children">';
+			$output .= '<a href="' . esc_url($item->url) . '" class="menu-item-link">' . esc_html($item->title) . '</a>';
+			// $output .= '<a class="menu-item-indicator"> ></a>';
+		}
+
+		if (!$has_children) {
+			$output .= '<li class="menu-item">';
+			$output .= '<a href="' . esc_url($item->url) . '" class="menu-item-link">' . esc_html($item->title) . '</a>';
+		}
+	}
+
+	function end_el(&$output, $item, $depth = 0, $args = null)
+	{
+		$output .= '</li>';
+	}
+}
+
 ?>
