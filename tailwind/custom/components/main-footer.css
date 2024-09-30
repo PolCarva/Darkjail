@@ -1,5 +1,5 @@
 .footer-menu {
-	@apply grid grid-cols-[repeat(auto-fill,minmax(137px,1fr))] gap-14 gap-y-7 lg:gap-[4.5rem];
+	@apply grid grid-cols-2 md:grid-cols-[repeat(auto-fill,minmax(137px,1fr))] gap-14 gap-y-7 lg:gap-[4.5rem];
 }
 .footer-menu > li {
 	@apply w-full max-w-[150px];
