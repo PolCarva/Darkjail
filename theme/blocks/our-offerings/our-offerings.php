@@ -48,7 +48,7 @@ $offerings = get_field('offerings'); // Repeater field for offerings
 							<p class="my-0 text-black/50 body3 line-clamp-4 max-w-[calc(100%-42px)]"><?php echo esc_html($description); ?></p>
 							<span class="absolute group-hover:text-cherry transition bottom-6 right-6 w-fit h-fit" aria-label="Learn more about <?php echo esc_attr($title); ?>">
 								<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M1 1H28.6607V28.6607M1 28.6631L18.2656 11.3975" stroke="currentColor" stroke-width="2"
+									<path class="stroke-black group-hover:stroke-cherry transition" d="M1 1H28.6607V28.6607M1 28.6631L18.2656 11.3975" stroke-width="2"
 										stroke-linecap="round" stroke-linejoin="round" />
 								</svg>
 							</span>
