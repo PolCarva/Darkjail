@@ -31,7 +31,7 @@ $logos = get_field('logos');
                             get_template_part('template-parts/components/image', '', array(
                                 'image_size' => 'large',
                                 'image_id' => $image_id,
-                                'image_class' => 'brightness-0 h-[68px] w-full object-contain'
+                                'image_class' => 'h-[68px] w-full object-contain'
                             ));
                         endif;
                         ?>
@@ -47,7 +47,7 @@ $logos = get_field('logos');
                             get_template_part('template-parts/components/image', '', array(
                                 'image_size' => 'large',
                                 'image_id' => $image_id,
-                                'image_class' => 'brightness-0 h-full w-full object-contain'
+                                'image_class' => 'h-full w-full object-contain'
                             ));
                         endif;
                         ?>
