@@ -19,9 +19,9 @@ if (!empty($block['className'])) {
 $logos = get_field('logos');
 
 ?>
-<div id="<?php echo esc_attr($id); ?>" class="bg-ice pb-[60px] lg:pb-[80px] <?php echo esc_attr($class_name); ?>">
+<div id="<?php echo esc_attr($id); ?>" class="bg-ice mask-borders pb-[60px] lg:pb-[80px] <?php echo esc_attr($class_name); ?>">
     <?php if ($logos) : ?>
-        <div id="<?php echo esc_attr($id); ?>" class="h-fit overflow-x-hidden m-auto relative w-full bg-ice <?php echo esc_attr($class_name); ?>">
+        <div id="<?php echo esc_attr($id); ?>" class="h-fit  overflow-x-hidden m-auto relative w-full bg-ice <?php echo esc_attr($class_name); ?>">
             <div class="slide-track  flex items-center">
                 <?php foreach ($logos as $logo) : ?>
                     <div class="h-[68px] py-0 px-3 w-[250px]">
