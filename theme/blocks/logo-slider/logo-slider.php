@@ -20,37 +20,64 @@ $logos = get_field('logos');
 
 ?>
 <div id="<?php echo esc_attr($id); ?>" class="bg-ice pb-[60px] lg:pb-[80px] <?php echo esc_attr($class_name); ?>">
-    <section class="c-container"
-        x-data="logoSlider"
-        x-init="initSlider(1000, 2)">
-        <div class="swiper-wrapper !ease-linear">
-            <?php if ($logos): ?>
-                <?php foreach ($logos as $logo): ?>
-                    <?php
-                    $image = $logo['image'] ?? '';
-                    ?>
-                    <div class="swiper-slide !w-12">
+    <?php if ($logos) : ?>
+        <div id="<?php echo esc_attr($id); ?>" class="h-fit overflow-x-hidden m-auto relative w-full bg-ice <?php echo esc_attr($class_name); ?>">
+            <div class="slide-track  flex items-center">
+                <?php foreach ($logos as $logo) : ?>
+                    <div class="h-[68px] py-0 px-3 w-[250px]">
                         <?php
-                        $logo_classes = "object-contain brightness-0";            
-            
-                        get_template_part('template-parts/components/image', '', array(
-                            'image_id' => $image,
-                            'mobile_image_id' => $image,
-                            'image_size' => 'small',
-                            'image_class' => $logo_classes,
-                            'image_position' => 'center'
-                        ));
+                        $image_id = $logo['image'];
+                        if ($image_id) :
+                            get_template_part('template-parts/components/image', '', array(
+                                'image_size' => 'large',
+                                'image_id' => $image_id,
+                                'image_class' => 'brightness-0 h-[68px] w-full object-contain'
+                            ));
+                        endif;
                         ?>
                     </div>
                 <?php endforeach; ?>
-            <?php endif; ?>
 
+                <!-- Duplicamos las imágenes para lograr un scroll infinito -->
+                <?php foreach ($logos as $logo) : ?>
+                    <div class="h-full py-0 px-3 w-[250px]">
+                        <?php
+                        $image_id = $logo['image'];
+                        if ($image_id) :
+                            get_template_part('template-parts/components/image', '', array(
+                                'image_size' => 'large',
+                                'image_id' => $image_id,
+                                'image_class' => 'brightness-0 h-full w-full object-contain'
+                            ));
+                        endif;
+                        ?>
+                    </div>
+                <?php endforeach; ?>
+            </div>
         </div>
-    </section>
+    <?php endif; ?>
 </div>
 
-<style >
+<style>
     .mask-borders {
-    mask-image: linear-gradient(to right, transparent 0, black 10%, black 90%, transparent 100%);
+        mask-image: linear-gradient(to right, transparent 0, black 10%, black 90%, transparent 100%);
+    }
+
+
+    #<?= $id . " " ?>.slide-track {
+        width: calc(250px * 14);
+        animation: scrollLogos 40s linear infinite;
+    }
+
+
+    @keyframes scrollLogos {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(calc(-250px * 7));
+            /* Mueve 7 imágenes de 250px de ancho */
+        }
     }
 </style>
