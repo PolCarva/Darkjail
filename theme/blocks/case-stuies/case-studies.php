@@ -44,7 +44,7 @@ $case_studies = get_field('case_studies');
 									class="<?php echo ($index === 0) ? 'aspect-[3/4] lg:aspect-[608/690] max-h-[690px]' : 'aspect-[608/234] max-h-[234px]'; ?> group-hover:scale-[1.03] w-full h-full object-cover block transition-transform duration-[0.3s] ease-[ease]"
 									src="<?php echo esc_url($image_url); ?>" alt="">
 								<div
-									class="flex flex-col gap-4 transition-all duration-300 ease-[ease] p-4 md:px-[26px] md:py-[22px] bottom-0 inset-x-0 bg-white">
+									class="flex flex-1 flex-col gap-4 transition-all duration-300 ease-[ease] p-4 md:px-[26px] md:py-[22px] bottom-0 inset-x-0 bg-white">
 									<?php if ($tag): ?>
 										<span class="text-cherry subtitle2  !my-0"><?php echo esc_html($tag); ?></span>
 									<?php endif; ?>
