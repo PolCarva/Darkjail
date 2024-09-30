@@ -54,7 +54,8 @@ $disclaimer = $footer_settings['footer_disclaimer'];
 						<?= $disclaimer ?>
 					</div>
 					<div class="flex items-center justify-center gap-4">
-						<?php if (!empty($social_links)): ?>
+						<?php if (!empty($social_links) && $social_links["links"]): ?>
+
 							<?php foreach ($social_links["links"] as $social_link): ?>
 								<?php if (isset($social_link['icon']) && $social_link['icon']): ?>
 									<a href="<?php echo esc_url($social_link['url']); ?>" aria-label="Social media link">
