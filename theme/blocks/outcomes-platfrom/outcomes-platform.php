@@ -79,7 +79,7 @@ if ($section_title) {
                                         <h3 class="h5 <?php echo $is_white ? 'text-white' : 'text-black'; ?>">
                                             <?php echo esc_html($first_word); ?> <br> <?php echo esc_html($rest_of_title); ?>
                                         </h3>
-                                        <h2 class="h2 <?php echo $is_white ? 'text-white' : 'text-black'; ?>"><?= $subtitle ?></h2>
+                                        <h2 class="h2 lg:text-[45px] xl:text-[50px] <?php echo $is_white ? 'text-white' : 'text-black'; ?>"><?= $subtitle ?></h2>
                                         <p class="max-w-[70%] body2 <?php echo $is_white ? 'text-white' : 'text-black'; ?>"><?= $description ?></p>
                                     </div>
                                 </div>
