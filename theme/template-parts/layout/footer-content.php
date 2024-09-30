@@ -23,13 +23,13 @@ $disclaimer = $footer_settings['footer_disclaimer'];
 	#colophon .bg-image {
 		background-image: url('<?= $footer_background__mobile['url']; ?>');
 		background-size: cover;
-		background-position: bottom;
+		background-position: center bottom 25%;
 	}
 
 	@media (width >=768px) {
 		#colophon .bg-image {
 			background-image: url('<?= $footer_background['url']; ?>');
-			background-position: center;
+			background-position: right top;
 		}
 	}
 </style>
