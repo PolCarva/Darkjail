@@ -41,7 +41,7 @@ $button_text = get_field('button_text');
 			<div class="absolute inset-0 bg-black/20"></div>
 
 			<div class="absolute inset-0 flex flex-col items-center justify-center gap-8 text-center">
-				<div class="flex flex-col gap-[48px] justify-center items-center text-center mx-auto">
+				<div class="flex flex-col gap-[48px] justify-center items-center text-center max-w-[90%] mx-auto">
 					<h2 class="!text-white text-[44px] lg:text-[92px] !my-0 h1 ">
 						<?php echo $heading; ?>
 						</br>
