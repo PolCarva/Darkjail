@@ -1,19 +1,14 @@
 // Set the Preflight flag based on the build target.
-const includePreflight = 'editor' === process.env._TW_TARGET ? false : true;
+const includePreflight = 'editor' === process.env._TW_TARGET ? false : true
 
 module.exports = {
-	presets: [
-		require('./tailwind-typography.config.js'),
-	],
-	content: [
-		'./theme/**/*.php',
-		'./theme/theme.json',
-	],
+	presets: [require('./tailwind-typography.config.js')],
+	content: ['./theme/**/*.php', './theme/theme.json'],
 	theme: {
 		extend: {
 			fontFamily: {
 				'pp-mori': ['"Mori", sans-serif'],
-				'manrope': ['"Manrope", sans-serif'],
+				manrope: ['"Manrope", sans-serif'],
 			},
 			colors: {
 				// primary
@@ -28,17 +23,17 @@ module.exports = {
 				'granny-smith': '#BAF146',
 				eggplant: '#77698E',
 				sashimi: '#FFBD98',
-				naners: '#FFEA7B'
-
+				naners: '#FFEA7B',
 			},
 			maxWidth: {
-				'content': '90rem', // Change the default max-width value for max-w-content
-        'desk': '1646px',
-        'wide-desk': '1766px'
+				content: '90rem', // Change the default max-width value for max-w-content
+				desk: '1646px',
+				'wide-desk': '1766px',
 			},
 			screens: {
-        'wide': '2150px'
-      }
+				wide: '2150px',
+				"2lg": "1440px",
+			},
 		},
 	},
 	corePlugins: {
@@ -56,4 +51,4 @@ module.exports = {
 		require('@tailwindcss/forms'),
 		require('@tailwindcss/aspect-ratio'),
 	],
-};
+}
