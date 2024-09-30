@@ -18,13 +18,15 @@ if (!empty($block['className'])) {
 
 // Load field(s) value.
 $heading = get_field('heading');
+$second_line_heading = get_field('second_line_heading');
 $image = get_field('background_image');
 $image_mobile = get_field('mobile_background_image') ?? '';
 $button_link = get_field('button_link');
 $button_text = get_field('button_text');
 
+
 ?>
-<div id="<?php echo esc_attr($id); ?>" class="bg-ice pb-[40px] hidden md:block <?php echo esc_attr($class_name); ?>">
+<div id="<?php echo esc_attr($id); ?>" class="bg-ice pb-[40px] <?php echo esc_attr($class_name); ?>">
 	<section class="c-container">
 		<div class="relative h-[540px] rounded-[14px] overflow-hidden">
 			<?php
@@ -36,11 +38,14 @@ $button_text = get_field('button_text');
 				'image_position' => 'center'
 			));
 			?>
+			<div class="absolute inset-0 bg-black/20"></div>
 
 			<div class="absolute inset-0 flex flex-col items-center justify-center gap-8 text-center">
-				<div class="flex flex-col gap-[48px] justify-center items-center text-center max-w-[50%] mx-auto">
-					<h2 class="!text-white !my-0 h1">
-						<?php echo esc_html($heading); ?>
+				<div class="flex flex-col gap-[48px] justify-center items-center text-center max-w-[90%] mx-auto">
+					<h2 class="!text-white text-[44px] lg:text-[92px] !my-0 h1 ">
+						<?php echo $heading; ?>
+						</br>
+						<?php echo $second_line_heading; ?>
 					</h2>
 					<?php
 					if (isset($button_text) && isset($button_link)) {
