@@ -25,7 +25,7 @@ $case_studies = get_field('case_studies');
 		<div class="c-container__sm">
 			<h2 class="h4 pb-4 lg:pb-[50px] !mb-0"><?php echo esc_html($heading); ?></h2>
 			<div
-				class="grid grid-cols-1 md:grid-cols-2 grid-rows-[auto] md:grid-rows-2 gap-4 md:gap-y-[50px] md:gap-x-[54px]">
+				class="grid grid-cols-1 desktop-l:grid-cols-2 grid-rows-[auto] desktop-l:grid-rows-2 gap-4 desktop-l:gap-y-[50px] desktop-l:gap-x-[54px]">
 				<?php if ($case_studies): ?>
 					<?php foreach ($case_studies as $index => $case_study): ?>
 						<?php
@@ -37,12 +37,11 @@ $case_studies = get_field('case_studies');
 						$link = $case_study['link'] ?? '#';
 						?>
 						<div
-							class="<?php echo ($index === 0) ? 'col-auto md:col-[1_/_2] md:row-[1_/_3] h-full' : 'col-auto md:col-[2_/_3]'; ?>	row-auto">
-							<a class="group hover:z-[1] hover:scale-[1.03] relative overflow-hidden !no-underline text-inherit block transition-transform duration-[0.3s] ease-[ease] rounded-[10px]
-														<?php echo ($index === 0) ? '' : 'flex flex-col h-full'; ?>" href="<?= $link ?>">
+							class="<?php echo ($index === 0) ? 'col-auto desktop-l:col-[1_/_2] desktop-l:row-[1_/_3] h-full' : 'col-auto desktop-l:col-[2_/_3]'; ?>	row-auto">
+							<a class="group h-full hover:z-[1] hover:scale-[1.03] relative overflow-hidden !no-underline text-inherit transition-transform duration-[0.3s] ease-[ease] rounded-[10px] flex flex-col" href="<?= $link ?>">
 								<img
 								 	loading="lazy"
-									class="<?php echo ($index === 0) ? 'aspect-[3/4] md:aspect-[608/690] max-h-[690px]' : 'aspect-[608/234] max-h-[234px]'; ?> group-hover:scale-[1.03] w-full h-full object-cover block transition-transform duration-[0.3s] ease-[ease]"
+									class="<?php echo ($index === 0) ? 'aspect-[3/4] desktop-l:aspect-[608/690] max-h-[690px]' : 'aspect-[608/234] max-h-[234px]'; ?> group-hover:scale-[1.03] w-full h-full object-cover block transition-transform duration-[0.3s] ease-[ease]"
 									src="<?php echo esc_url($image_url); ?>" alt="">
 								<div
 									class="flex flex-col gap-4 transition-all duration-300 ease-[ease] p-4 md:px-[26px] md:py-[22px] bottom-0 inset-x-0 bg-white">
