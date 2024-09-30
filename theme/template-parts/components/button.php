@@ -43,7 +43,7 @@ $svg_color = '';
 // make a switch case for the button type
 switch ($type) {
 	case 'primary':
-		$classes = '!text-white bg-black hover:bg-[#000] transition-all disabled:opacity-40 rounded-full focus:outline-none';
+		$classes = '!text-white bg-black hover:bg-[#000] border border-black hover:border-[#000] transition-all disabled:opacity-40 rounded-full focus:outline-none';
 		break;
 	case 'secondary';
 		$classes = '!text-black bg-transparent border border-black hover:border-black/50 transition-all disabled:opacity-50 rounded-full focus:outline-none inline-flex items-center gap-3';
@@ -89,9 +89,8 @@ if (!empty($custom_class)) {
 <?php
 if (!empty($text) && !empty($url)) {
 	?>
-	<div class="<?php echo $container_class ?>">
-		<a href="<?php echo esc_url($url['url']); ?>" target="<?= $target ?>"
-			class="<?php echo $classes ?> !no-underline button-component">
+	<div class="<?= $container_class ?>">
+		<a href="<?= esc_url($url['url']); ?>" target="<?= $target ?>" class="<?= $classes ?> !no-underline button-component">
 			<?php if (strpos($type, 'icon') !== false || strpos($type, 'ghost') !== false): ?>
 				<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path d="M8 3V13" stroke="<?= $svg_color ?>" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -99,15 +98,15 @@ if (!empty($text) && !empty($url)) {
 				</svg>
 			<?php endif; ?>
 			<span class="text-center md:whitespace-nowrap">
-				<?php echo esc_html($text); ?>
+				<?= esc_html($text); ?>
 			</span>
 		</a>
 	</div>
 	<?php
 } elseif (!empty($text)) {
 	?>
-	<div class="<?php echo $container_class ?>">
-		<button class="<?php echo $classes ?> button-component" type="<?= $button_type ?>">
+	<div class="<?= $container_class ?>">
+		<button class="<?= $classes ?> button-component" type="<?= $button_type ?>">
 			<?php if (strpos($type, 'icon') !== false || strpos($type, 'ghost') !== false): ?>
 				<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path d="M8 3V13" stroke="<?= $svg_color ?>" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -115,7 +114,7 @@ if (!empty($text) && !empty($url)) {
 				</svg>
 			<?php endif; ?>
 			<span class="text-center md:whitespace-nowrap">
-				<?php echo esc_html($text); ?>
+				<?= esc_html($text); ?>
 			</span>
 		</button>
 	</div>
