@@ -24,14 +24,14 @@ $logos = get_field('logos');
         <div id="<?php echo esc_attr($id); ?>" class="h-fit  overflow-x-hidden m-auto relative w-full bg-ice <?php echo esc_attr($class_name); ?>">
             <div class="slide-track  flex items-center">
                 <?php foreach ($logos as $logo) : ?>
-                    <div class="h-[68px] py-0 px-3 w-[250px]">
+                    <div class="h-[68px] py-0 px-3 w-[225px]">
                         <?php
                         $image_id = $logo['image'];
                         if ($image_id) :
                             get_template_part('template-parts/components/image', '', array(
                                 'image_size' => 'large',
                                 'image_id' => $image_id,
-                                'image_class' => 'h-[68px] w-full object-contain'
+                                'image_class' => 'h-[68px] object-contain'
                             ));
                         endif;
                         ?>
@@ -40,14 +40,14 @@ $logos = get_field('logos');
 
                 <!-- Duplicamos las imágenes para lograr un scroll infinito -->
                 <?php foreach ($logos as $logo) : ?>
-                    <div class="h-full py-0 px-3 w-[250px]">
+                    <div class="h-[68px] py-0 px-3 w-[225px]">
                         <?php
                         $image_id = $logo['image'];
                         if ($image_id) :
                             get_template_part('template-parts/components/image', '', array(
                                 'image_size' => 'large',
                                 'image_id' => $image_id,
-                                'image_class' => 'h-full w-full object-contain'
+                                'image_class' => 'h-[68px] object-contain'
                             ));
                         endif;
                         ?>
@@ -65,7 +65,8 @@ $logos = get_field('logos');
 
 
     #<?= $id . " " ?>.slide-track {
-        width: calc(250px * 14);
+        width: calc(225px * 14);
+        height: 68px;
         animation: scrollLogos 40s linear infinite;
     }
 
@@ -76,8 +77,8 @@ $logos = get_field('logos');
         }
 
         100% {
-            transform: translateX(calc(-250px * 7));
-            /* Mueve 7 imágenes de 250px de ancho */
+            transform: translateX(calc(-225px * 7));
+            /* Mueve 7 imágenes de 225px de ancho */
         }
     }
 </style>
