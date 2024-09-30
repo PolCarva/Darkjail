@@ -44,8 +44,8 @@ $mobile_text_color = $content_styles['mobile_text_color'];
 $hero_id = uniqid('hero-');
 
 ?>
-<div class="bg-ice pb-[30px] lg:pb-[80px]">
-    <section id="<?= $hero_id ?>" class="w-full lg:h-[675px] lg:max-h-[calc(95svh-113px)] c-container">
+<div class="bg-ice pb-[30px] xl:pb-[80px]">
+    <section id="<?= $hero_id ?>" class="w-full xl:h-[675px] xl:max-h-[calc(95svh-113px)] c-container">
         <div class="relative size-full flex flex-col gap-5">
             <div class="w-full bg-cover rounded-2xl overflow-hidden aspect-video">
                 <?php if (!empty($background_video)) : ?>
@@ -72,8 +72,8 @@ $hero_id = uniqid('hero-');
                 <?php endif; ?>
             </div>
 
-            <div class="lg:absolute bottom-10 left-10 flex flex-col">
-                <<?php echo $heading_type ?> class="heading h1 lg:my-0"><?php echo esc_html($first_line); ?> <br class="hidden lg:block">
+            <div class="xl:absolute bottom-10 left-10 flex flex-col">
+                <<?php echo $heading_type ?> class="heading h1 xl:my-0"><?php echo esc_html($first_line); ?> <br class="hidden xl:block">
                     <?php echo esc_html($second_line); ?>
                 </<?php echo $heading_type ?>>
                 <?php if (isset($subheading) && $subheading) : ?>
@@ -91,7 +91,7 @@ $hero_id = uniqid('hero-');
         color: <?= $mobile_text_color ?> !important;
     }
 
-    @media (min-width: 1024px) {
+    @media (min-width: 1280px) {
 
         #<?= $hero_id . " " ?>.heading,
         #<?= $hero_id . " " ?>.subheading {

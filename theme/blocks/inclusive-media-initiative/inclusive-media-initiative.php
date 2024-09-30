@@ -39,7 +39,7 @@ $cta_link = get_field('cta_link');
                 ));
                 ?>
             <?php endif; ?>
-            <div class="absolute top-0 left-0 w-full md:max-w-[70%] lg:max-w-[38%] z-10 flex flex-col justify-center items-start gap-5 p-[24px] md:p-16">
+            <div class="absolute top-0 left-0 w-full lg:max-w-[60%] xl:max-w-[38%] z-10 flex flex-col justify-center items-start gap-5 p-[24px] md:p-16">
                 <div class="flex flex-col items-start justify-center gap-6">
                     <?php if ($banner_logo): ?>
                         <img src="<?php echo esc_url($banner_logo['url']); ?>"
