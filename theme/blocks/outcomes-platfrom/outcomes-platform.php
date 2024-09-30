@@ -40,7 +40,7 @@ if ($section_title) {
         background-position: center;
     }
 
-    @media (min-width: 1310px) {
+    @media (min-width: 1024px) {
         #<?php echo $block_id . " " ?>.pixa-outcomes-platform__card-list {
             background-image: url('<?php bloginfo('template_url') ?>/src/img/bg-shapes.png');
         }
@@ -48,11 +48,10 @@ if ($section_title) {
 </style>
 <div id="<?php echo esc_attr($id); ?>" class="bg-ice pb-[100px] lg:pb-[155px] <?php echo esc_attr($class_name); ?>">
     <section class="c-container">
-        <div class="">
-            <div class="relative lg:h-[632px] h-auto bg-white w-full overflow-hidden rounded-[14px]">
+        <div>
+            <div class="relative lg:h-fit h-auto bg-white w-full overflow-hidden rounded-[14px]">
                 <h2 class="h4 absolute z-10 m-0 left-5 lg:left-11 top-[34px]"><?= esc_html($first_half ?? "") ?> <br> <?= esc_html($second_half ?? "") ?></h2>
                 <div class="pixa-outcomes-platform__card-list w-full h-full flex flex-col mt-10 lg:flex-row lg:mt-0">
-
                     <?php if ($cards): ?>
                         <?php foreach ($cards as $index => $card): ?>
                             <?php
@@ -66,9 +65,9 @@ if ($section_title) {
 
                             $rest_of_title = implode(' ', $words);
                             ?>
-                            <div class="w-full h-[560px] lg:h-full relative overflow-hidden flex flex-col justify-end first:lg:pl-11 first:lg:w-11/12 p-5">
+                            <div class="w-full h-[560px] lg:h-fit lg:pt-[20rem] xl:pt-[16.5rem] relative overflow-hidden flex flex-col justify-end first:lg:pl-11 first:lg:w-11/12 p-5">
 
-                                <div class="relative z-[1] flex flex-col justify-between h-[370px] max-h-[80%]">
+                                <div class="relative z-[1] flex flex-col justify-between h-[370px] max-h-[80%] lg:h-fit pb-5">
                                     <div class="shrink-0 mb-[55px]">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="76" height="76" viewBox="0 0 76 76" fill="none">
                                             <circle cx="38" cy="38" r="38" fill="white" />
