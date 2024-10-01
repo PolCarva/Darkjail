@@ -78,10 +78,10 @@ if (!defined('DANGO_ACF_TAILWIND_VERSION')) {
 	 * generated zip file with a timestamp, converted to base 36.
 	 */
 	$versionStyle = date("ymd-Gis", filemtime(get_stylesheet_directory() . '/style.css'));
-  $versionScript = date("ymd-Gis", filemtime(get_stylesheet_directory() . '/js/script.min.js'));
+	$versionScript = date("ymd-Gis", filemtime(get_stylesheet_directory() . '/js/script.min.js'));
 
-  define('DANGO_ACF_TAILWIND_VERSION', $versionStyle);
-  define('DANGO_ACF_TAILWIND_VERSION_SCRIPT', $versionScript);
+	define('DANGO_ACF_TAILWIND_VERSION', $versionStyle);
+	define('DANGO_ACF_TAILWIND_VERSION_SCRIPT', $versionScript);
 }
 
 if (!defined('DANGO_ACF_TAILWIND_TYPOGRAPHY_CLASSES')) {
@@ -214,6 +214,8 @@ add_action('widgets_init', 'dango_acf_tailwind_widgets_init');
  */
 function dango_acf_tailwind_scripts()
 {
+	wp_enqueue_script('AOS', 'https://unpkg.com/aos@2.3.1/dist/aos.js', false, null, false);
+	wp_enqueue_style('AOS_animate', 'https://unpkg.com/aos@2.3.1/dist/aos.css', false, null);
 	wp_enqueue_style('dango-acf-tailwind-style', get_template_directory_uri() . '/style.css', array(), DANGO_ACF_TAILWIND_VERSION);
 	wp_enqueue_script('dango-acf-tailwind-script', get_template_directory_uri() . '/js/script.min.js', array(), DANGO_ACF_TAILWIND_VERSION_SCRIPT, true);
 
