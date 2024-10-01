@@ -172,7 +172,7 @@ class Custom_Walker_Nav_Menu extends Walker_Nav_Menu
 		$has_children = $args->walker->has_children;
 
 		if ($depth === 0 && $has_children) {
-			$output .= '<li class="flex flex-row flex-wrap items-center justify-center gap-2 lg:flex-nowrap menu-item menu-item-has-children">';
+			$output .= '<li class="flex flex-row flex-wrap items-center justify-center gap-x-2 lg:flex-nowrap menu-item menu-item-has-children">';
 			$output .= '<a href="' . esc_url($item->url) . '" class="menu-item-link">' . esc_html($item->title) . '</a>';
 
 			$output .= '<svg class="lg:hidden" width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.5 7.00001L1.5 4.37114e-08L0.5 0.999797L6.5 7.00001L0.499999 13.0002L1.5 14L8.5 7.00001Z" fill="black"/></svg>';
