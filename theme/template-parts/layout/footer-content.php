@@ -26,7 +26,7 @@ $disclaimer = $footer_settings['footer_disclaimer'];
 		background-position: center bottom 25%;
 	}
 
-	@media (width >=768px) {
+	@media (width >= 1024px) {
 		#colophon .bg-image {
 			background-image: url('<?= $footer_background['url']; ?>');
 			background-position: right top;
