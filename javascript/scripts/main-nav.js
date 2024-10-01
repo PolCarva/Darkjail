@@ -15,6 +15,7 @@ export default function MainNav() {
 
 	for (const menuItem of menuItems) {
 		const submenu = menuItem.querySelector('.sub-menu')
+		const arrow = menuItem.querySelector('.mobile-arrow')
 		menuItem.addEventListener('click', (e) => {
 			e.stopPropagation() // Prevent parent item from toggling
 
@@ -22,14 +23,19 @@ export default function MainNav() {
 			for (const item of menuItems) {
 				if (item !== menuItem) {
 					item.querySelector('.sub-menu').classList.remove('opened')
+					console.log(item.querySelector('.mobile-arrow'))
+					const arrow = item.querySelector('.mobile-arrow')
+					arrow.style.transform = 'rotate(0deg)'
 				}
 			}
 
 			// Toggle the class 'left-0' on the submenu
 			if (submenu.classList.contains('opened')) {
 				submenu.classList.remove('opened')
+				arrow.style.transform = 'rotate(0deg)'
 			} else {
 				submenu.classList.add('opened') // Add the class 'left-0' for smooth transition
+				arrow.style.transform = 'rotate(90deg)'
 			}
 
 		})
