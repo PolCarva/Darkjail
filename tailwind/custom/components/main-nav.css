@@ -94,6 +94,7 @@
 	max-height: 100dvh;
 	overflow-y: auto; /* Add a vertical scrollbar if necessary */
 	opacity: 1;
+	scrollbar-gutter: stable /* Save space for the scrollbar */
 }
 
 .hamburger-icon .bar {
@@ -155,12 +156,12 @@
 	@apply gap-4 mt-4;
 }
 
-.mobile-menu .main-nav-mobile > .menu-item.menu-item-has-children > a:after {
+/* .mobile-menu .main-nav-mobile > .menu-item.menu-item-has-children > a:after {
 	content: " >";
 	float: right;
 	font-weight: normal;
 	margin-left: 8px;
-}
+} */
 .mobile-menu .sub-menu:not(.child) {
 	@apply mx-auto w-[calc(100%-32px)] overflow-hidden max-h-0 bg-salt rounded-[14px];
 	transition: max-height 0.3s ease-in-out;
