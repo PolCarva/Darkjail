@@ -30,7 +30,8 @@ if ($hide_bar) {
 		color: <?= $text_color ?>;
 		margin: 0;
 		font-size: 0.75rem;
-		line-height: 100%;
+		line-height: normal;
+		text-wrap: balance;
 	}
 
 	#announcement-bar a {
@@ -38,7 +39,7 @@ if ($hide_bar) {
 	}
 
 	.announcement-bar-transition {
-		transition: opacity 0.5s, visibility 0.5s;
+		transition: visibility 0.5s;
 	}
 
 	.header-transition {
@@ -46,12 +47,10 @@ if ($hide_bar) {
 	}
 
 	.hidden-element {
-		opacity: 0;
 		visibility: hidden;
 	}
 
 	.visible-element {
-		opacity: 1;
 		visibility: visible;
 	}
 </style>
