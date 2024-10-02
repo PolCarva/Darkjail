@@ -34,7 +34,7 @@
 }
 
 .main-nav .sub-menu:not(.child) {
-	@apply absolute block right-1/2 translate-x-1/2 z-10 invisible opacity-0 w-max max-w-[205px] p-[22px] rounded-[14px] mt-0 bg-salt top-5 transition-all duration-500 text-black;
+	@apply absolute block right-1/2 translate-x-1/2 z-10 invisible opacity-0 w-max p-[22px] rounded-[14px] mt-0 bg-salt top-5 transition-all duration-500 text-black;
 }
 
 .main-nav .back,
