@@ -16,6 +16,7 @@ $background_image_mobile = $header_settings['mobile_nav_background'];
 // print_r($background_image_mobile);
 // echo '</pre>';
 
+get_template_part('template-parts/layout/announcement-bar', 'content');
 ?>
 
 <style>
