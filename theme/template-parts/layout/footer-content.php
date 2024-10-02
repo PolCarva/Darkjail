@@ -93,7 +93,7 @@ class Custom_Walker_Footer_Menu extends Walker_Nav_Menu
 	{
 		// Check if the current item has children (sub-menu)
 		if ($args->walker->has_children) {
-			$output .= '<ul class="sub-menu' . ($depth >= 1 ? 'child' : ' mt-[22px]') . '">';
+			$output .= '<ul class="sub-menu' . ($depth >= 1 ? 'child' : ' mt-[22px] w-max') . '">';
 		}
 	}
 
@@ -115,7 +115,7 @@ class Custom_Walker_Footer_Menu extends Walker_Nav_Menu
 		}
 
 		if (!$has_children) {
-			$output .= '<li class="menu-item">';
+			$output .= '<li class="w-full menu-item">';
 			$output .= '<a href="' . esc_url($item->url) . '" class="menu-item-link">' . esc_html($item->title) . '</a>';
 		}
 	}
