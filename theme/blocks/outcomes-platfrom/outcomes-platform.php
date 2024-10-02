@@ -66,7 +66,7 @@ if ($section_title) {
                             $rest_of_title = implode(' ', $words);
                             $aos_delay = $index * 100;
                             ?>
-                            <div data-aos="fade-up" data-aos-offset="500" data-aos-delay="<?= $aos_delay ?>" class="w-full h-[560px] lg:h-fit lg:pt-[20rem] xl:pt-[16.5rem] relative flex flex-col justify-end first:lg:pl-11 first:lg:w-11/12 p-5">
+                            <div data-aos="fade-right" data-aos-offset="500" data-aos-delay="<?= $aos_delay ?>" class="w-full h-[560px] lg:h-fit lg:pt-[20rem] xl:pt-[16.5rem] relative flex flex-col justify-end first:lg:pl-11 first:lg:w-11/12 p-5">
 
                                 <div class="relative z-[1] flex flex-col justify-between md:h-[370px] max-h-[80%] lg:h-fit pb-5">
                                     <div class="shrink-0 mb-[55px]">
@@ -80,8 +80,8 @@ if ($section_title) {
                                         <h3 class="h5 <?php echo $is_white ? 'text-white' : 'text-black'; ?>">
                                             <?php echo esc_html($first_word); ?> <br> <?php echo esc_html($rest_of_title); ?>
                                         </h3>
-                                        <h2 class="h2 lg:text-[42px] xl:text-[50px] <?php echo $is_white ? 'text-white' : 'text-black'; ?>"><?= $subtitle ?></h2>
-                                        <p class="max-w-[70%] body2 line-clamp-6 lg:line-clamp-4 <?php echo $is_white ? 'text-white' : 'text-black'; ?>"><?= $description ?> </p>
+                                        <h2 class="h2 !mb-[9px] !mt-0 lg:text-[42px] xl:text-[50px] <?php echo $is_white ? 'text-white' : 'text-black'; ?>"><?= $subtitle ?></h2>
+                                        <p class="!my-0 max-w-[70%] body2 line-clamp-6 lg:line-clamp-4 <?php echo $is_white ? 'text-white' : 'text-black'; ?>"><?= $description ?> </p>
                                     </div>
                                 </div>
                             </div>

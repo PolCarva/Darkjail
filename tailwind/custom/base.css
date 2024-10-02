@@ -24,30 +24,34 @@ body {
 }
 
 
-.wordpress-pages-container > *:not(div):not(article):not(section) {
+.wordpress-pages-container>*:not(div):not(article):not(section) {
 	@apply max-w-[73rem] px-8;
 }
-.wordpress-pages-container > .custom-container {
+
+.wordpress-pages-container>.custom-container {
 	@apply block max-w-[73rem] my-6;
 }
-.wordpress-pages-container > ul,
-.wordpress-pages-container > ol {
+
+.wordpress-pages-container>ul,
+.wordpress-pages-container>ol {
 	@apply px-14 !important;
 }
 
 /* apply mb-6 to all h1,h2,h3,h4,h5,h6 inside .wordpress-pages */
-.wordpress-pages-container > h1,
-.wordpress-pages-container > h2,
-.wordpress-pages-container > h3 {
+.wordpress-pages-container>h1,
+.wordpress-pages-container>h2,
+.wordpress-pages-container>h3 {
 	@apply mb-4 !important;
 }
-.wordpress-pages-container > h4,
-.wordpress-pages-container > h5,
-.wordpress-pages-container > h6 {
+
+.wordpress-pages-container>h4,
+.wordpress-pages-container>h5,
+.wordpress-pages-container>h6 {
 	@apply mb-2 !important;
 }
-.wordpress-pages-container > p,
-#main .post.type-post .entry-content > p {
+
+.wordpress-pages-container>p,
+#main .post.type-post .entry-content>p {
 	@apply mb-6 !important;
 }
 
@@ -55,13 +59,15 @@ body {
 #main .post.type-post .entry-content {
 	@apply max-w-[73rem] px-8;
 }
+
 /* #main .post.type-post .entry-content > ul,
 #main .post.type-post .entry-content > ol {
 	@apply ml-8;
 } */
-#main .post.type-post .entry-content > figure {
+#main .post.type-post .entry-content>figure {
 	@apply mb-8;
 }
+
 #main .post.type-post .entry-content p a {
 	@apply underline;
 }
@@ -78,29 +84,36 @@ h3,
 h4,
 h5,
 h6 {
-	@apply !mb-4 scroll-mt-[80px] md:scroll-mt-[110px]; /* Set here header height once it's done */
+	@apply  !mb-4 scroll-mt-[80px] md:scroll-mt-[110px];
+	/* Set here header height once it's done */
 	@apply text-black;
 }
+
 h1,
 .h1 {
 	@apply leading-[100%] tracking-[-0.05em] text-[55px] lg:text-[92px] font-pp-mori font-normal;
 }
+
 h2,
 .h2 {
 	@apply leading-[110%] tracking-[-0.05em] text-[44px] font-semibold font-pp-mori lg:text-[50px];
 }
+
 h3,
 .h3 {
 	@apply leading-[110%] tracking-[0%] text-[40px] font-light font-manrope lg:text-[46px];
 }
+
 h4,
 .h4 {
 	@apply leading-[110%] tracking-[0%] text-[32px] font-semibold font-manrope lg:text-[40px];
 }
+
 h5,
 .h5 {
 	@apply leading-[120%] tracking-[0%] text-[26px] font-medium font-manrope lg:text-[32px];
 }
+
 h6,
 .h6 {
 	@apply leading-[120%] tracking-[0%] text-[22px] font-semibold font-manrope lg:text-[26px];
@@ -110,9 +123,11 @@ h6,
 .subtitle1 {
 	@apply leading-[100%] tracking-[0%] font-semibold text-lg lg:text-xl;
 }
+
 .subtitle2 {
 	@apply leading-[100%] tracking-[0%] font-semibold font-manrope text-base;
 }
+
 .subtitle3 {
 	@apply leading-[100%] tracking-[0%] font-normal font-manrope text-sm;
 }
@@ -121,18 +136,23 @@ h6,
 .body1 {
 	@apply leading-[140%] tracking-[0%] text-xl lg:text-2xl font-medium font-manrope;
 }
+
 .body2 {
 	@apply leading-[140%] tracking-[0%] text-lg lg:text-xl font-normal font-manrope;
 }
+
 .body3 {
 	@apply leading-[140%] tracking-[0%] text-base lg:text-lg font-normal font-manrope;
 }
+
 .body4 {
 	@apply leading-[140%] tracking-[0%] text-sm lg:text-base font-normal font-manrope;
 }
+
 .body5 {
 	@apply leading-[140%] tracking-[0%] text-xs font-normal font-pp-mori;
 }
+
 p,
 span {
 	@apply leading-[140%] tracking-[0%] text-xl lg:text-2xl font-medium font-manrope;
@@ -143,9 +163,11 @@ span {
 .n1 {
 	@apply leading-[100%] tracking-[0%] text-2xl font-semibold font-pp-mori;
 }
+
 .n2 {
 	@apply leading-[100%] tracking-[0%] text-lg font-semibold font-pp-mori;
 }
+
 .n3 {
 	@apply leading-[100%] tracking-[0%] text-base font-normal font-pp-mori;
 }
@@ -155,6 +177,7 @@ span {
 .btn_m span {
 	@apply leading-[100%] tracking-[0%] text-sm font-semibold font-pp-mori m-0 mt-auto cursor-pointer;
 }
+
 .btn_l,
 .btn_l span {
 	@apply leading-[100%] tracking-[0%] text-lg font-semibold font-pp-mori m-0 mt-auto cursor-pointer;
@@ -164,6 +187,7 @@ span {
 .tag__primary {
 	@apply btn_m text-white bg-cherry hover:bg-yam disabled:bg-sashimi !px-5 py-[11px] rounded-full transition-all;
 }
+
 .tag__secondary {
 	@apply btn_m text-cherry bg-white border border-cherry hover:bg-cherry hover:text-white disabled:bg-sashimi !px-5 py-[11px] rounded-md transition-all;
 }
@@ -173,16 +197,20 @@ span {
 	padding-left: 2rem;
 	@apply pl-8 mx-auto mb-8 list-decimal list-outside;
 }
+
 #main article ul {
 	padding-left: 2rem;
 	@apply pl-8 mx-auto mb-8 list-disc list-outside;
 }
+
 #main article li {
 	@apply leading-[140%] tracking-[0%] text-xl lg:text-2xl font-medium;
 }
+
 strong {
 	@apply font-bold;
 }
+
 #main .wordpress-pages-container a {
 	@apply underline;
 }
