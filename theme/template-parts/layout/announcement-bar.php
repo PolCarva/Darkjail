@@ -59,20 +59,20 @@ if ($hide_bar) {
 	document.addEventListener('alpine:init', () => {
 		Alpine.data('AnnouncementBar', () => ({
 			previousScrollY: 0,
+			adminBarHeight: 0,
+			announcementBarHeight: 0,
 			init() {
 				this.calculateContentSpaceTop()
 
 				const header = document.querySelector('#masthead')
-				const announcementBarHeight = this.$el.offsetHeight
-				header.style.top = `${announcementBarHeight}px`
+				const announcementBar = this.$el
+				this.announcementBarHeight = announcementBar.offsetHeight
 
 				const wpAdminBar = document.querySelector('#wpadminbar')
-				const adminBarHeight = wpAdminBar ? wpAdminBar.offsetHeight : 0
+				this.adminBarHeight = wpAdminBar ? wpAdminBar.offsetHeight : 0
 
-				if (wpAdminBar) {
-					header.style.top = `${announcementBarHeight + adminBarHeight}px`
-					this.$el.style.top = `${adminBarHeight}px`
-				}
+				this.calculateHeight({ header, announcementBar, announcementBarHeight: this.announcementBarHeight, wpAdminBar, adminBarHeight: this.adminBarHeight })
+				window.addEventListener('resize', () => this.calculateHeight({ header, announcementBar, announcementBarHeight: this.announcementBarHeight, wpAdminBar, adminBarHeight: this.adminBarHeight }))
 
 				// hide announcement bar on scroll
 				window.addEventListener('scroll', () => {
@@ -80,18 +80,30 @@ if ($hide_bar) {
 
 					if (currentScrollY > this.previousScrollY && currentScrollY > 100) {
 						header.classList.add('header-transition');
-						header.style.top = wpAdminBar ? `${adminBarHeight}px` : '0';
-						this.$el.classList.add('hidden-element');
-						this.$el.classList.remove('visible-element');
+						header.style.top = wpAdminBar ? `${this.adminBarHeight}px` : '0';
+						announcementBar.classList.add('hidden-element');
+						announcementBar.classList.remove('visible-element');
 					} else if (currentScrollY < this.previousScrollY && currentScrollY > 50) {
-						this.$el.classList.add('visible-element');
-						this.$el.classList.remove('hidden-element');
+						announcementBar.classList.add('visible-element');
+						announcementBar.classList.remove('hidden-element');
 						header.classList.add('header-transition');
-						header.style.top = wpAdminBar ? `${announcementBarHeight + adminBarHeight}px` : `${announcementBarHeight}px`;
+						header.style.top = wpAdminBar ? `${this.announcementBarHeight + this.adminBarHeight}px` : `${this.announcementBarHeight}px`;
 					}
 
 					this.previousScrollY = currentScrollY;
 				});
+			},
+			calculateHeight({ header, announcementBar, announcementBarHeight, wpAdminBar, adminBarHeight }) {
+				header.style.top = `${announcementBarHeight}px`
+				this.adminBarHeight = wpAdminBar ? wpAdminBar.offsetHeight : 0
+				this.announcementBarHeight =announcementBar.offsetHeight
+
+				if (wpAdminBar) {
+					header.style.top = `${announcementBarHeight + adminBarHeight}px`
+					announcementBar.style.top = `${adminBarHeight}px`
+				}
+
+
 			},
 			calculateContentSpaceTop() {
 				const content = document.querySelector('#content');
