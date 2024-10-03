@@ -73,20 +73,29 @@ body {
 }
 
 /* HEADINGS */
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	@apply  !mb-4 scroll-mt-[80px] md:scroll-mt-[110px];
-	/* Set here header height once it's done */
-	@apply text-black;
+.c-container h1,
+.c-container h2,
+.c-container h3,
+.c-container h4,
+.c-container h5,
+.c-container h6,
+.c-container__sm h1,
+.c-container__sm h2,
+.c-container__sm h3,
+.c-container__sm h4,
+.c-container__sm h5,
+.c-container__sm h6 {
+  /* Sin estilos */
+}
+
+h1:not(.c-container h1):not(.c-container__sm h1),
+h2:not(.c-container h2):not(.c-container__sm h2),
+h3:not(.c-container h3):not(.c-container__sm h3),
+h4:not(.c-container h4):not(.c-container__sm h4),
+h5:not(.c-container h5):not(.c-container__sm h5),
+h6:not(.c-container h6):not(.c-container__sm h6) {
+  @apply !mb-4 bg-red-200 scroll-mt-[80px] md:scroll-mt-[110px];
+  @apply text-black;
 }
 
 h1,
