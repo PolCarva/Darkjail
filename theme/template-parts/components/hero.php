@@ -1,24 +1,5 @@
 <?php
-/*
-Use example: 	
 
-get_template_part('template-parts/components/hero', '', array(
-    'heading' => "Don’t Youtube without us",
-    'subheading' => "Pixability helps you deliver more of the impressions that matter",
-    'image' => array(
-        'main_image' => 14198,
-        'mobile_image' => false,
-    ),
-    'content_styles' => array(
-        'text_color' => '#FFEA7B',
-        'mobile_text_color' => '#D53538',
-    ),
-    'heading_type' => 'h1',
-);
-
-
-*/
-// Extract the variables from the array
 extract($args);
 
 $first_line = $heading;
