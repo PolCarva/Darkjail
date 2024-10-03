@@ -21,7 +21,7 @@ jobs:
     - name: 📂 Sync files
       uses: Dylan700/sftp-upload-action@v1.2.3
       with:
-        server: pixabilitystg.sftp.wpengine.com
+        server: // ADD SERVER
         port: 2222
         username: ${{ secrets.ftp_staging_user }}
         password: ${{ secrets.ftp_staging_password }}
@@ -32,4 +32,4 @@ jobs:
           **/node_modules/**
           **/custom-plugins/**
         uploads: |
-          ./ => wp-content/themes/Pixability-WP/
+          ./ => wp-content/themes/darkjail/

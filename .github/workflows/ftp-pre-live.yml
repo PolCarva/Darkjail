@@ -21,7 +21,7 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
-        server: giow1123.siteground.us
+        server: // ADD SERVER
         username: ${{ secrets.ftp_pre-live_user }}
         password: ${{ secrets.ftp_pre-live_password }}
         exclude: |

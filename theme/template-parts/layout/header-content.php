@@ -66,7 +66,7 @@ get_template_part('template-parts/layout/announcement-bar', 'content');
 					'button' => [
 						'text' => 'Login',
 						'url' => [
-							'url' => 'https://one.pixability.com/login',
+							'url' => '#',
 							'target' => '_self',
 						],
 					],
@@ -132,7 +132,7 @@ get_template_part('template-parts/layout/announcement-bar', 'content');
 						'button' => [
 							'text' => 'Login',
 							'url' => [
-								'url' => 'https://one.pixability.com/login',
+								'url' => '#',
 								'target' => '_self',
 							],
 						],
