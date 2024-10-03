@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package dango_acf_tailwind
+ * @package darkjail_acf_tailwind
  */
 
 get_header();
@@ -25,11 +25,11 @@ get_header();
 					/*
 					the_post_navigation(
 						array(
-							'next_text' => '<span aria-hidden="true">' . __( 'Next Post', 'dango-acf-tailwind' ) . '</span> ' .
-								'<span class="sr-only">' . __( 'Next post:', 'dango-acf-tailwind' ) . '</span> <br/>' .
+							'next_text' => '<span aria-hidden="true">' . __( 'Next Post', 'darkjail-acf-tailwind' ) . '</span> ' .
+								'<span class="sr-only">' . __( 'Next post:', 'darkjail-acf-tailwind' ) . '</span> <br/>' .
 								'<span>%title</span>',
-							'prev_text' => '<span aria-hidden="true">' . __( 'Previous Post', 'dango-acf-tailwind' ) . '</span> ' .
-								'<span class="sr-only">' . __( 'Previous post:', 'dango-acf-tailwind' ) . '</span> <br/>' .
+							'prev_text' => '<span aria-hidden="true">' . __( 'Previous Post', 'darkjail-acf-tailwind' ) . '</span> ' .
+								'<span class="sr-only">' . __( 'Previous post:', 'darkjail-acf-tailwind' ) . '</span> <br/>' .
 								'<span>%title</span>',
 						)
 					);

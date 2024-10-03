@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package dango_acf_tailwind
+ * @package darkjail_acf_tailwind
  */
 
 ?>
@@ -19,7 +19,7 @@
 				printf(
 					/* translators: 1: search result title. 2: search term. */
 					'<h1 class="page-title">%1$s <span>%2$s</span></h1>',
-					esc_html__( 'Search results for:', 'dango-acf-tailwind' ),
+					esc_html__( 'Search results for:', 'darkjail-acf-tailwind' ),
 					get_search_query()
 				);
 				?>
@@ -27,25 +27,25 @@
 
 		<?php else : ?>
 
-			<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'dango-acf-tailwind' ); ?></h1>
+			<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'darkjail-acf-tailwind' ); ?></h1>
 
 		<?php endif; ?>
 	</header><!-- .page-header -->
 
-	<div <?php dango_acf_tailwind_content_class( 'page-content' ); ?>>
+	<div <?php darkjail_acf_tailwind_content_class( 'page-content' ); ?>>
 		<?php
 		if ( is_home() && current_user_can( 'publish_posts' ) ) :
 			?>
 
 			<p>
-				<?php esc_html_e( 'Your site is set to show the most recent posts on your homepage, but you haven&rsquo;t published any posts.', 'dango-acf-tailwind' ); ?>
+				<?php esc_html_e( 'Your site is set to show the most recent posts on your homepage, but you haven&rsquo;t published any posts.', 'darkjail-acf-tailwind' ); ?>
 			</p>
 
 			<p>
 				<a href="<?php echo esc_url( admin_url( 'edit.php' ) ); ?>">
 					<?php
 					/* translators: 1: link to WP admin new post page. */
-					esc_html_e( 'Add or publish posts', 'dango-acf-tailwind' );
+					esc_html_e( 'Add or publish posts', 'darkjail-acf-tailwind' );
 					?>
 				</a>
 			</p>
@@ -55,7 +55,7 @@
 			?>
 
 			<p>
-				<?php esc_html_e( 'Your search generated no results. Please try a different search.', 'dango-acf-tailwind' ); ?>
+				<?php esc_html_e( 'Your search generated no results. Please try a different search.', 'darkjail-acf-tailwind' ); ?>
 			</p>
 
 			<?php
@@ -64,7 +64,7 @@
 			?>
 
 			<p>
-				<?php esc_html_e( 'No content matched your request.', 'dango-acf-tailwind' ); ?>
+				<?php esc_html_e( 'No content matched your request.', 'darkjail-acf-tailwind' ); ?>
 			</p>
 
 			<?php

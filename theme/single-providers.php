@@ -8,7 +8,7 @@ Template Name: Providers
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package dango_acf_tailwind
+ * @package darkjail_acf_tailwind
  */
 
 get_header();

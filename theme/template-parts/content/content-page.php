@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package dango_acf_tailwind
+ * @package darkjail_acf_tailwind
  */
 
 ?>
@@ -21,15 +21,15 @@
 		?>
 	</header><!-- .entry-header -->
 
-	<?php dango_acf_tailwind_post_thumbnail(); ?>
+	<?php darkjail_acf_tailwind_post_thumbnail(); ?>
 
-	<div <?php dango_acf_tailwind_content_class( 'entry-content wordpress-pages-container' ); ?>>
+	<div <?php darkjail_acf_tailwind_content_class( 'entry-content wordpress-pages-container' ); ?>>
 		<?php
 		the_content();
 
 		wp_link_pages(
 			array(
-				'before' => '<div>' . __( 'Pages:', 'dango-acf-tailwind' ),
+				'before' => '<div>' . __( 'Pages:', 'darkjail-acf-tailwind' ),
 				'after'  => '</div>',
 			)
 		);
@@ -43,7 +43,7 @@
 				sprintf(
 					wp_kses(
 						/* translators: %s: Name of current post. Only visible to screen readers. */
-						__( 'Edit <span class="sr-only">%s</span>', 'dango-acf-tailwind' ),
+						__( 'Edit <span class="sr-only">%s</span>', 'darkjail-acf-tailwind' ),
 						array(
 							'span' => array(
 								'class' => array(),

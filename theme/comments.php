@@ -7,7 +7,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package dango_acf_tailwind
+ * @package darkjail_acf_tailwind
  */
 
 /*
@@ -26,12 +26,12 @@ if ( post_password_required() ) {
 		?>
 		<h2>
 			<?php
-			$dango_acf_tailwind_comment_count = get_comments_number();
-			if ( '1' === $dango_acf_tailwind_comment_count ) {
+			$darkjail_acf_tailwind_comment_count = get_comments_number();
+			if ( '1' === $darkjail_acf_tailwind_comment_count ) {
 				// phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped
 				printf(
 					/* translators: 1: title. */
-					esc_html__( 'One comment on &ldquo;%1$s&rdquo;', 'dango-acf-tailwind' ),
+					esc_html__( 'One comment on &ldquo;%1$s&rdquo;', 'darkjail-acf-tailwind' ),
 					get_the_title()
 				);
 				// phpcs:enable WordPress.Security.EscapeOutput.OutputNotEscaped
@@ -39,8 +39,8 @@ if ( post_password_required() ) {
 				// phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped
 				printf(
 					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s comment on &ldquo;%2$s&rdquo;', '%1$s comments on &ldquo;%2$s&rdquo;', $dango_acf_tailwind_comment_count, 'comments title', 'dango-acf-tailwind' ) ),
-					number_format_i18n( $dango_acf_tailwind_comment_count ),
+					esc_html( _nx( '%1$s comment on &ldquo;%2$s&rdquo;', '%1$s comments on &ldquo;%2$s&rdquo;', $darkjail_acf_tailwind_comment_count, 'comments title', 'darkjail-acf-tailwind' ) ),
+					number_format_i18n( $darkjail_acf_tailwind_comment_count ),
 					get_the_title()
 				);
 				// phpcs:enable WordPress.Security.EscapeOutput.OutputNotEscaped
@@ -55,7 +55,7 @@ if ( post_password_required() ) {
 			wp_list_comments(
 				array(
 					'style'      => 'ol',
-					'callback'   => 'dango_acf_tailwind_html5_comment',
+					'callback'   => 'darkjail_acf_tailwind_html5_comment',
 					'short_ping' => true,
 				)
 			);
@@ -69,7 +69,7 @@ if ( post_password_required() ) {
 		// message.
 		if ( ! comments_open() ) :
 			?>
-			<p><?php esc_html_e( 'Comments are closed.', 'dango-acf-tailwind' ); ?></p>
+			<p><?php esc_html_e( 'Comments are closed.', 'darkjail-acf-tailwind' ); ?></p>
 			<?php
 		endif;
 

@@ -94,7 +94,7 @@ h3:not(.c-container h3):not(.c-container__sm h3),
 h4:not(.c-container h4):not(.c-container__sm h4),
 h5:not(.c-container h5):not(.c-container__sm h5),
 h6:not(.c-container h6):not(.c-container__sm h6) {
-  @apply !mb-4 bg-red-200 scroll-mt-[80px] md:scroll-mt-[110px];
+  @apply !mb-4 scroll-mt-[80px] md:scroll-mt-[110px];
   @apply text-black;
 }
 

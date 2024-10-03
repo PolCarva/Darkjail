@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package dango_acf_tailwind
+ * @package darkjail_acf_tailwind
  */
 
 ?>

@@ -5,34 +5,18 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package dango_acf_tailwind
+ * @package darkjail_acf_tailwind
  */
 
-$footer_settings = get_field('header_footer', 'option');
-$footer_logo = $footer_settings['footer_logo'];
-$footer_background = $footer_settings['footer_image'];
-$footer_background__mobile = $footer_settings['footer_image__mobile'];
-$social_links = $footer_settings['social_links'] ?: array();
-$disclaimer = $footer_settings['footer_disclaimer'];
+$footer_settings = get_field('footer', 'option');
+$footer_logo = get_field('footer_logo', 'option');
+$settings = get_field('', 'option');
+$social_links = get_field('social_links', 'option') ?: array();
+$disclaimer = get_field('disclaimer', 'option');
 
-// get_template_part('template-parts/layout/newsletter', 'content');
 
 ?>
 
-<style>
-	#colophon .bg-image {
-		background-image: url('<?= $footer_background__mobile['url']; ?>');
-		background-size: cover;
-		background-position: center bottom 25%;
-	}
-
-	@media (width >= 1024px) {
-		#colophon .bg-image {
-			background-image: url('<?= $footer_background['url']; ?>');
-			background-position: right top;
-		}
-	}
-</style>
 
 <footer id="colophon" class="flex flex-col gap-8 py-8 text-black bg-ice">
 	<div class="w-full c-container">

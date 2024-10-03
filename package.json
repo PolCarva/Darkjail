@@ -45,7 +45,7 @@
 		"watch:tailwind:editor": "npm run development:tailwind:editor -- --watch",
 		"watch:tailwind:frontend": "npm run development:tailwind:frontend -- --watch",
 		"watch": "run-p watch:**",
-		"zip": "node node_scripts/zip.js dango-acf-tailwind"
+		"zip": "node node_scripts/zip.js darkjail-acf-tailwind"
 	},
 	"prettier": "@wordpress/prettier-config"
 }

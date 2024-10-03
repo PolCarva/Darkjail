@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
- * @package dango_acf_tailwind
+ * @package darkjail_acf_tailwind
  */
 
 get_header();
@@ -20,7 +20,7 @@ get_header();
 				printf(
 					/* translators: 1: search result title. 2: search term. */
 					'<h1 class="page-title">%1$s <span>%2$s</span></h1>',
-					esc_html__( 'Search results for:', 'dango-acf-tailwind' ),
+					esc_html__( 'Search results for:', 'darkjail-acf-tailwind' ),
 					get_search_query()
 				);
 				?>
@@ -36,7 +36,7 @@ get_header();
 			endwhile;
 
 			// Previous/next page navigation.
-			dango_acf_tailwind_the_posts_navigation();
+			darkjail_acf_tailwind_the_posts_navigation();
 
 		else :
 

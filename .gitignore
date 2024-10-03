@@ -10,7 +10,7 @@ style.css
 style-editor.css
 
 # Ignore the generated zip file:
-dango-acf-tailwind.zip
+darkjail-acf-tailwind.zip
 
 # Ignore .DS_Store files from macOS:
 .DS_Store

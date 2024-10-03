@@ -5,12 +5,11 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package dango_acf_tailwind
+ * @package darkjail_acf_tailwind
  */
 
-$header_settings = get_field('header_footer', 'option');
-$dango_acf_tailwind_logo = $header_settings['site_logo'];
-$background_image_mobile = $header_settings['mobile_nav_background'];
+$header_settings = get_field('header_settings', 'option');
+$darkjail_acf_tailwind_logo = get_field('logo', 'option');
 
 // echo '<pre>';
 // print_r($background_image_mobile);
@@ -19,22 +18,15 @@ $background_image_mobile = $header_settings['mobile_nav_background'];
 get_template_part('template-parts/layout/announcement-bar', 'content');
 ?>
 
-<style>
-	#mobile-menu {
-		background-image: url(<?= $background_image_mobile['url']; ?>);
-		background-size: cover;
-		background-position: center;
-	}
-</style>
 
 <header id="masthead" class="fixed z-20 flex justify-center w-full pt-4 pb-8 bg-ice lg:py-8">
 	<div class="relative flex w-full gap-2 c-container">
 		<?php //logo
 
-		if ($dango_acf_tailwind_logo): ?>
+		if ($darkjail_acf_tailwind_logo): ?>
 			<div class="items-center justify-center hidden lg:flex">
 				<a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
-					<img src="<?php echo wp_get_attachment_image_url($dango_acf_tailwind_logo, 'medium'); ?>"
+					<img src="<?php echo wp_get_attachment_image_url($darkjail_acf_tailwind_logo, 'medium'); ?>"
 						alt="<?php bloginfo('name'); ?>" class="max-h-14 ">
 				</a>
 			</div>
@@ -42,7 +34,7 @@ get_template_part('template-parts/layout/announcement-bar', 'content');
 		endif;
 		?>
 		<nav id="site-navigation" class="items-center justify-end hidden w-full gap-2 lg:flex"
-			aria-label="<?php esc_attr_e('Main Navigation', 'dango-acf-tailwind'); ?>">
+			aria-label="<?php esc_attr_e('Main Navigation', 'darkjail-acf-tailwind'); ?>">
 			<div class="flex w-[-webkit-fill-available] justify-center h-full items-center">
 				<?php
 				if (has_nav_menu('menu-1')) {
@@ -89,11 +81,11 @@ get_template_part('template-parts/layout/announcement-bar', 'content');
 
 		<?php //logo
 
-		if ($dango_acf_tailwind_logo):
+		if ($darkjail_acf_tailwind_logo):
 			?>
 			<div class="lg:hidden">
 				<a href="<?= esc_url(home_url('/')); ?>" rel="home">
-					<img src="<?= wp_get_attachment_image_url($dango_acf_tailwind_logo, 'medium'); ?>"
+					<img src="<?= wp_get_attachment_image_url($darkjail_acf_tailwind_logo, 'medium'); ?>"
 						alt="<?php bloginfo('name'); ?>" class="max-h-14 ">
 				</a>
 			</div>

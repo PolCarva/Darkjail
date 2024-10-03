@@ -4,14 +4,14 @@
  *
  * Eventually, some functionality here could be replaced by core features.
  *
- * @package dango_acf_tailwind
+ * @package darkjail_acf_tailwind
  */
 
-if ( ! function_exists( 'dango_acf_tailwind_posted_on' ) ) :
+if ( ! function_exists( 'darkjail_acf_tailwind_posted_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time.
 	 */
-	function dango_acf_tailwind_posted_on() {
+	function darkjail_acf_tailwind_posted_on() {
 		$time_string = '<time datetime="%1$s">%2$s</time>';
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 			$time_string = '<time datetime="%1$s">%2$s</time>';
@@ -33,67 +33,67 @@ if ( ! function_exists( 'dango_acf_tailwind_posted_on' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'dango_acf_tailwind_posted_by' ) ) :
+if ( ! function_exists( 'darkjail_acf_tailwind_posted_by' ) ) :
 	/**
 	 * Prints HTML with meta information about theme author.
 	 */
-	function dango_acf_tailwind_posted_by() {
+	function darkjail_acf_tailwind_posted_by() {
 		printf(
 		/* translators: 1: posted by label, only visible to screen readers. 2: author link. 3: post author. */
 			'<span class="sr-only">%1$s</span><span class="author vcard"><a class="url fn n" href="%2$s">%3$s</a></span>',
-			esc_html__( 'Posted by', 'dango-acf-tailwind' ),
+			esc_html__( 'Posted by', 'darkjail-acf-tailwind' ),
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 			esc_html( get_the_author() )
 		);
 	}
 endif;
 
-if ( ! function_exists( 'dango_acf_tailwind_comment_count' ) ) :
+if ( ! function_exists( 'darkjail_acf_tailwind_comment_count' ) ) :
 	/**
 	 * Prints HTML with the comment count for the current post.
 	 */
-	function dango_acf_tailwind_comment_count() {
+	function darkjail_acf_tailwind_comment_count() {
 		if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 			/* translators: %s: Name of current post. Only visible to screen readers. */
-			comments_popup_link( sprintf( __( 'Leave a comment<span class="sr-only"> on %s</span>', 'dango-acf-tailwind' ), get_the_title() ) );
+			comments_popup_link( sprintf( __( 'Leave a comment<span class="sr-only"> on %s</span>', 'darkjail-acf-tailwind' ), get_the_title() ) );
 		}
 	}
 endif;
 
-if ( ! function_exists( 'dango_acf_tailwind_entry_meta' ) ) :
+if ( ! function_exists( 'darkjail_acf_tailwind_entry_meta' ) ) :
 	/**
 	 * Prints HTML with meta information for the categories, tags and comments.
 	 * This template tag is used in the entry header.
 	 */
-	function dango_acf_tailwind_entry_meta() {
+	function darkjail_acf_tailwind_entry_meta() {
 
 		// Hide author, post date, category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
 
 			// Posted by.
-			dango_acf_tailwind_posted_by();
+			darkjail_acf_tailwind_posted_by();
 
 			// Posted on.
-			dango_acf_tailwind_posted_on();
+			darkjail_acf_tailwind_posted_on();
 
 			/* translators: used between list items, there is a space after the comma. */
-			$categories_list = get_the_category_list( __( ', ', 'dango-acf-tailwind' ) );
+			$categories_list = get_the_category_list( __( ', ', 'darkjail-acf-tailwind' ) );
 			if ( $categories_list ) {
 				printf(
 				/* translators: 1: posted in label, only visible to screen readers. 2: list of categories. */
 					'<span class="sr-only">%1$s</span>%2$s',
-					esc_html__( 'Posted in', 'dango-acf-tailwind' ),
+					esc_html__( 'Posted in', 'darkjail-acf-tailwind' ),
 					$categories_list // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				);
 			}
 
 			/* translators: used between list items, there is a space after the comma. */
-			$tags_list = get_the_tag_list( '', __( ', ', 'dango-acf-tailwind' ) );
+			$tags_list = get_the_tag_list( '', __( ', ', 'darkjail-acf-tailwind' ) );
 			if ( $tags_list ) {
 				printf(
 				/* translators: 1: tags label, only visible to screen readers. 2: list of tags. */
 					'<span class="sr-only">%1$s</span>%2$s',
-					esc_html__( 'Tags:', 'dango-acf-tailwind' ),
+					esc_html__( 'Tags:', 'darkjail-acf-tailwind' ),
 					$tags_list // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				);
 			}
@@ -101,7 +101,7 @@ if ( ! function_exists( 'dango_acf_tailwind_entry_meta' ) ) :
 
 		// Comment count.
 		if ( ! is_singular() ) {
-			dango_acf_tailwind_comment_count();
+			darkjail_acf_tailwind_comment_count();
 		}
 
 		// Edit post link.
@@ -109,7 +109,7 @@ if ( ! function_exists( 'dango_acf_tailwind_entry_meta' ) ) :
 			sprintf(
 				wp_kses(
 				/* translators: %s: Name of current post. Only visible to screen readers. */
-					__( 'Edit <span class="sr-only">%s</span>', 'dango-acf-tailwind' ),
+					__( 'Edit <span class="sr-only">%s</span>', 'darkjail-acf-tailwind' ),
 					array(
 						'span' => array(
 							'class' => array(),
@@ -122,23 +122,23 @@ if ( ! function_exists( 'dango_acf_tailwind_entry_meta' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'dango_acf_tailwind_entry_footer' ) ) :
+if ( ! function_exists( 'darkjail_acf_tailwind_entry_footer' ) ) :
 	/**
 	 * Prints HTML with meta information for the categories, tags and comments.
 	 */
-	function dango_acf_tailwind_entry_footer() {
+	function darkjail_acf_tailwind_entry_footer() {
 
 		// Hide author, post date, category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
 
 			// Posted by.
-			//dango_acf_tailwind_posted_by();
+			//darkjail_acf_tailwind_posted_by();
 
 			// Posted on.
-			dango_acf_tailwind_posted_on();
+			darkjail_acf_tailwind_posted_on();
 
 			/* translators: used between list items, there is a space after the comma. */
-			$categories_list = get_the_category_list( __( ', ', 'dango-acf-tailwind' ) );
+			$categories_list = get_the_category_list( __( ', ', 'darkjail-acf-tailwind' ) );
 			if ( $categories_list ) {
 				// Get the list of post categories excluding "Uncategorized"
 				$categories = get_the_category();
@@ -152,19 +152,19 @@ if ( ! function_exists( 'dango_acf_tailwind_entry_footer' ) ) :
 				printf(
 					/* translators: 1: posted in label, only visible to screen readers. 2: list of categories. */
 					'<span class="sr-only">%1$s</span>%2$s',
-					esc_html__('Posted in', 'dango-acf-tailwind'),
+					esc_html__('Posted in', 'darkjail-acf-tailwind'),
 					$categories_list // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				);
 
 			}
 
 			/* translators: used between list items, there is a space after the comma. */
-			$tags_list = get_the_tag_list( '', __( ', ', 'dango-acf-tailwind' ) );
+			$tags_list = get_the_tag_list( '', __( ', ', 'darkjail-acf-tailwind' ) );
 			if ( $tags_list ) {
 				printf(
 				/* translators: 1: tags label, only visible to screen readers. 2: list of tags. */
 					'<span class="sr-only">%1$s</span>%2$s',
-					esc_html__( 'Tags:', 'dango-acf-tailwind' ),
+					esc_html__( 'Tags:', 'darkjail-acf-tailwind' ),
 					$tags_list // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				);
 			}
@@ -172,7 +172,7 @@ if ( ! function_exists( 'dango_acf_tailwind_entry_footer' ) ) :
 
 		// Comment count.
 		if ( ! is_singular() ) {
-			dango_acf_tailwind_comment_count();
+			darkjail_acf_tailwind_comment_count();
 		}
 
 		// Edit post link.
@@ -180,7 +180,7 @@ if ( ! function_exists( 'dango_acf_tailwind_entry_footer' ) ) :
 			sprintf(
 				wp_kses(
 				/* translators: %s: Name of current post. Only visible to screen readers. */
-					__( 'Edit <span class="sr-only">%s</span>', 'dango-acf-tailwind' ),
+					__( 'Edit <span class="sr-only">%s</span>', 'darkjail-acf-tailwind' ),
 					array(
 						'span' => array(
 							'class' => array(),
@@ -193,13 +193,13 @@ if ( ! function_exists( 'dango_acf_tailwind_entry_footer' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'dango_acf_tailwind_post_thumbnail' ) ) :
+if ( ! function_exists( 'darkjail_acf_tailwind_post_thumbnail' ) ) :
 	/**
 	 * Displays an optional post thumbnail, wrapping the post thumbnail in an
 	 * anchor element except when viewing a single post.
 	 */
-	function dango_acf_tailwind_post_thumbnail() {
-		if ( ! dango_acf_tailwind_can_show_post_thumbnail() ) {
+	function darkjail_acf_tailwind_post_thumbnail() {
+		if ( ! darkjail_acf_tailwind_can_show_post_thumbnail() ) {
 			return;
 		}
 
@@ -225,30 +225,30 @@ if ( ! function_exists( 'dango_acf_tailwind_post_thumbnail' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'dango_acf_tailwind_comment_avatar' ) ) :
+if ( ! function_exists( 'darkjail_acf_tailwind_comment_avatar' ) ) :
 	/**
 	 * Returns the HTML markup to generate a user avatar.
 	 *
 	 * @param mixed $id_or_email The Gravatar to retrieve. Accepts a user_id, gravatar md5 hash,
 	 *                           user email, WP_User object, WP_Post object, or WP_Comment object.
 	 */
-	function dango_acf_tailwind_get_user_avatar_markup( $id_or_email = null ) {
+	function darkjail_acf_tailwind_get_user_avatar_markup( $id_or_email = null ) {
 
 		if ( ! isset( $id_or_email ) ) {
 			$id_or_email = get_current_user_id();
 		}
 
-		return sprintf( '<div class="vcard">%s</div>', get_avatar( $id_or_email, dango_acf_tailwind_get_avatar_size() ) );
+		return sprintf( '<div class="vcard">%s</div>', get_avatar( $id_or_email, darkjail_acf_tailwind_get_avatar_size() ) );
 	}
 endif;
 
-if ( ! function_exists( 'dango_acf_tailwind_discussion_avatars_list' ) ) :
+if ( ! function_exists( 'darkjail_acf_tailwind_discussion_avatars_list' ) ) :
 	/**
 	 * Displays a list of avatars involved in a discussion for a given post.
 	 *
 	 * @param array $comment_authors Comment authors to list as avatars.
 	 */
-	function dango_acf_tailwind_discussion_avatars_list( $comment_authors ) {
+	function darkjail_acf_tailwind_discussion_avatars_list( $comment_authors ) {
 		if ( empty( $comment_authors ) ) {
 			return;
 		}
@@ -256,44 +256,44 @@ if ( ! function_exists( 'dango_acf_tailwind_discussion_avatars_list' ) ) :
 		foreach ( $comment_authors as $id_or_email ) {
 			printf(
 				"<li>%s</li>\n",
-				dango_acf_tailwind_get_user_avatar_markup( $id_or_email ) // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				darkjail_acf_tailwind_get_user_avatar_markup( $id_or_email ) // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			);
 		}
 		echo '</ol>', "\n";
 	}
 endif;
 
-if ( ! function_exists( 'dango_acf_tailwind_the_posts_navigation' ) ) :
+if ( ! function_exists( 'darkjail_acf_tailwind_the_posts_navigation' ) ) :
 	/**
 	 * Wraps `the_posts_pagination` for use throughout the theme.
 	 */
-	function dango_acf_tailwind_the_posts_navigation() {
+	function darkjail_acf_tailwind_the_posts_navigation() {
 		the_posts_pagination(
 			array(
 				'mid_size'  => 2,
-				'prev_text' => __( 'Newer posts', 'dango-acf-tailwind' ),
-				'next_text' => __( 'Older posts', 'dango-acf-tailwind' ),
+				'prev_text' => __( 'Newer posts', 'darkjail-acf-tailwind' ),
+				'next_text' => __( 'Older posts', 'darkjail-acf-tailwind' ),
 			)
 		);
 	}
 endif;
 
-if ( ! function_exists( 'dango_acf_tailwind_content_class' ) ) :
+if ( ! function_exists( 'darkjail_acf_tailwind_content_class' ) ) :
 	/**
 	 * Displays the class names for the post content wrapper.
 	 *
 	 * This allows us to add Tailwind Typography’s modifier classes throughout
 	 * the theme without repeating them in multiple files. (They can be edited
 	 * at the top of the `../functions.php` file via the
-	 * DANGO_ACF_TAILWIND_TYPOGRAPHY_CLASSES constant.)
+	 * darkjail_ACF_TAILWIND_TYPOGRAPHY_CLASSES constant.)
 	 *
 	 * Based on WordPress core’s `body_class` and `get_body_class` functions.
 	 *
 	 * @param array $class Space-separated string or array of class names to
 	 *                     add to the class list.
 	 */
-	function dango_acf_tailwind_content_class( $class = '' ) {
-		$all_classes = array( $class, DANGO_ACF_TAILWIND_TYPOGRAPHY_CLASSES );
+	function darkjail_acf_tailwind_content_class( $class = '' ) {
+		$all_classes = array( $class, darkjail_ACF_TAILWIND_TYPOGRAPHY_CLASSES );
 
 		foreach ( $all_classes as &$classes ) {
 			if ( ! empty( $classes ) ) {

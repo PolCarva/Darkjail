@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package dango_acf_tailwind
+ * @package darkjail_acf_tailwind
  */
 
 get_header();
@@ -29,7 +29,7 @@ get_header();
 			endwhile;
 
 			// Previous/next page navigation.
-			dango_acf_tailwind_the_posts_navigation();
+			darkjail_acf_tailwind_the_posts_navigation();
 
 		else :
 
