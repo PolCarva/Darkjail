@@ -72,7 +72,7 @@ $hero_id = uniqid('hero-');
                 <?php if (isset($tag) && $tag) : ?>
                     <p class="tag !mb-[14px] font-pp-mori text-[14px] font-semibold !mt-0"><?= esc_html($tag); ?></p>
                 <?php endif; ?>
-                <<?php echo $heading_type ?> class="heading <?= $heading_size; ?> mb-[11px] !mt-0"><?php echo esc_html($first_line); ?> <br class="hidden xl:block">
+                <<?php echo $heading_type ?> class="heading <?= $heading_size; ?> <?php echo isset($subheading) && $subheading ? "mb-[11px]" : "mb-[32px]"; ?> !mt-0"><?php echo esc_html($first_line); ?> <br class="hidden xl:block">
                     <?php echo esc_html($second_line); ?>
                 </<?php echo $heading_type ?>>
                 <?php if (isset($subheading) && $subheading) : ?>
