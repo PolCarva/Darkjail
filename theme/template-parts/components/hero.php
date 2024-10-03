@@ -39,6 +39,7 @@ $mobile_text_color = $content_styles['mobile_text_color'];
 
 $hero_id = uniqid('hero-');
 
+
 ?>
 <div class="bg-ice pb-[30px] lg:pb-[80px]">
     <section id="<?= $hero_id ?>" class="w-full <?php echo ($is_big ? "xl:h-[675px] " : "xl:h-[471px] ") ?> xl:max-h-[calc(95svh-113px)] c-container">

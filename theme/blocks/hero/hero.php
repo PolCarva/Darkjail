@@ -10,7 +10,7 @@ $image            = get_field('image_options');
 $content_styles   = get_field('content_styles');
 $buttons         = get_field('buttons');
 $tag             = get_field('tag');
-$is_big          = get_field('is_big') ?: true;
+$is_big          = get_field('is_big');
 
 
 
