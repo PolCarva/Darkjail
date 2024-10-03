@@ -21,12 +21,8 @@ get_template_part('template-parts/components/hero', '', array(
 // Extract the variables from the array
 extract($args);
 
-$heading_words = explode(' ', $heading);
-
-$first_line_count = ceil(count($heading_words) / 2);
-
-$first_line = implode(' ', array_slice($heading_words, 0, $first_line_count));
-$second_line = implode(' ', array_slice($heading_words, $first_line_count));
+$first_line = $heading;
+$second_line = $heading_second_line;
 
 $background_video = $image['background_video'];
 
@@ -73,12 +69,39 @@ $hero_id = uniqid('hero-');
             </div>
 
             <div class="xl:absolute bottom-10 left-10 flex flex-col">
-                <<?php echo $heading_type ?> class="heading h1 xl:my-0"><?php echo esc_html($first_line); ?> <br class="hidden xl:block">
+                <?php if (isset($tag) && $tag) : ?>
+                    <p class="tag !mb-[14px] font-pp-mori text-[14px] font-semibold !mt-0"><?= esc_html($tag); ?></p>
+                <?php endif; ?>
+                <<?php echo $heading_type ?> class="heading <?= $heading_size; ?> mb-[11px] !mt-0"><?php echo esc_html($first_line); ?> <br class="hidden xl:block">
                     <?php echo esc_html($second_line); ?>
                 </<?php echo $heading_type ?>>
                 <?php if (isset($subheading) && $subheading) : ?>
-                    <p class="subheading my-0"><?php echo esc_html($subheading); ?></p>
+                    <p class="subheading !mb-[28px] !mt-0"><?php echo esc_html($subheading); ?></p>
                 <?php endif; ?>
+                <?php if (isset($buttons) && $buttons) : ?>
+                    <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+                        <?php foreach ($buttons as $index) :
+                            $button = $index['button'];
+
+                            $button_args = array(
+                                'type' => $button['variant'],
+                                'size' => 'medium',
+                                'button' => array(
+                                    'text' => $button['text'],
+                                    'size' => 'medium',
+                                    'url' => $button['link'],
+                                    'target' => '_self',
+                                    'container_class' => '!w-full sm:!w-fit',
+                                    'custom_class' => '!w-full sm:!w-fit text-center justify-center',
+                                )
+                            );
+
+                            get_template_part('template-parts/components/button', '', $button_args);
+                        endforeach; ?>
+                    </div>
+                <?php endif; ?>
+
+
             </div>
         </div>
     </section>
@@ -87,14 +110,16 @@ $hero_id = uniqid('hero-');
 
 <style>
     #<?= $hero_id . " " ?>.heading,
-    #<?= $hero_id . " " ?>.subheading {
+    #<?= $hero_id . " " ?>.subheading,
+    #<?= $hero_id . " " ?>.tag {
         color: <?= $mobile_text_color ?> !important;
     }
 
     @media (min-width: 1280px) {
 
         #<?= $hero_id . " " ?>.heading,
-        #<?= $hero_id . " " ?>.subheading {
+        #<?= $hero_id . " " ?>.subheading,
+        #<?= $hero_id . " " ?>.tag {
             color: <?= $text_color ?> !important;
         }
 

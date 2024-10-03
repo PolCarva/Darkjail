@@ -1,25 +1,27 @@
 <?php
 
 // Load values and assign defaults.
-$heading          = get_field('heading') ?: 'Your heading here...';
-$subheading       = get_field('subheading') ?: 'Your subheading here...';
+$heading          = get_field('heading') ?: 'Your first line here...';
+$heading_second_line          = get_field('heading_second_line');
+$heading_size    = get_field('heading_size') ?: 'h1';
+$heading_type       = get_field('heading_type') ?: 'h1';
+$subheading       = get_field('subheading');
 $image            = get_field('image_options');
 $content_styles   = get_field('content_styles');
-$heading_type       = get_field('heading_type');
-/* $button           = get_field('button');
-$right_align      = get_field('right_align');
-$desktop_full_width = get_field('desktop_full_width');
- */
+$buttons         = get_field('buttons');
+$tag             = get_field('tag');
+
 
 
 get_template_part('template-parts/components/hero', '', array(
     'heading' => $heading,
+    'heading_second_line' => $heading_second_line,
+    'heading_size' => $heading_size,
+    'heading_type' => $heading_type,
     'subheading' => $subheading,
     'image' => $image,
     'content_styles' => $content_styles,
-    'heading_type' => $heading_type
-    /* 'button' => $button,
-    'right_align' => $right_align,
-    'desktop_full_width' => $desktop_full_width,
-     */
+    'buttons' => $buttons,
+    'tag' => $tag,
+
 ));
