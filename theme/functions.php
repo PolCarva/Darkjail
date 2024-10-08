@@ -27,49 +27,7 @@ function register_acf_blocks()
 add_action('init', 'register_acf_blocks');
 
 
-// Register the custom post types
-function create_posttype()
-{
-	// Providers Custom Post Type
-	register_post_type(
-		'providers',
-		array(
-			'labels' => array(
-				'name' => __('Providers'),
-				'singular_name' => __('Provider'),
-			),
-			'public' => true,
-			'has_archive' => true,
-			'rewrite' => array('slug' => 'providers'),
-			'show_in_rest' => true,
-			'supports' => array('title', 'editor', 'thumbnail', 'custom-fields', 'revisions', 'excerpt', 'page-attributes'), // Add 'page-attributes'
-			'taxonomies' => array('category', 'post_tag'),
-			'show_in_menu' => 'edit.php?post_type=page', // Display in the Pages menu
-		)
-	);
-
-	// Service Areas Custom Post Type
-	register_post_type(
-		'service-areas',
-		array(
-			'labels' => array(
-				'name' => __('Service Areas'),
-				'singular_name' => __('Service Area'),
-			),
-			'public' => true,
-			'has_archive' => true,
-			'rewrite' => array('slug' => 'service-areas'),
-			'show_in_rest' => true,
-			'supports' => array('title', 'editor', 'thumbnail', 'custom-fields', 'revisions', 'excerpt', 'page-attributes'), // Add 'page-attributes'
-			'taxonomies' => array('category', 'post_tag'),
-			'show_in_menu' => 'edit.php?post_type=page', // Display in the Pages menu
-		)
-	);
-}
-add_action('init', 'create_posttype');
-
-
-if (!defined('darkjail_ACF_TAILWIND_VERSION')) {
+if (!defined('DARKJAIL_ACF_TAILWIND_VERSION')) {
 	/*
 	 * Set the theme’s version number.
 	 *
@@ -80,11 +38,11 @@ if (!defined('darkjail_ACF_TAILWIND_VERSION')) {
 	$versionStyle = date("ymd-Gis", filemtime(get_stylesheet_directory() . '/style.css'));
 	$versionScript = date("ymd-Gis", filemtime(get_stylesheet_directory() . '/js/script.min.js'));
 
-	define('darkjail_ACF_TAILWIND_VERSION', $versionStyle);
-	define('darkjail_ACF_TAILWIND_VERSION_SCRIPT', $versionScript);
+	define('DARKJAIL_ACF_TAILWIND_VERSION', $versionStyle);
+	define('DARKJAIL_ACF_TAILWIND_VERSION_SCRIPT', $versionScript);
 }
 
-if (!defined('darkjail_ACF_TAILWIND_TYPOGRAPHY_CLASSES')) {
+if (!defined('DARKJAIL_ACF_TAILWIND_TYPOGRAPHY_CLASSES')) {
 	/*
 	 * Set Tailwind Typography classes for the front end, block editor and
 	 * classic editor using the constant below.
@@ -103,8 +61,8 @@ if (!defined('darkjail_ACF_TAILWIND_TYPOGRAPHY_CLASSES')) {
 	 * initializes.
 	 */
 	define(
-		'darkjail_ACF_TAILWIND_TYPOGRAPHY_CLASSES',
-		'prose-a:text-primary bg-ice'
+		'DARKJAIL_ACF_TAILWIND_TYPOGRAPHY_CLASSES',
+		'prose-a:text-black'
 	);
 }
 
@@ -216,8 +174,8 @@ function darkjail_acf_tailwind_scripts()
 {
 	wp_enqueue_script('AOS', 'https://unpkg.com/aos@2.3.1/dist/aos.js', false, null, false);
 	wp_enqueue_style('AOS_animate', 'https://unpkg.com/aos@2.3.1/dist/aos.css', false, null);
-	wp_enqueue_style('darkjail-acf-tailwind-style', get_template_directory_uri() . '/style.css', array(), darkjail_ACF_TAILWIND_VERSION);
-	wp_enqueue_script('darkjail-acf-tailwind-script', get_template_directory_uri() . '/js/script.min.js', array(), darkjail_ACF_TAILWIND_VERSION_SCRIPT, true);
+	wp_enqueue_style('darkjail-acf-tailwind-style', get_template_directory_uri() . '/style.css', array(), DARKJAIL_ACF_TAILWIND_VERSION);
+	wp_enqueue_script('darkjail-acf-tailwind-script', get_template_directory_uri() . '/js/script.min.js', array(), DARKJAIL_ACF_TAILWIND_VERSION_SCRIPT, true);
 
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply');
@@ -237,7 +195,7 @@ function darkjail_acf_tailwind_enqueue_block_editor_script()
 			'wp-blocks',
 			'wp-edit-post',
 		),
-		darkjail_ACF_TAILWIND_VERSION,
+		DARKJAIL_ACF_TAILWIND_VERSION,
 		true
 	);
 }
@@ -246,7 +204,7 @@ add_action('enqueue_block_editor_assets', 'darkjail_acf_tailwind_enqueue_block_e
 /**
  * Enqueue the script necessary to support Tailwind Typography in the block
  * editor, using an inline script to create a JavaScript array containing the
- * Tailwind Typography classes from darkjail_ACF_TAILWIND_TYPOGRAPHY_CLASSES.
+ * Tailwind Typography classes from DARKJAIL_ACF_TAILWIND_TYPOGRAPHY_CLASSES.
  */
 function darkjail_acf_tailwind_enqueue_typography_script()
 {
@@ -258,10 +216,10 @@ function darkjail_acf_tailwind_enqueue_typography_script()
 				'wp-blocks',
 				'wp-edit-post',
 			),
-			darkjail_ACF_TAILWIND_VERSION,
+			DARKJAIL_ACF_TAILWIND_VERSION,
 			true
 		);
-		wp_add_inline_script('darkjail-acf-tailwind-typography', "tailwindTypographyClasses = '" . esc_attr(darkjail_ACF_TAILWIND_TYPOGRAPHY_CLASSES) . "'.split(' ');", 'before');
+		wp_add_inline_script('darkjail-acf-tailwind-typography', "tailwindTypographyClasses = '" . esc_attr(DARKJAIL_ACF_TAILWIND_TYPOGRAPHY_CLASSES) . "'.split(' ');", 'before');
 	}
 }
 add_action('enqueue_block_assets', 'darkjail_acf_tailwind_enqueue_typography_script');
@@ -274,7 +232,7 @@ add_action('enqueue_block_assets', 'darkjail_acf_tailwind_enqueue_typography_scr
  */
 function darkjail_acf_tailwind_tinymce_add_class($settings)
 {
-	$settings['body_class'] = darkjail_ACF_TAILWIND_TYPOGRAPHY_CLASSES;
+	$settings['body_class'] = DARKJAIL_ACF_TAILWIND_TYPOGRAPHY_CLASSES;
 	return $settings;
 }
 add_filter('tiny_mce_before_init', 'darkjail_acf_tailwind_tinymce_add_class');

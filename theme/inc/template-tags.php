@@ -285,7 +285,7 @@ if ( ! function_exists( 'darkjail_acf_tailwind_content_class' ) ) :
 	 * This allows us to add Tailwind Typography’s modifier classes throughout
 	 * the theme without repeating them in multiple files. (They can be edited
 	 * at the top of the `../functions.php` file via the
-	 * darkjail_ACF_TAILWIND_TYPOGRAPHY_CLASSES constant.)
+	 * DARKJAIL_ACF_TAILWIND_TYPOGRAPHY_CLASSES constant.)
 	 *
 	 * Based on WordPress core’s `body_class` and `get_body_class` functions.
 	 *
@@ -293,7 +293,7 @@ if ( ! function_exists( 'darkjail_acf_tailwind_content_class' ) ) :
 	 *                     add to the class list.
 	 */
 	function darkjail_acf_tailwind_content_class( $class = '' ) {
-		$all_classes = array( $class, darkjail_ACF_TAILWIND_TYPOGRAPHY_CLASSES );
+		$all_classes = array( $class, DARKJAIL_ACF_TAILWIND_TYPOGRAPHY_CLASSES );
 
 		foreach ( $all_classes as &$classes ) {
 			if ( ! empty( $classes ) ) {

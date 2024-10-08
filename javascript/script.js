@@ -15,8 +15,5 @@ import Swiper from 'swiper/bundle'
 window.Swiper = Swiper
 window.Alpine = Alpine
 
-import MainNav from './scripts/main-nav'
-
-MainNav()
 
 Alpine.start()

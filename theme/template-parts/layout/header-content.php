@@ -19,7 +19,7 @@ get_template_part('template-parts/layout/announcement-bar', 'content');
 ?>
 
 
-<header id="masthead" class="fixed z-20 flex justify-center w-full pt-4 pb-8 bg-ice lg:py-8">
+<header id="masthead" class="fixed z-20 flex justify-center w-full pt-4 pb-8 lg:py-8">
 	<div class="relative flex w-full gap-2 c-container">
 		<?php //logo
 

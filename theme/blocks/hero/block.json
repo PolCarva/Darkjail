@@ -1,0 +1,13 @@
+{
+    "name": "acf/hero",
+    "title": "Hero",
+    "description": "Hero component",
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["hero", "header"],
+    "acf": {
+        "mode": "auto",
+        "renderTemplate": "hero.php"
+    },
+    "align": "full"
+}

@@ -10,15 +10,14 @@
 
 $footer_settings = get_field('footer', 'option');
 $footer_logo = get_field('footer_logo', 'option');
-$settings = get_field('', 'option');
-$social_links = get_field('social_links', 'option') ?: array();
+$social_links = get_field('social_links', 'option') ?? [];
 $disclaimer = get_field('disclaimer', 'option');
 
 
 ?>
 
 
-<footer id="colophon" class="flex flex-col gap-8 py-8 text-black bg-ice">
+<footer id="colophon" class="flex flex-col gap-8 py-8 text-black">
 	<div class="w-full c-container">
 		<div
 			class="flex flex-col items-start justify-between w-full gap-12 lg:gap-[90px] p-4 bg-image md:flex-row md:p-12 rounded-[14px]">
@@ -38,9 +37,11 @@ $disclaimer = get_field('disclaimer', 'option');
 						<?= $disclaimer ?>
 					</div>
 					<div class="flex items-center justify-center gap-4">
-						<?php if (!empty($social_links) && $social_links["links"]): ?>
+						<?php if (!empty($social_links)):
+						?>
 
-							<?php foreach ($social_links["links"] as $social_link): ?>
+							<?php foreach ($social_links as $social_link):
+							?>
 								<?php if (isset($social_link['icon']) && $social_link['icon']): ?>
 									<a href="<?php echo esc_url($social_link['url']); ?>" aria-label="Social media link">
 										<?php get_template_part('template-parts/components/image', '', array('image_size' => 'medium', 'image_id' => $social_link['icon'], 'image_class' => '')); ?>
