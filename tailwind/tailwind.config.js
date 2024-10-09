@@ -5,7 +5,13 @@ module.exports = {
 	presets: [require('./tailwind-typography.config.js')],
 	content: ['./theme/**/*.php', './theme/theme.json'],
 	theme: {
-		extend: {},
+		extend: {
+			fontFamily: {
+				syne: ['Syne', 'sans-serif'],
+				teko: ['Teko', 'sans-serif'],
+				heebo: ['Heebo', 'sans-serif'],
+			},
+		},
 	},
 	corePlugins: {
 		// Disable Preflight base styles in builds targeting the editor.

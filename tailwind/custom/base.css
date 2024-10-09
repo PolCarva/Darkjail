@@ -11,6 +11,7 @@
  * `theme.json` file and is applied both to the frontend and in the block
  * editor.
 */
+
 body {
 	@apply bg-background text-foreground;
 }
@@ -95,7 +96,6 @@ h4:not(.c-container h4):not(.c-container__sm h4),
 h5:not(.c-container h5):not(.c-container__sm h5),
 h6:not(.c-container h6):not(.c-container__sm h6) {
   @apply !mb-4 scroll-mt-[80px] md:scroll-mt-[110px];
-  @apply text-black;
 }
 
 
@@ -115,4 +115,8 @@ h6:not(.c-container h6):not(.c-container__sm h6) {
 
 #main .wordpress-pages-container a {
 	@apply underline;
+}
+
+h1, .h1 {
+	@apply text-[50px] font-extrabold font-syne;
 }

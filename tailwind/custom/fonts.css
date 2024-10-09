@@ -4,74 +4,29 @@
  * These will be added immediately before Tailwind’s `base` layer.
  */
 
+/* Syne Variable Font */
 @font-face {
-	font-family: 'Mori';
+	font-family: 'Syne';
 	font-style: normal;
-	font-weight: 300;
-	src: url('./pp_mori/PPMori-Light.woff') format('woff');
+	font-weight: 100 900;
+	src: url('./syne/Syne-VariableFont_wght.ttf') format('truetype'); 
+	font-display: swap;
+  }
+
+/* Add Heebo */
+@font-face {
+	font-family: 'Heebo';
+	font-style: normal;
+	font-weight: 100;
+	src: url('./heebo/Heebo-VariableFont_wght.ttf') format('woff');
+	font-display: swap;
 }
 
+/* Add Teko */
 @font-face {
-	font-family: 'Mori';
+	font-family: 'Teko';
 	font-style: normal;
-	font-weight: 400;
-	src: url('./pp_mori/PPMori-Regular.woff') format('woff');
-}
-
-@font-face {
-	font-family: 'Mori';
-	font-style: normal;
-	font-weight: 600;
-	src: url('./pp_mori/PPMori-SemiBold.woff') format('woff');
-}
-
-@font-face {
-	font-family: 'Mori';
-	font-style: normal;
-	font-weight: 700;
-	src: url('./pp_mori/PPMori-Bold.woff') format('woff');
-}
-
-
-
-@font-face {
-	font-family: 'Manrope';
-	font-style: normal;
-	font-weight: 200;
-	src: url('./manrope/Manrope-ExtraLight.ttf') format('woff');
-}
-
-@font-face {
-	font-family: 'Manrope';
-	font-style: normal;
-	font-weight: 300;
-	src: url('./manrope/Manrope-Light.ttf') format('woff');
-}
-
-@font-face {
-	font-family: 'Manrope';
-	font-style: normal;
-	font-weight: 400;
-	src: url('./manrope/Manrope-Regular.ttf') format('woff');
-}
-
-@font-face {
-	font-family: 'Manrope';
-	font-style: normal;
-	font-weight: 500;
-	src: url('./manrope/Manrope-Medium.ttf') format('woff');
-}
-
-@font-face {
-	font-family: 'Manrope';
-	font-style: normal;
-	font-weight: 600;
-	src: url('./manrope/Manrope-SemiBold.ttf') format('woff');
-}
-
-@font-face {
-	font-family: 'Manrope';
-	font-style: normal;
-	font-weight: 700;
-	src: url('./manrope/Manrope-Bold.ttf') format('woff');
+	font-weight: 100;
+	src: url('./teko/Teko-VariableFont_wght.ttf') format('woff');
+	font-display: swap;
 }

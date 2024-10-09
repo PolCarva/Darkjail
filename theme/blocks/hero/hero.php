@@ -11,11 +11,14 @@ $hero_id = uniqid('hero-');
 ?>
 
 <section class="w-full h-svh bg-black relative">
-    <div class="absolute top-0 left-0 w-full h-full bg-black opacity-50 z-0"></div>
-    <div class="absolute text-white bottom-5 left-5 z-10">
-        <h1 class="h1">
-            <?php echo $heading; ?>
-        </h1>
-        <p><?php echo $subheading ?></p>
+    <div class="c-container">
+        <div class="absolute top-0 left-0 w-full h-full bg-black opacity-50 z-0"></div>
+        <div class="absolute text-white bottom-5 left-5 z-10">
+            <h1 class="h1 text-white">
+                <?php echo $heading; ?>
+            </h1>
+
+            <p><?php echo $subheading ?></p>
+        </div>
     </div>
 </section>
