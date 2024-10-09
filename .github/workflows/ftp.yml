@@ -23,7 +23,7 @@ jobs:
       with:
         server: sftp://82.112.247.245
         port: 65002
-        username: ${{ secrets.ftp_staging_user }}
+        username: u903934307
         password: ${{ secrets.ftp_staging_password }}
         ignore: |
           **/.git*
@@ -32,4 +32,4 @@ jobs:
           **/node_modules/**
           **/custom-plugins/**
         uploads: |
-          ./ => wp-content/themes/darkjail/
+          ./ => /home/u903934307/domains/darkjail.com/public_html/wp-content/themes/darkjail/
