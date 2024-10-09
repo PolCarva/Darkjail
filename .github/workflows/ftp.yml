@@ -32,4 +32,4 @@ jobs:
           **/node_modules/**
           **/custom-plugins/**
         uploads: |
-          ./ => domains/darkjail.com/public_html/wp-content
+          ./ => domains/darkjail.com/public_html/wp-content/themes/darkjail/
