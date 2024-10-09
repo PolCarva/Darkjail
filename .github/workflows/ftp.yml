@@ -24,7 +24,7 @@ jobs:
         server: sftp://82.112.247.245
         port: 65002
         username: u903934307
-        password: ${{ secrets.ftp_staging_password }}
+        password: K/99uQoUR$#QT[Hh
         ignore: |
           **/.git*
           **/.git*/**
