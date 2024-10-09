@@ -21,8 +21,8 @@ jobs:
     - name: 📂 Sync files
       uses: Dylan700/sftp-upload-action@v1.2.3
       with:
-        server: ftp://darkjail.com
-        port: 21
+        server: sftp://82.112.247.245
+        port: 65002
         username: ${{ secrets.ftp_staging_user }}
         password: ${{ secrets.ftp_staging_password }}
         ignore: |
