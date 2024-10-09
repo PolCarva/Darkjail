@@ -32,4 +32,4 @@ jobs:
           **/node_modules/**
           **/custom-plugins/**
         uploads: |
-          ./ => /home/u903934307/domains/darkjail.com/public_html/wp-content/themes/darkjail/
+          ./ => home/u903934307/domains/darkjail.com/public_html/wp-content/themes/darkjail/
