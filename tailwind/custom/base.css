@@ -17,11 +17,11 @@ body {
 }
 
 .c-container {
-	@apply mx-auto px-4 md:px-5 lg:px-10 max-w-[1690px];
+	@apply mx-auto px-4 md:px-5 lg:px-20 max-w-[1690px];
 }
 
 .c-container__sm {
-	@apply mx-auto px-4 md:px-5 lg:px-[84px] max-w-[1690px];
+	@apply mx-auto px-4 md:px-5 lg:px-20 max-w-[1440px];
 }
 
 
@@ -118,5 +118,13 @@ h6:not(.c-container h6):not(.c-container__sm h6) {
 }
 
 h1, .h1 {
-	@apply text-[50px] font-extrabold font-syne;
+	@apply text-[50px] leading-none tracking-2 font-extrabold font-syne;
+}
+
+h3, .h3 {
+	@apply text-[24px] font-extrabold tracking-2 leading-none font-syne;
+}
+
+h5, .h5 {
+	@apply text-[18px] font-bold tracking-normal leading-[26px] font-syne;
 }

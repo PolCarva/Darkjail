@@ -6,6 +6,9 @@ module.exports = {
 	content: ['./theme/**/*.php', './theme/theme.json'],
 	theme: {
 		extend: {
+			letterSpacing: {
+				2: '0.02em',
+			},
 			fontFamily: {
 				syne: ['Syne', 'sans-serif'],
 				teko: ['Teko', 'sans-serif'],

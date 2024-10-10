@@ -19,133 +19,110 @@ get_template_part('template-parts/layout/announcement-bar', 'content');
 ?>
 
 
-<header id="masthead" class="fixed z-20 flex justify-center w-full pt-4 pb-8 lg:py-8">
-	<div class="relative flex w-full gap-2 c-container">
-		<?php //logo
+<header id="masthead" class="flex flex-col justify-center w-full -mb-5 relative z-50">
+	<div class="bg-black">
+		<div class="flex w-full gap-2 c-container py-6">
+			<?php //logo
 
-		if ($darkjail_acf_tailwind_logo): ?>
-			<div class="items-center justify-center hidden lg:flex">
-				<a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
-					<img src="<?php echo wp_get_attachment_image_url($darkjail_acf_tailwind_logo, 'medium'); ?>"
-						alt="<?php bloginfo('name'); ?>" class="max-h-14 ">
-				</a>
-			</div>
+			if ($darkjail_acf_tailwind_logo): ?>
+				<div class="items-center justify-center hidden lg:flex">
+					<a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
+						<img src="<?php echo wp_get_attachment_image_url($darkjail_acf_tailwind_logo, 'medium'); ?>"
+							alt="<?php bloginfo('name'); ?>" class="h-10 ">
+					</a>
+				</div>
 			<?php
-		endif;
-		?>
-		<nav id="site-navigation" class="items-center justify-end hidden w-full gap-2 lg:flex"
-			aria-label="<?php esc_attr_e('Main Navigation', 'darkjail-acf-tailwind'); ?>">
-			<div class="flex w-[-webkit-fill-available] justify-center h-full items-center">
-				<?php
-				if (has_nav_menu('menu-1')) {
-					wp_nav_menu(
-						array(
+			endif;
+			?>
+			<nav id="site-navigation" class="items-center justify-end hidden w-full gap-2 lg:flex"
+				aria-label="<?php esc_attr_e('Main Navigation', 'darkjail-acf-tailwind'); ?>">
+				<div class="flex w-[-webkit-fill-available] justify-center h-full items-center">
+					<?php
+					if (has_nav_menu('menu-1')) {
+						wp_nav_menu(
+							array(
+								'theme_location' => 'menu-1', // Replace with your menu location
+								'container' => false,    // Remove the menu container
+								'menu_class' => 'main-nav', // Add your custom CSS classes here
+								'walker' => new Custom_Walker_Nav_Menu(),
+							)
+						);
+					}
+					?>
+				</div>
+
+			</nav><!-- #site-navigation -->
+
+
+			<?php //logo
+
+			if ($darkjail_acf_tailwind_logo):
+			?>
+				<div class="lg:hidden">
+					<a href="<?= esc_url(home_url('/')); ?>" rel="home">
+						<img src="<?= wp_get_attachment_image_url($darkjail_acf_tailwind_logo, 'medium'); ?>"
+							alt="<?php bloginfo('name'); ?>" class="max-h-14 ">
+					</a>
+				</div>
+			<?php
+			endif;
+			?>
+			<nav class="flex justify-end lg:hidden mobile-menu">
+				<input type="checkbox" id="menu-toggle" class="hidden">
+				<label for="menu-toggle" id="mobile-menu-button" class="block h-8 w-8 pt-[9px] mr-4">
+					<div class="hamburger-icon">
+						<span class="bar"></span>
+						<span class="bar"></span>
+						<span class="bar"></span>
+					</div>
+
+				</label>
+				<div id="mobile-menu"
+					class="absolute w-[100dvw] py-24 px-4 mt-0 overflow-hidden transition-all duration-300 ease-in-out bg-white shadow-lg opacity-0 left-0 top-16 max-h-0">
+					<?php
+					// Use wp_nav_menu() or create a custom menu here
+					if (has_nav_menu('menu-1')) {
+						wp_nav_menu(array(
 							'theme_location' => 'menu-1', // Replace with your menu location
 							'container' => false,    // Remove the menu container
-							'menu_class' => 'main-nav', // Add your custom CSS classes here
+							'menu_class' => 'main-nav-mobile', // Add your custom CSS classes here
 							'walker' => new Custom_Walker_Nav_Menu(),
-						)
-					);
-				}
-				?>
-			</div>
-			<!--  -->
-			<div class="flex items-center gap-2">
-				<?php
-				get_template_part('template-parts/components/button', '', array(
-					'type' => 'secondary',
-					'size' => 'medium',
-					'button' => [
-						'text' => 'Login',
-						'url' => [
-							'url' => '#',
-							'target' => '_self',
-						],
-					],
-				));
-				get_template_part('template-parts/components/button', '', array(
-					'type' => 'primary',
-					'size' => 'medium',
-					'button' => [
-						'text' => 'Contact Us',
-						'url' => [
-							'url' => '/get-in-touch',
-							'target' => '_self',
-						],
-					],
-				))
+
+						));
+					}
 					?>
-			</div>
-		</nav><!-- #site-navigation -->
-
-
-		<?php //logo
-
-		if ($darkjail_acf_tailwind_logo):
-			?>
-			<div class="lg:hidden">
-				<a href="<?= esc_url(home_url('/')); ?>" rel="home">
-					<img src="<?= wp_get_attachment_image_url($darkjail_acf_tailwind_logo, 'medium'); ?>"
-						alt="<?php bloginfo('name'); ?>" class="max-h-14 ">
-				</a>
-			</div>
-			<?php
-		endif;
-		?>
-		<nav class="flex justify-end lg:hidden mobile-menu">
-			<input type="checkbox" id="menu-toggle" class="hidden">
-			<label for="menu-toggle" id="mobile-menu-button" class="block h-8 w-8 pt-[9px] mr-4">
-				<div class="hamburger-icon">
-					<span class="bar"></span>
-					<span class="bar"></span>
-					<span class="bar"></span>
-				</div>
-
-			</label>
-			<div id="mobile-menu"
-				class="absolute w-[100dvw] py-24 px-4 mt-0 overflow-hidden transition-all duration-300 ease-in-out bg-white shadow-lg opacity-0 left-0 top-16 max-h-0">
-				<?php
-				// Use wp_nav_menu() or create a custom menu here
-				if (has_nav_menu('menu-1')) {
-					wp_nav_menu(array(
-						'theme_location' => 'menu-1', // Replace with your menu location
-						'container' => false,    // Remove the menu container
-						'menu_class' => 'main-nav-mobile', // Add your custom CSS classes here
-						'walker' => new Custom_Walker_Nav_Menu(),
-
-					));
-				}
-				?>
-				<div class="flex flex-col items-center gap-[42px] mt-[42px]">
-					<?php
-					get_template_part('template-parts/components/button', '', array(
-						'type' => 'secondary',
-						'size' => 'medium',
-						'button' => [
-							'text' => 'Login',
-							'url' => [
-								'url' => '#',
-								'target' => '_self',
+					<div class="flex flex-col items-center gap-[42px] mt-[42px]">
+						<?php
+						get_template_part('template-parts/components/button', '', array(
+							'type' => 'secondary',
+							'size' => 'medium',
+							'button' => [
+								'text' => 'Login',
+								'url' => [
+									'url' => '#',
+									'target' => '_self',
+								],
 							],
-						],
-					));
-					get_template_part('template-parts/components/button', '', array(
-						'type' => 'primary',
-						'size' => 'medium',
-						'button' => [
-							'text' => 'Contact Us',
-							'url' => [
-								'url' => '/get-in-touch',
-								'target' => '_self',
+						));
+						get_template_part('template-parts/components/button', '', array(
+							'type' => 'primary',
+							'size' => 'medium',
+							'button' => [
+								'text' => 'Contact Us',
+								'url' => [
+									'url' => '/get-in-touch',
+									'target' => '_self',
+								],
 							],
-						],
-					))
+						))
 						?>
+					</div>
 				</div>
-			</div>
-		</nav>
+			</nav>
 
+		</div>
 	</div>
+	<div class="bg-gradient-to-b from-black h-5 to-black/0"></div>
 </header><!-- #masthead -->
 
 <?php
