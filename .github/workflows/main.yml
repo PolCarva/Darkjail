@@ -22,8 +22,8 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
         server: ftp.darkjail.com
-        username: u903934307.ftp
-        password: 5x+MOmXZqPIW2[o>
+        username: ${{secrets.FTP_STAGING_USER}}
+        password: ${{ secrets.FTP_STAGING_PASSWORD }}
         exclude: |
           **/.git*
           **/.git*/**
