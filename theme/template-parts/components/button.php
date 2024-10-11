@@ -26,8 +26,8 @@ extract($args);
 
 $text = $button['text'];
 $url = $button['url'] ?? '';
-$button_type = $button['_type'] ?? 'button';
-$target = $url['target'] ?? '_self';
+$button_type = $button['type'] ?? 'button';
+$target = $button['target'] ?? '_self';
 
 //show_icon should be optional
 $custom_class = $button['custom_class'] ?? '';

@@ -19,7 +19,7 @@ jobs:
       run: npm run build
 
     - name: 📂 Sync files
-      uses: Dylan700/sftp-upload-action@v1.2.3
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
         server: sftp://82.112.247.245
         port: 65002

@@ -5,7 +5,7 @@ $second_line_heading = get_field('second_line_heading');
 $subheading = get_field('subheading');
 $main_image = get_field('main_image');
 $mobile_image = get_field('mobile_image');
-$button = get_field('button');
+$buttons = get_field('buttons');
 
 $next_date = get_field('next_date', "options");
 
@@ -14,43 +14,56 @@ $hero_id = uniqid('hero-');
 
 ?>
 
-<section class="w-full h-[70svh] relative grid">
-    <div class="c-container">
-        <div class="absolute top-0 left-0 w-full h-full py-10 z-10"></div>
-        <div class="absolute text-white left-0 h-[85%] c-container flex flex-col gap-2 justify-end z-10">
+<section class="w-full min-h-[65svh] md:min-h-[50svh] lg:min-h-[70svh] grid relative">
+    <div class="relative z-20 c-container w-full h-full">
+        <div class="absolute text-white left-0 items-end bottom-20 px-4 md:px-5 lg:px-20">
             <h1 class="h1 flex flex-col text-white">
                 <?php echo $heading; ?>
                 <span class="block"><?php echo $second_line_heading; ?></span>
             </h1>
 
-            <p class="mb-3">
+            <div class="my-3 [&_p]:text-[20px] [&_p]:lg:text-[30px] [&_p]:font-normal [&_p]:leading-none [&_p]:tracking-normal [&_p]:font-teko ">
                 <?php echo $subheading ?>
-            </p>
-            <?php if ($button) {
-                get_template_part('template-parts/components/button', '', array(
-                    'type' => $button['button_type'],
-                    'size' => 'medium',
-                    'button' => [
-                        'text' => $button['text'],
-                        'url' => $button['url'],
-                        'target' => '_self',
-                    ],
-                ));
-            }
-            ?>
+            </div>
+
+            <?php if ($buttons) { ?>
+                <div class="flex flex-col md:flex-row items-center mt-5 gap-4">
+                    <?php foreach ($buttons as $index) {
+                        $button = $index['button'];
+                        $button_text = $button['text'];
+                        $button_link = $button['link'];
+                        $button_type = $button['type'];
+
+                        get_template_part('template-parts/components/button', '', array(
+                            'type' => $button_type,
+                              'size' => 'medium',
+                            'button' => array(
+                              'text' => $button_text,
+                              'url' => $button_link,
+                              'custom_class' => '',
+                              'container_class' => '',
+                            )
+                          ));
+                          
+                    }
+
+                    ?>
+                </div>
+            <?php } ?>
+
+        </div>
+        <div class="absolute shadow-[10px_10px_0px_#FF6400] w-[calc(100%-2rem)] sm:w-auto px-10 bg-white py-5 right-1/2 translate-x-1/2 sm:translate-x-0 sm:right-5 lg:right-20 md:py-5 md:px-20 bottom-0 translate-y-1/2 flex flex-col gap-2 justify-end z-20">
+
+            <h2 class="h1 md:text-[36px] lg:!text-[50px] text-black text-center"><?= $next_date; ?></h2>
+            <p class="h5 text-black uppercase text-center">PRÓXIMA FECHA</p>
         </div>
     </div>
-    <div class="absolute shadow-[10px_10px_0px_#FF6400] bg-white py-5 right-4 md:right-5 lg:right-20 bottom-0 translate-y-1/2 c-container flex flex-col gap-2 justify-end z-10">
-
-        <h2 class="h1 text-black text-center"><?= $next_date; ?></h2>
-        <p class="h5 text-black uppercase text-center">PRÓXIMA FECHA</p>
-    </div>
-
+    <div class="bg-black/20 absolute inset-0 z-10"></div>
     <?php if ($main_image) {
         get_template_part('template-parts/components/image', '', array(
             'image_id' => $main_image,
             'mobile_image_id' => $mobile_image,
-            'image_class' => 'absolute inset-0 w-full h-full object-cover',
+            'image_class' => 'absolute z-0 inset-0 w-full h-full object-cover',
             'image_size' => 'extra-large',
         ));
     }

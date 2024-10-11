@@ -8,6 +8,7 @@ module.exports = {
 		extend: {
 			letterSpacing: {
 				2: '0.02em',
+				2.5: '0.025em',
 			},
 			fontFamily: {
 				syne: ['Syne', 'sans-serif'],
