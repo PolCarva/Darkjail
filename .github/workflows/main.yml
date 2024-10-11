@@ -21,10 +21,9 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
-        server: sftp://darkjail.com
-        username: u903934307
-        password: K/99uQoUR$#QT[Hh
-        protocol: ftps
+        server: ftp.darkjail.com
+        username: u903934307.pablo
+        password: 5x+MOmXZqPIW2[o>
         port: 65002
         exclude: |
           **/.git*
@@ -33,4 +32,4 @@ jobs:
           **/node_modules/**
           **/custom-plugins/**
         local-dir: ./
-        remote-dir: domains/darkjail.com/public_html/wp-content/themes/darkjail/
+        remote-dir: wp-content/themes/darkjail/
