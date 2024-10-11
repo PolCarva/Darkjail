@@ -23,7 +23,7 @@ $hero_id = uniqid('hero-');
             </h1>
 
             <div class="my-3 [&_p]:text-[20px] [&_p]:lg:text-[30px] [&_p]:font-normal [&_p]:leading-none [&_p]:tracking-normal [&_p]:font-teko ">
-                <?php echo $subheading ?>
+                <?php echo $subheading ?> a
             </div>
 
             <?php if ($buttons) { ?>
