@@ -19,17 +19,18 @@ jobs:
       run: npm run build
 
     - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
-        server: sftp://82.112.247.245
+        server: sftp://darkjail.com
         port: 65002
+        protocol: sftp	
         username: u903934307
         password: K/99uQoUR$#QT[Hh
-        ignore: |
+        exclude: |
           **/.git*
           **/.git*/**
           **/.vscode/**
           **/node_modules/**
           **/custom-plugins/**
-        uploads: |
-          ./ => wp-content/themes/darkjail/
+        local-dir: ./
+        remote-dir: wp-content/themes/darkjail/
