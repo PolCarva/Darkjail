@@ -22,7 +22,7 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
         server: ftp.darkjail.com
-        username: u903934307.pablo
+        username: u903934307.ftp
         password: 5x+MOmXZqPIW2[o>
         exclude: |
           **/.git*
@@ -30,4 +30,5 @@ jobs:
           **/.vscode/**
           **/node_modules/**
           **/custom-plugins/**
-        remote-dir: wp-content/themes/darkjail/
+        local-dir: ./
+        remote-dir: ./
