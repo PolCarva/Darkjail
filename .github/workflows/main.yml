@@ -24,7 +24,6 @@ jobs:
         server: ftp.darkjail.com
         username: u903934307.pablo
         password: 5x+MOmXZqPIW2[o>
-        port: 65002
         exclude: |
           **/.git*
           **/.git*/**
