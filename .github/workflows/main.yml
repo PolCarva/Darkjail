@@ -31,4 +31,4 @@ jobs:
           **/node_modules/**
           **/custom-plugins/**
         local-dir: ./
-        remote-dir: ./wp-content/themes/darkjail/
+        remote-dir: wp-content/themes/darkjail/
