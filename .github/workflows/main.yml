@@ -22,10 +22,10 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
         server: sftp://darkjail.com
-        port: 65002
-        protocol: sftp	
         username: u903934307
         password: K/99uQoUR$#QT[Hh
+        protocol: ftps
+        port: 65002
         exclude: |
           **/.git*
           **/.git*/**
