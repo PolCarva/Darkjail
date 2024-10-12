@@ -14,7 +14,7 @@ $hero_id = uniqid('hero-');
 
 ?>
 
-<section class="w-full min-h-[65svh] md:min-h-[50svh] lg:min-h-[70svh] grid relative">
+<section class="w-full min-h-[65svh] md:min-h-[50svh] lg:min-h-[70svh] grid relative mb-20">
     <div class="relative z-20 c-container w-full h-full">
         <div class="absolute text-white left-0 items-end bottom-20 px-4 md:px-5 lg:px-20">
             <h1 class="h1 flex flex-col text-white">
@@ -52,9 +52,9 @@ $hero_id = uniqid('hero-');
             <?php } ?>
 
         </div>
-        <div class="absolute shadow-[10px_10px_0px_#FF6400] w-[calc(100%-2rem)] sm:w-auto px-10 bg-white py-5 right-1/2 translate-x-1/2 sm:translate-x-0 sm:right-5 lg:right-20 md:py-5 md:px-20 bottom-0 translate-y-1/2 flex flex-col gap-2 justify-end z-20">
+        <div class="absolute shadow-[10px_10px_0px_#FF6400] sm:w-auto px-10 w-max bg-white py-5 right-5 lg:right-20 md:py-5 md:px-20 bottom-0 translate-y-1/2 flex flex-col gap-2 justify-end z-20">
 
-            <h2 class="h1 md:text-[36px] lg:!text-[50px] text-black text-center"><?= $next_date; ?></h2>
+            <h2 class="h1 !text-[24px] lg:!text-[30px] md:!text-[30px] text-black text-center"><?= $next_date; ?></h2>
             <p class="h5 text-black uppercase text-center">PRÓXIMA FECHA</p>
         </div>
     </div>
@@ -71,3 +71,4 @@ $hero_id = uniqid('hero-');
 
 
 </section>
+

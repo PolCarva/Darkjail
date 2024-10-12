@@ -122,7 +122,7 @@ get_template_part('template-parts/layout/announcement-bar', 'content');
 
 		</div>
 	</div>
-	<div class="bg-gradient-to-b from-black h-5 to-black/0"></div>
+	<div class="bg-gradient-to-b from-black h-5 to-black/0 -translate-y-px"></div>
 </header><!-- #masthead -->
 
 <?php

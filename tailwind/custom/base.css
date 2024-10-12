@@ -118,7 +118,7 @@ h6:not(.c-container h6):not(.c-container__sm h6) {
 }
 
 h1, .h1 {
-	@apply text-[36px] md:text-[50px] lg:text-[80px] leading-none tracking-2 font-extrabold font-syne;
+	@apply text-[36px] md:text-[50px] lg:text-[64px] leading-none tracking-2 font-extrabold font-syne;
 }
 
 h2, .h2 {
@@ -134,7 +134,7 @@ h4, .h4 {
 }
 
 h5, .h5 {
-	@apply text-[18px] font-bold tracking-normal leading-[26px] font-syne;
+	@apply text-[16px] md:text-[18px] font-bold tracking-normal leading-[26px] font-syne;
 }
 
 .subtitle-1 {
