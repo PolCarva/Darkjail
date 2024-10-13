@@ -46,9 +46,10 @@ if ($youtube_url):
         <!-- Modal (solo visible en el frontend, no en el editor) -->
         <?php if (!is_admin()): ?>
             <div @click="open = false; embedUrl = ''" x-show="open" @keydown.window.escape="open = false; embedUrl = ''" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 z-50"
-            :class="{ 'hidden': !open }"
-            x-cloak>
-                <div class="bg-primary p-2 max-w-screen-md w-full relative">
+
+                x-cloak>
+                <div class="p-2 max-w-screen-md w-full relative"
+                    :class="{ 'bg-primary': open }">
                     <!-- Botón para cerrar la modal -->
                     <button @click="open = false; embedUrl = ''" class="text-2xl size-8 absolute z-20 -top-8 right-0 lg:-right-8 text-white hover:text-white/80 transition">
                         &#10005;
