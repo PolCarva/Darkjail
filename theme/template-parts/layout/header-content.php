@@ -78,7 +78,7 @@ get_template_part('template-parts/layout/announcement-bar', 'content');
 
 				</label>
 				<div id="mobile-menu"
-					class="absolute w-[100dvw] py-24 px-4 mt-0 overflow-hidden transition-all duration-300 ease-in-out bg-white shadow-lg opacity-0 left-0 top-16 max-h-0">
+					class="absolute w-full max-w-svw py-24 px-4 mt-0 overflow-hidden transition-all duration-300 ease-in-out bg-white shadow-lg opacity-0 left-0 top-16 max-h-0">
 					<?php
 					// Use wp_nav_menu() or create a custom menu here
 					if (has_nav_menu('menu-1')) {

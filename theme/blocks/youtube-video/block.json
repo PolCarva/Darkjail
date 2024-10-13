@@ -1,0 +1,13 @@
+{
+    "name": "acf/youtube-video",
+    "title": "Video de youtube",
+    "description": "Componente de video de youtube",
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["video", "youtube"],
+    "acf": {
+        "mode": "auto",
+        "renderTemplate": "youtube-video.php"
+    },
+    "align": "full"
+}

@@ -1,0 +1,13 @@
+{
+    "name": "acf/heading-and-text",
+    "title": "Título y texto",
+    "description": "Componente de título y texto",
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["heading", "text", "title", "texto", "título"],
+    "acf": {
+        "mode": "auto",
+        "renderTemplate": "heading-and-text.php"
+    },
+    "align": "full"
+}
