@@ -45,7 +45,8 @@ if ($youtube_url):
 
         <!-- Modal (solo visible en el frontend, no en el editor) -->
         <?php if (!is_admin()): ?>
-            <div @click="open = false; embedUrl = ''" x-show="open" @keydown.window.escape="open = false; embedUrl = ''" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 z-50"
+            <div @click="open = false; embedUrl = ''" x-show="open" @keydown.window.escape="open = false; embedUrl = ''" class="fixed flex inset-0 items-center justify-center bg-black bg-opacity-75 z-50"
+                :class="{'!hidden': !open}"
 
                 x-cloak>
                 <div class="p-2 max-w-screen-md w-full relative"
