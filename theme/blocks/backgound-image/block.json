@@ -1,0 +1,13 @@
+{
+    "name": "acf/backgorund-image",
+    "title": "Imagen de fondo",
+    "description": "Bloque para mostrar una imagen de fondo y unificar el estilo de las secciones.",
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["background","image", "fondo", "imagen", "secciones"],
+    "acf": {
+        "mode": "auto",
+        "renderTemplate": "background-image.php"
+    },
+    "align": "full"
+}
