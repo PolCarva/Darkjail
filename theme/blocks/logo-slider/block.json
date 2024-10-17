@@ -1,0 +1,13 @@
+{
+    "name": "acf/logo-slider",
+    "title": "Carrusel de logos",
+    "description": "Bloque para mostrar un carrusel de logos de clientes o marcas.",
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["logo","slider", "carrusel", "marcas", "clientes"],
+    "acf": {
+        "mode": "auto",
+        "renderTemplate": "logo-slider.php"
+    },
+    "align": "full"
+}
