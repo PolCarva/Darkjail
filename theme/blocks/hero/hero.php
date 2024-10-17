@@ -14,7 +14,7 @@ $hero_id = uniqid('hero-');
 
 ?>
 
-<section class="w-full min-h-[65svh] md:min-h-[50svh] lg:min-h-[70svh] grid relative mb-24 md:mb-20">
+<section class="w-full min-h-[80svh] md:min-h-[60svh] lg:min-h-[86svh] grid relative mb-24 md:mb-20">
     <div class="relative z-20 c-container w-full h-full">
         <div class="absolute text-white left-0 items-end bottom-20 px-4 md:px-5 lg:px-20">
             <h1 class="h1 flex flex-col text-white">

@@ -18,7 +18,7 @@ if ($youtube_url):
     $embed_url = "https://www.youtube-nocookie.com/embed/$youtube_id";
 ?>
 
-    <section class="c-container__sm mt-10"
+    <section class="c-container__sm max-w-sceen-lg mx-auto mt-10"
         <?php if (!is_admin()): // Solo aplicar Alpine.js si no estamos en el editor 
         ?>
         x-data="{ open: false, embedUrl: '' }"
