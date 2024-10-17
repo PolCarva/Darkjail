@@ -62,7 +62,7 @@ if (!defined('DARKJAIL_ACF_TAILWIND_TYPOGRAPHY_CLASSES')) {
 	 */
 	define(
 		'DARKJAIL_ACF_TAILWIND_TYPOGRAPHY_CLASSES',
-		'prose-a:text-black'
+		'prose-a:text-white'
 	);
 }
 

@@ -1,0 +1,13 @@
+{
+    "name": "acf/image-content",
+    "title": "Imágen y contenido",
+    "description": "Bloque de imágen y contenido",
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["imágen", "contenido"],
+    "acf": {
+        "mode": "auto",
+        "renderTemplate": "image-content.php"
+    },
+    "align": "full"
+}

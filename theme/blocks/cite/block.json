@@ -1,0 +1,13 @@
+{
+    "name": "acf/quote",
+    "title": "Cita",
+    "description": "Componente de cita",
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["cita", "quote"],
+    "acf": {
+        "mode": "auto",
+        "renderTemplate": "quote.php"
+    },
+    "align": "full"
+}

@@ -17,16 +17,20 @@ body {
 }
 
 .entry-title {
-	@apply !text-white;
+	@apply  !text-white;
 }
+
 .c-container {
 	@apply mx-auto px-4 md:px-5 lg:px-20 max-w-[1690px];
 }
 
-.c-container__sm {
+.c-container__sm, .wp-block-columns {
 	@apply mx-auto px-4 md:px-5 lg:px-20 max-w-[1440px];
 }
 
+.wp-block-columns .c-container {
+	@apply  !px-0;
+}
 
 .wordpress-pages-container>*:not(div):not(article):not(section) {
 	@apply max-w-[73rem] px-8;
@@ -89,7 +93,7 @@ body {
 .c-container__sm h4,
 .c-container__sm h5,
 .c-container__sm h6 {
-  /* Sin estilos */
+	/* Sin estilos */
 }
 
 h1:not(.c-container h1):not(.c-container__sm h1),
@@ -98,8 +102,9 @@ h3:not(.c-container h3):not(.c-container__sm h3),
 h4:not(.c-container h4):not(.c-container__sm h4),
 h5:not(.c-container h5):not(.c-container__sm h5),
 h6:not(.c-container h6):not(.c-container__sm h6) {
-  @apply !mb-4 scroll-mt-[80px] md:scroll-mt-[110px];
+	@apply  !mb-4 scroll-mt-[80px] md:scroll-mt-[110px];
 }
+
 
 
 #main article ol {
@@ -141,5 +146,9 @@ h5, .h5 {
 }
 
 .subtitle-1 {
-	@apply text-[16px] md:text-[18px] lg:text-[30px] font-normal uppercase leading-none tracking-normal font-teko; 
+	@apply text-[16px] md:text-[18px] lg:text-[30px] font-normal uppercase leading-none tracking-normal font-teko;
+}
+
+small, .small {
+	@apply text-[12px] font-light tracking-normal leading-none font-heebo;
 }

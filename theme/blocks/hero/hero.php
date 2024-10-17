@@ -10,11 +10,11 @@ $buttons = get_field('buttons');
 $next_date = get_field('next_date', "options");
 
 
-$hero_id = uniqid('hero-');
+$block_id = uniqid('hero-');
 
 ?>
 
-<section class="w-full min-h-[80svh] md:min-h-[60svh] lg:min-h-[86svh] grid relative mb-24 md:mb-20">
+<section id="<?= $block_id ?>" class="w-full min-h-[80svh] md:min-h-[60svh] lg:min-h-[86svh] grid relative mb-24 md:mb-20">
     <div class="relative z-20 c-container w-full h-full">
         <div class="absolute text-white left-0 items-end bottom-20 px-4 md:px-5 lg:px-20">
             <h1 class="h1 flex flex-col text-white">
@@ -36,15 +36,14 @@ $hero_id = uniqid('hero-');
 
                         get_template_part('template-parts/components/button', '', array(
                             'type' => $button_type,
-                              'size' => 'medium',
+                            'size' => 'medium',
                             'button' => array(
-                              'text' => $button_text,
-                              'url' => $button_link,
-                              'custom_class' => '',
-                              'container_class' => '',
+                                'text' => $button_text,
+                                'url' => $button_link,
+                                'custom_class' => '',
+                                'container_class' => '',
                             )
-                          ));
-                          
+                        ));
                     }
 
                     ?>
@@ -69,6 +68,9 @@ $hero_id = uniqid('hero-');
     }
     ?>
 
-
+    <?php
+    get_template_part('template-parts/styles/margin-styles', '', array(
+        'section_id' => $block_id,
+    ));
+    ?>
 </section>
-
