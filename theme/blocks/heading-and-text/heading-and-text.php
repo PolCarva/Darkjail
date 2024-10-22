@@ -29,7 +29,7 @@ if ($text_align === 'right') {
 } else if ($text_align === 'center') {
     $text_styles .= ' text-center';
 } else {
-    $text_styles .= ' text-left max-w-[80%]';
+    $text_styles .= ' text-left md:max-w-[80%]';
 }
 
 $block_id = 'heading-and-text-' . uniqid();

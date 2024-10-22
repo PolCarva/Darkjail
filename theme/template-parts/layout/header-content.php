@@ -28,7 +28,7 @@ get_template_part('template-parts/layout/announcement-bar', 'content');
 				<div class="items-center justify-center hidden lg:flex">
 					<a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
 						<img src="<?php echo wp_get_attachment_image_url($darkjail_acf_tailwind_logo, 'medium'); ?>"
-							alt="<?php bloginfo('name'); ?>" class="h-10 ">
+							alt="<?php bloginfo('name'); ?>" class="h-5 md:h-10 ">
 					</a>
 				</div>
 			<?php
@@ -61,19 +61,19 @@ get_template_part('template-parts/layout/announcement-bar', 'content');
 				<div class="lg:hidden">
 					<a href="<?= esc_url(home_url('/')); ?>" rel="home">
 						<img src="<?= wp_get_attachment_image_url($darkjail_acf_tailwind_logo, 'medium'); ?>"
-							alt="<?php bloginfo('name'); ?>" class="max-h-14 ">
+							alt="<?php bloginfo('name'); ?>" class="max-h-8 md:max-h-14 ">
 					</a>
 				</div>
 			<?php
 			endif;
 			?>
-			<nav class="flex justify-end lg:hidden mobile-menu">
-				<input type="checkbox" id="menu-toggle" class="hidden">
+			<!-- <nav class="flex justify-end lg:hidden mobile-menu">
+				<input type="checkbox" id="menu-toggle" class="">
 				<label for="menu-toggle" id="mobile-menu-button" class="block h-8 w-8 pt-[9px] mr-4">
-					<div class="hamburger-icon">
-						<span class="bar"></span>
-						<span class="bar"></span>
-						<span class="bar"></span>
+					<div class="hamburger-icon w-full">
+						<span class="bar w-full bg-white"></span>
+						<span class="bar w-full bg-white"></span>
+						<span class="bar w-full bg-white"></span>
 					</div>
 
 				</label>
@@ -118,7 +118,7 @@ get_template_part('template-parts/layout/announcement-bar', 'content');
 						?>
 					</div>
 				</div>
-			</nav>
+			</nav> -->
 
 		</div>
 	</div>

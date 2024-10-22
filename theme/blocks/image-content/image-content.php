@@ -8,8 +8,8 @@ $block_id = uniqid('image-content-');
 ?>
 
 <section id="<?= $block_id ?>">
-    <div class="c-container w-full h-full flex flex-col gap-2 <?php echo $inverted ? 'md:flex-row-reverse' : 'md:flex-row' ?>">
-        <div class="md:w-1/2 flex justify-end">
+    <div class="c-container w-full h-full flex flex-col gap-10 md:gap-2 <?php echo $inverted ? 'md:flex-row-reverse' : 'md:flex-row' ?>">
+        <div class="md:w-1/2 flex md:justify-end">
             <?php if ($main_image) {
                 get_template_part('template-parts/components/image', '', array(
                     'image_id' => $main_image,
@@ -20,7 +20,7 @@ $block_id = uniqid('image-content-');
             ?>
         </div>
         <div class="md:w-1/2">
-            <InnerBlocks class="px-5 md:px-0 flex h-full flex-col justify-center <?php echo $inverted ? 'items-end' : 'items-start' ?>" />
+            <InnerBlocks class="md:px-0 flex h-full flex-col justify-center <?php echo $inverted ? 'items-end' : 'items-start' ?>" />
         </div>
     </div>
 
