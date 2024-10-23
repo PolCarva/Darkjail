@@ -1,0 +1,13 @@
+{
+    "name": "acf/shorts-slider",
+    "title": "Carrusel de shorts",
+    "description": "Bloque de carrusel de shorts",
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["shorts", "carrusel"],
+    "acf": {
+        "mode": "auto",
+        "renderTemplate": "shorts-slider.php"
+    },
+    "align": "full"
+}

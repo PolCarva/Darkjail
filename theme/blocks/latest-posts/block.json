@@ -1,0 +1,13 @@
+{
+    "name": "acf/latest-posts",
+    "title": "Últimos posts",
+    "description": "Bloque de los últimos posts",
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["posts", "últimos"],
+    "acf": {
+        "mode": "auto",
+        "renderTemplate": "latest-posts.php"
+    },
+    "align": "full"
+}

@@ -149,6 +149,10 @@ h5, .h5 {
 	@apply text-[16px] md:text-[18px] lg:text-[30px] font-normal uppercase leading-none tracking-normal font-teko;
 }
 
+.subtitle-2 {
+	@apply text-[18px] md:text-[20px] font-normal uppercase leading-none tracking-normal font-teko;
+}
+
 small, .small {
 	@apply text-[12px] font-light tracking-normal leading-none font-heebo;
 }
