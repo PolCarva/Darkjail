@@ -16,6 +16,7 @@ Use example:
 extract($args);
 
 $image_id = $image_id;
+$image_url = $image_url ?? '';
 $mobile_image_id = $mobile_image_id ?? '';
 $image_position = $image_position ?? 'center';
 $alt_text 	  ??= get_post_meta($image_id, '_wp_attachment_image_alt', true);

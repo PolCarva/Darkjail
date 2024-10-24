@@ -16,6 +16,10 @@ body {
 	@apply bg-background text-white;
 }
 
+body:has(.modalOpened) {
+	@apply max-h-svh overflow-hidden;
+}
+
 .entry-title {
 	@apply  !text-white;
 }
@@ -108,12 +112,12 @@ h6:not(.c-container h6):not(.c-container__sm h6) {
 
 
 #main article ol {
-	padding-left: 2rem;
+	padding-left:2rem;
 	@apply pl-8 mx-auto mb-8 list-decimal list-outside;
 }
 
 #main article ul {
-	padding-left: 2rem;
+	padding-left:2rem;
 	@apply pl-8 mx-auto mb-8 list-disc list-outside;
 }
 

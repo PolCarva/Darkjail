@@ -4,29 +4,56 @@ $shorts = get_field('shorts');
 $block_id = uniqid("shorts-slider-");
 ?>
 
-<section class="max-w-sceen-lg mx-auto mt-10" id="<?= $block_id ?>">
-    <div x-data="shortSlider" class="swiper relative swiper-container">
-        <div class="swiper-wrapper" x-data="{ activeIndex: 2, hoveredIndex: null }">
+<section class="max-w-sceen-lg mx-auto mt-10" id="<?= $block_id ?>"
+    <?php if (!is_admin()): ?>
+    x-data="{ showModal: false, selectedVideo: '' }"
+    <?php endif; ?>>
+
+    <div
+        <?php if (!is_admin()): ?>
+        x-data="shortSlider"
+        <?php endif; ?>
+        class="swiper relative swiper-container px-5 md:px-20">
+        <div class="swiper-wrapper"
+            <?php if (!is_admin()): ?>
+            x-data="{ activeIndex: 2, hoveredIndex: null }"
+            <?php endif; ?>>
 
 
             <?php foreach ($shorts as $index => $short) :
                 $short_link = $short['link'];
                 $thumbnail = $short['thumbnail_img'];
+                if (strpos($short_link, '/shorts/') !== false) {
+                    $embed_link = str_replace("/shorts/", "/embed/", $short_link);
+                } else {
+                    $embed_link = str_replace("watch?v=", "embed/", $short_link);
+                }
             ?>
                 <!-- Miniatura del video -->
-                <div class="flex justify-center w-full relative swiper-slide">
+                <div class="flex justify-center  relative swiper-slide <?php echo is_admin() ? 'mr-5 md:!max-w-[22%]' : 'w-full' ?>">
                     <div class="relative group w-full aspect-h-16 aspect-w-9 cursor-pointer overflow-hidden"
-                        x-data
+                        <?php if (!is_admin()): ?>
                         @mouseenter="hoveredIndex = <?= $index ?>; activeIndex = <?= $index ?>"
                         @mouseleave="hoveredIndex = null"
-                        :class="{ 'hovered': hoveredIndex === <?= $index ?> }">
+                        @click="showModal = true; selectedVideo = '<?= esc_url($embed_link); ?>';"
+                        :class="{ 'hovered': hoveredIndex === <?= $index ?> }"
+                        <?php endif; ?>>
+
+                        <!-- Imagen miniatura -->
                         <img src="<?php echo esc_url($thumbnail['url']); ?>" alt="Miniatura del video" class="cursor-pointer w-full h-full group-hover:scale-110 object-cover shadow-lg hover:shadow-xl transition duration-300">
+
+                        <!-- Overlay para el hover y active -->
                         <div
-                            class="hidden md:block bg-black overlay bg-opacity-10 transition inset-0 absolute"
-                            :class="{ 'backdrop-blur-0 bg-opacity-0': activeIndex === <?= $index ?> || hoveredIndex === <?= $index ?> || activeIndex === null && $el.closest('.swiper-slide').classList.contains('swiper-slide-next'),
-                              'backdrop-blur-sm': hoveredIndex !== <?= $index ?> && (activeIndex !== <?= $index ?> || activeIndex === null && !$el.closest('.swiper-slide').classList.contains('swiper-slide-next')) }">
+                            class="hidden md:block bg-black bg-opacity-10 transition inset-0 absolute"
+                            <?php if (!is_admin()): ?>
+                            :class="{ 
+                                'backdrop-blur-0 bg-opacity-0': activeIndex === <?= $index ?> || hoveredIndex === <?= $index ?>, 
+                                'backdrop-blur-sm': hoveredIndex !== <?= $index ?> && activeIndex !== <?= $index ?> 
+                            }"
+                            <?php endif; ?>>
                         </div>
-                        <!-- Play button -->
+
+                        <!-- Botón de Play -->
                         <svg class="cursor-pointer absolute fill-primary hover:fill-primary-700 group-hover:scale-110 transition left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 size-12 md:size-16 lg:size-28" width="110" height="110" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect width="110" height="110" rx="55" fill="white" fill-opacity="0.6" />
                             <path d="M85.7657 55.275C85.7675 56.0278 85.5745 56.7683 85.2054 57.4244C84.8363 58.0805 84.3037 58.63 83.6593 59.0193L43.7278 83.4472C43.0546 83.8594 42.2835 84.0845 41.4942 84.0991C40.7049 84.1137 39.926 83.9173 39.238 83.5303C38.5565 83.1493 37.9888 82.5936 37.5933 81.9204C37.1978 81.2472 36.9887 80.4809 36.9875 79.7001V30.8499C36.9887 30.0692 37.1978 29.3028 37.5933 28.6296C37.9888 27.9564 38.5565 27.4008 39.238 27.0197C39.926 26.6327 40.7049 26.4363 41.4942 26.451C42.2835 26.4656 43.0546 26.6906 43.7278 27.1029L83.6593 51.5307C84.3037 51.9201 84.8363 52.4695 85.2054 53.1256C85.5745 53.7817 85.7675 54.5222 85.7657 55.275Z" />
@@ -34,6 +61,8 @@ $block_id = uniqid("shorts-slider-");
                     </div>
                 </div>
             <?php endforeach; ?>
+
+
         </div>
 
         <div class="short-slider__prev hidden md:block absolute top-1/2 -translate-y-1/2 left-5 z-10">
@@ -48,6 +77,29 @@ $block_id = uniqid("shorts-slider-");
 
         </div>
     </div>
+    <!-- Modal (solo visible en el frontend, no en el editor) -->
+    <?php if (!is_admin()): ?>
+        <div @click="showModal = false; selectedVideo = ''" x-show="showModal" @keydown.window.escape="showModal = false; selectedVideo = ''" class="fixed flex inset-0 items-center justify-center bg-black bg-opacity-75 z-50"
+            :class="{'!hidden': !showModal, 'modalOpened': showModal}"
+
+            x-cloak>
+            <div class="p-2 max-w-[85vw] md:max-w-[400px] w-full relative"
+                :class="{ 'bg-primary': showModal }">
+                <!-- Botón para cerrar la modal -->
+                <button @click="showModal = false; selectedVideo = ''" class="text-2xl size-8 absolute z-20 -top-8 right-0 lg:-right-8 text-white hover:text-white/80 transition">
+                    &#10005;
+                </button>
+
+                <!-- Video de YouTube embebido sin cookies y con autoplay -->
+                <div class="aspect-w-9 aspect-h-16"> <!-- Proporción vertical 9:16 -->
+                    <iframe class="w-full h-full" :src="selectedVideo" frameborder="0" allow="autoplay" allowfullscreen></iframe>
+                </div>
+
+            </div>
+
+        </div>
+    <?php endif; ?>
+
 
 </section>
 
@@ -59,7 +111,7 @@ $block_id = uniqid("shorts-slider-");
             init() {
                 new Swiper(this.$el, {
                     direction: 'horizontal',
-                    slidesPerView: 2.2,
+                    slidesPerView: 1.75,
                     initialSlide: 1,
                     spaceBetween: 20,
                     breakpoints: {
