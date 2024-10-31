@@ -1,0 +1,13 @@
+{
+    "name": "acf/event-results",
+    "title": "Resultado de eventos",
+    "description": "Bloque para mostrar los resultados de un evento.",
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["event","results", "evento", "resultados"],
+    "acf": {
+        "mode": "auto",
+        "renderTemplate": "event-results.php"
+    },
+    "align": "full"
+}

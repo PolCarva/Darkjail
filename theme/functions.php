@@ -279,13 +279,41 @@ function custom_customize_register($wp_customize)
 		'section' => 'custom_site_identity',
 		'type' => 'text',
 	));
-
-
-
-	// Add any other custom fields you need
-
 }
 add_action('customize_register', 'custom_customize_register');
 
 // Add a custom image size
 add_image_size('extra-large', 1920, 1920, true);
+
+add_filter('acf/load_field/name=event_selector', function ($field) {
+	global $wpdb;
+	$table_name = $wpdb->prefix . 'darkjail_results';
+
+	// Obtener eventos únicos de la tabla
+	$events = $wpdb->get_col("SELECT DISTINCT event FROM $table_name");
+	if ($events) {
+		foreach ($events as $event) {
+			$field['choices'][$event] = $event;
+		}
+	}
+	return $field;
+});
+
+
+function get_darkjail_results() {
+    global $wpdb;
+    $table_name = $wpdb->prefix . 'darkjail_results';
+
+    $event = isset($_GET['event']) ? sanitize_text_field($_GET['event']) : '';
+
+    if (!$event) {
+        wp_send_json_error('Evento no especificado.');
+    }
+
+    $results = $wpdb->get_results($wpdb->prepare(
+        "SELECT participants, phase, video_url FROM $table_name WHERE event = %s",
+        $event
+    ), ARRAY_A);
+
+    wp_send_json($results);
+}
