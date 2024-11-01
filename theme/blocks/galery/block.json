@@ -1,0 +1,13 @@
+{
+    "name": "acf/galery",
+    "title": "Galería",
+    "description": "Galería de imágenes",
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["galery", "img", "images", "galeria", "imagenes"],
+    "acf": {
+        "mode": "auto",
+        "renderTemplate": "galery.php"
+    },
+    "align": "full"
+}
