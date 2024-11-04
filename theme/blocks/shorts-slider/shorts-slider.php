@@ -79,11 +79,11 @@ $block_id = uniqid("shorts-slider-");
     </div>
     <!-- Modal (solo visible en el frontend, no en el editor) -->
     <?php if (!is_admin()): ?>
-        <div @click="showModal = false; selectedVideo = ''" x-show="showModal" @keydown.window.escape="showModal = false; selectedVideo = ''" class="fixed flex inset-0 items-center justify-center bg-black bg-opacity-75 z-50"
+        <div @click="showModal = false; selectedVideo = ''" x-show="showModal" @keydown.window.escape="showModal = false; selectedVideo = ''" class="fixed py-10 flex inset-0 items-center justify-center bg-black bg-opacity-75 z-50"
             :class="{'!hidden': !showModal, 'modalOpened': showModal}"
 
             x-cloak>
-            <div class="p-2 max-w-[85vw] md:max-w-[400px] w-full relative"
+            <div class="p-2 max-w-[85vw] md:max-w-[50vw] lg:max-w-[300px] xl:max-w-[350px] w-full relative"
                 :class="{ 'bg-primary': showModal }">
                 <!-- Botón para cerrar la modal -->
                 <button @click="showModal = false; selectedVideo = ''" class="text-2xl size-8 absolute z-20 -top-8 right-0 lg:-right-8 text-white hover:text-white/80 transition">
