@@ -1,0 +1,13 @@
+{
+    "name": "acf/timeline",
+    "title": "Línea de tiempo",
+    "description": "Bloque de línea de tiempo",
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["timeline", "línea de tiempo"],
+    "acf": {
+        "mode": "auto",
+        "renderTemplate": "timeline.php"
+    },
+    "align": "full"
+}

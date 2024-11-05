@@ -19,7 +19,7 @@ $block_id = uniqid('image-content-');
             }
             ?>
         </div>
-        <div class="md:w-1/2">
+        <div class="md:w-1/2 md:p-2.5">
             <InnerBlocks class="md:px-0 flex h-full flex-col justify-center <?php echo $inverted ? 'items-end' : 'items-start' ?>" />
         </div>
     </div>

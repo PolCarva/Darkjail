@@ -5,6 +5,7 @@ $subtitle = get_field('subtitle');
 $text = get_field('text');
 
 $heading_tag = get_field('heading_tag') ?? 'h2';
+$content_max_width = get_field('content_max_width') ?? false;
 
 $remove_padding = get_field('remove_padding') ?? false;
 
@@ -29,7 +30,11 @@ if ($text_align === 'right') {
 } else if ($text_align === 'center') {
     $text_styles .= ' text-center';
 } else {
-    $text_styles .= ' text-left md:max-w-[80%]';
+    $text_styles .= ' text-left ';
+}
+
+if ($content_max_width) {
+    $text_styles .= ' max-w-[80%] ';
 }
 
 $block_id = 'heading-and-text-' . uniqid();

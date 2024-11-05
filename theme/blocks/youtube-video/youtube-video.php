@@ -39,8 +39,8 @@ if ($youtube_url):
             </div>
 
             <!-- Tapes -->
-            <img class="absolute top-0 lg:top-2 left-2 lg:left-4 -translate-x-1/2 -rotate-45 w-12 sm:w-16 md:w-20 lg:w-28" src="https://darkjail.com/wp-content/uploads/2024/10/tape.png" alt="Cinta">
-            <img class="absolute bottom-0 right-3 translate-x-1/2 -rotate-45 w-12 sm:w-16 md:w-20 lg:w-28" src="https://darkjail.com/wp-content/uploads/2024/10/tape.png" alt="Cinta">
+            <img class="absolute top-0 lg:top-2 left-2 lg:left-4 -translate-x-1/2 -rotate-45 w-12 sm:w-16 md:w-20 lg:w-28 xl:w-36" src="https://darkjail.com/wp-content/uploads/2024/10/tape.png" alt="Cinta">
+            <img class="absolute bottom-0 right-3 translate-x-1/2 -rotate-45 w-12 sm:w-16 md:w-20 lg:w-28 xl:w-36" src="https://darkjail.com/wp-content/uploads/2024/10/tape.png" alt="Cinta">
         </div>
 
         <!-- Modal (solo visible en el frontend, no en el editor) -->
