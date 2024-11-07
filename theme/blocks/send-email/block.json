@@ -1,0 +1,13 @@
+{
+    "name": "acf/contact-block",
+    "title": "Email de contacto",
+    "description": "Bloque de email de contacto",
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["cta", "email", "contacto"],
+    "acf": {
+        "mode": "auto",
+        "renderTemplate": "contact-block.php"
+    },
+    "align": "full"
+}

@@ -12,7 +12,10 @@ $block_id = 'image-' . uniqid();
         before:transition-[width] before:duration-300 hover:before:w-full"
                 href="<?= $link_to_all ?>" target="_blank">VER TODAS</a>
         <?php endif ?>
-        <div <?php if ($is_preview) : ?> class="bg-gray-500" <?php endif; ?>>
+        <div <?php if ($is_preview) : ?> class="bg-gray-500 grid" <?php endif; ?>>
+            <?php if ($is_preview) : ?>
+                <h2 class="text-white !text-xl px-10">La preview de este elemento no está disponible, verifica su correc funcionamiento en la página real</h2>
+            <?php endif; ?>
             <?php echo do_shortcode($shortcode); ?>
         </div>
 

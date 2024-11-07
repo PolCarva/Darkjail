@@ -16,9 +16,11 @@ if ($youtube_url):
     }
 
     $embed_url = "https://www.youtube-nocookie.com/embed/$youtube_id";
+
+    $block_id = 'youtube-video-' . uniqid();
 ?>
 
-    <section class="c-container__sm max-w-sceen-lg mx-auto mt-10"
+    <section id="<?= $block_id ?>" class="c-container__sm max-w-sceen-lg mx-auto mt-10"
         <?php if (!is_admin()): // Solo aplicar Alpine.js si no estamos en el editor 
         ?>
         x-data="{ open: false, embedUrl: '' }"
@@ -65,6 +67,11 @@ if ($youtube_url):
 
             </div>
         <?php endif; ?>
+        <?php
+        get_template_part('template-parts/styles/margin-styles', '', array(
+            'section_id' => $block_id,
+        ));
+        ?>
     </section>
 
 <?php endif; ?>

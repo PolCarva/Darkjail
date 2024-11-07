@@ -22,7 +22,7 @@ $amount_of_logos = count($logos);
 
 ?>
 <div id="<?php echo esc_attr($block_id); ?>"
-	class="mask-borders my-20 <?php echo esc_attr($class_name); ?>">
+	class="mask-borders <?php echo esc_attr($class_name); ?>">
 	<?php if ($logos): ?>
 		<div
 			class="h-fit  overflow-x-hidden m-auto relative w-full <?php echo esc_attr($class_name); ?>">
@@ -105,4 +105,10 @@ $amount_of_logos = count($logos);
 			}
 		}
 	</style>
+
+	<?php
+	get_template_part('template-parts/styles/margin-styles', '', array(
+		'section_id' => $block_id,
+	));
+	?>
 </div>
