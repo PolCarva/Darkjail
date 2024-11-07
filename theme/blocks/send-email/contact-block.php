@@ -69,7 +69,19 @@ $section_id = uniqid('contact-');
             display: block !important;
         }
 
-        
+        #wpforms-254-header-error {
+            position: absolute !important;
+            bottom: calc(100% + 1rem) !important;
+            display: none !important;
+        }
+
+        #wpforms-254-header-error:first-of-type {
+            display: block !important;
+        }
+
+        .wpforms-submit-spinner {
+            display: none !important;
+        }
     </style>
 
     <!-- <div class="wpforms-container wpforms-container-full contact-form wpforms-render-modern relative z-10 !w-full" id="wpforms-254">
