@@ -12,7 +12,7 @@ $section_id = uniqid('contact-');
     <div class="absolute inset-0 z-10 bg-black/40"></div>
     <div class="hidden"><?php echo $shortcode ?></div>
     <div class="relative z-10">
-        <h2 class="h3 " style="margin-bottom: 0 !important "><?php echo esc_html($title); ?></h2>
+        <h2 class="h3" style="margin-bottom: 0 !important !text-center md:!text-left"><?php echo esc_html($title); ?></h2>
     </div>
     <div class="wpforms-container wpforms-container-full contact-form wpforms-render-modern relative z-10 !w-full" id="wpforms-254">
         <form id="wpforms-form-254" class="wpforms-validate wpforms-form wpforms-ajax-form" data-formid="254" method="post" enctype="multipart/form-data" action="/" data-token="81b02e01a120cfc335c6180ff085845f" data-token-time="1730935953" novalidate="novalidate"><noscript class="wpforms-error-noscript">Por favor habilita Javascript para acceder a este contenido.</noscript>
