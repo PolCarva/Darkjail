@@ -34,6 +34,10 @@ $section_id = uniqid('contact-');
             width: 100% !important;
         }
 
+        #wpforms-254-field_1-container {
+            min-height: 3.5rem !important;
+        }
+
         #wpforms-form-254 .wpforms-submit-container {
             height: 3.5rem !important;
             position: absolute !important;
