@@ -48,8 +48,11 @@ $section_id = uniqid('contact-');
     <script>
         const form = document.querySelector("#wpforms-form-254");
         const form_data_time = form.getAttribute('data-token-time');
+        const form_token = form.getAttribute('data-token');
         const custom_form = document.querySelector('.custom_form');
         custom_form.setAttribute('data-token-time', form_data_time);
+        custom_form.setAttribute('data-token', form_token);
+        form.remove();
         console.log(custom_form);
     </script>
     <?php get_template_part('template-parts/styles/margin-styles', '', array(
