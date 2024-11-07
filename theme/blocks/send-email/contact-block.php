@@ -58,6 +58,18 @@ $section_id = uniqid('contact-');
         #wpforms-form-254 button::after {
             display: none !important;
         }
+
+        .wpforms-error {
+            position: absolute !important;
+            top: calc(100% + 1rem) !important;
+            display: none !important;
+        }
+
+        .wpforms-error:first-of-type {
+            display: block !important;
+        }
+
+        
     </style>
 
     <!-- <div class="wpforms-container wpforms-container-full contact-form wpforms-render-modern relative z-10 !w-full" id="wpforms-254">
