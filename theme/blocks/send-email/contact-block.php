@@ -10,11 +10,57 @@ $section_id = uniqid('contact-');
 
 <div class="text-white !max-w-[1440px] bg-cover !px-4 md:!px-5 !py-20 lg:!py-12 lg:!px-20 c-container__sm relative md:gap-20 grid grid-cols-1 items-center md:grid-cols-2 min-w-[300px] md:min-h-0" style="background-image: url(<?php echo $background_image ?>); max-width: 1440px;">
     <div class="absolute inset-0 z-10 bg-black/40"></div>
-    <div class="hidden"><?php echo $shortcode ?></div>
     <div class="relative z-10">
         <h2 class="h3" style="margin-bottom: 0 !important !text-center md:!text-left"><?php echo esc_html($title); ?></h2>
     </div>
-    <div class="wpforms-container wpforms-container-full contact-form wpforms-render-modern relative z-10 !w-full" id="wpforms-254">
+    <div class="relative z-10"><?php echo $shortcode ?></div>
+
+    <style>
+        #wpforms-form-254 {
+            position: relative !important;
+            height: 3.5rem !important;
+            min-height: 3.5rem !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            min-width: 100% !important;
+        }
+
+        #wpforms-form-254 input {
+            max-width: 100% !important;
+            border-radius: 0;
+            padding: 27px 23px;
+            position: absolute !important;
+            inset: 0 !important;
+            width: 100% !important;
+        }
+
+        #wpforms-form-254 .wpforms-submit-container {
+            height: 3.5rem !important;
+            position: absolute !important;
+            top: 50% !important;
+            transform: translateY(-50%) !important;
+            right: 0.5rem !important;
+            width: fit-content !important;
+            margin: 0 !important;
+            display: grid !important;
+            place-content: center !important;
+        }
+
+        #wpforms-form-254 button {
+            font-family: 'Syne' !important;
+            font-weight: 700 !important;
+            text-transform: uppercase !important;
+            background-color: #ff6400 !important;
+            border-radius: 0 !important;
+            transition: all 0.3s ease-in-out !important;
+        }
+
+        #wpforms-form-254 button::after {
+            display: none !important;
+        }
+    </style>
+
+    <!-- <div class="wpforms-container wpforms-container-full contact-form wpforms-render-modern relative z-10 !w-full" id="wpforms-254">
         <form id="wpforms-form-254" class="custom_form wpforms-validate wpforms-form wpforms-ajax-form" data-formid="254" method="post" enctype="multipart/form-data" action="/" data-token="f08f9a16d7fe31d35ae09b446e8d8d14" data-token-time="1731005779" novalidate="novalidate"><noscript class="wpforms-error-noscript">Por favor habilita Javascript para acceder a este contenido.</noscript>
             <div class="wpforms-hidden" id="wpforms-error-noscript">Por favor habilita Javascript para acceder a este contenido.</div>
             <div class="wpforms-field-container">
@@ -33,7 +79,7 @@ $section_id = uniqid('contact-');
                         <button style='border-radius: 0px;' type="submit" name="wpforms[submit]" id="wpforms-submit-254" class="!absolute !top-1/2 !-translate-y-1/2 !right-3 !bg-primary h4  hover:!bg-primary-700 after:!hidden !uppercase !font-syne !rounded-0 !transition wpforms-submit contact-form-btn" data-alt-text="Enviando..." data-submit-text="Enviar" aria-live="assertive" value="wpforms-submit">Enviar</button>
                     </div>
                 </div>
-            </div><!-- .wpforms-field-container -->
+            </div>
             <div class="wpforms-submit-container">
                 <input type="hidden" name="wpforms[id]" value="254"> <input type="hidden" name="wpforms[nonce]" value="caea4a7fe8">
                 <input type="hidden" name="page_title" value="Home">
@@ -46,15 +92,18 @@ $section_id = uniqid('contact-');
     </div>
 
     <script>
-        const form = document.querySelector("#wpforms-form-254");
-        const form_data_time = form.getAttribute('data-token-time');
-        const form_token = form.getAttribute('data-token');
-        const custom_form = document.querySelector('.custom_form');
-        custom_form.setAttribute('data-token-time', form_data_time);
-        custom_form.setAttribute('data-token', form_token);
-        form.remove();
-        console.log(custom_form, 'lol');
-    </script>
+        const form = document.querySelectorAll("#wpforms-form-254");
+        if (form.length > 1) {
+            const dataAttributes = form[0].dataset;
+            for (const key in dataAttributes) {
+                if (dataAttributes.hasOwnProperty(key)) {
+                    form[1].dataset[key] = dataAttributes[key];
+                }
+            }
+        }
+
+
+    </script> -->
     <?php get_template_part('template-parts/styles/margin-styles', '', array(
         'section_id' => $block_id,
     )); ?>
