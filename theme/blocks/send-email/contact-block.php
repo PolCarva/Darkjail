@@ -53,7 +53,7 @@ $section_id = uniqid('contact-');
         custom_form.setAttribute('data-token-time', form_data_time);
         custom_form.setAttribute('data-token', form_token);
         form.remove();
-        console.log(custom_form);
+        console.log(custom_form, 'lol');
     </script>
     <?php get_template_part('template-parts/styles/margin-styles', '', array(
         'section_id' => $block_id,
