@@ -36,7 +36,7 @@ get_template_part('template-parts/layout/announcement-bar', 'content');
 			?>
 			<nav id="site-navigation" class="items-center justify-end hidden w-full gap-2 lg:flex"
 				aria-label="<?php esc_attr_e('Main Navigation', 'darkjail-acf-tailwind'); ?>">
-				<div class="flex w-[-webkit-fill-available] justify-center h-full items-center">
+				<div class="flex w-[-webkit-fill-available] justify-end h-full items-center">
 					<?php
 					if (has_nav_menu('menu-1')) {
 						wp_nav_menu(
