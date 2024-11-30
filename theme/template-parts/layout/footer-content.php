@@ -54,7 +54,7 @@ $disclaimer = get_field('disclaimer', 'option');
 			</div>
 		</div>
 	</div>
-	<div class="w-full text-center text-white">Desarrollado por <a href="https://www.linkedin.com/in/pablo-carvalho-gimenez" target="_blank" class="underline">Pablo Carvalho</a></div>
+	<div class="w-full text-center text-white">Desarrollado por <a href="https://www.linkedin.com/in/pablo-carvalho-gimenez" target="_blank" class="underline">Pablo Carvalho</a> © 2024</div>
 </footer>
 
 <?php
