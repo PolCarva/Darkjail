@@ -38,17 +38,37 @@ $section_id = uniqid('contact-');
             min-height: 3.5rem !important;
         }
 
-        #wpforms-form-401 .wpforms-submit-container {
-            height: 3.5rem !important;
-            position: absolute !important;
-            top: 50% !important;
-            transform: translateY(-50%) !important;
-            right: 0.5rem !important;
-            width: fit-content !important;
-            margin: 0 !important;
-            display: grid !important;
-            place-content: center !important;
+        #wpforms-form-401 #wpforms-submit-401 {
+            width: 100% !important;
         }
+
+        #wpforms-form-401 .wpforms-submit-container {
+            #wpforms-form-401 .wpforms-submit-container {
+                height: 3.5rem !important;
+                position: absolute !important;
+                top: 100% !important;
+                transform: translateY(0%) !important;
+                right: 0rem !important;
+                width: 100% !important;
+                margin: 0 !important;
+                display: flex !important;
+            }
+        }
+
+        @media screen and (min-width: 768px) {
+            #wpforms-form-401 .wpforms-submit-container {
+                height: 3.5rem !important;
+                position: absolute !important;
+                top: 50% !important;
+                transform: translateY(-50%) !important;
+                right: 0.5rem !important;
+                width: fit-content !important;
+                margin: 0 !important;
+                display: grid !important;
+                place-content: center !important;
+            }
+        }
+
 
         #wpforms-form-401 button {
             font-family: 'Syne' !important;
