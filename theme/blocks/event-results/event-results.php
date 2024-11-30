@@ -52,8 +52,8 @@ if ($selected_event) :
                                 @click="open = true; embedUrl = '<?= esc_url($embed_url); ?>?autoplay=1'"
                                 <?php endif; ?>
                                 class="match-card hover:scale-105 transition flex flex-col items-start border border-gray-300 rounded-lg p-4 shadow-md bg-white cursor-pointer">
-                                <p class="text-lg font-medium text-black"><?= esc_html($match->participants) ?></p>
-                                <p class="text-sm text-gray-600"><?= esc_html($match->phase) ?></p>
+                                <p class="text-lg font-semibold text-black"><?= esc_html($match->participants) ?></p>
+                                <p class="text-sm text-gray-700"><?= esc_html($match->phase) ?></p>
                                 <span class="!text-black w-fit self-end !no-underline hover:underline mt-2 inline-block">
                                     <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <circle cx="17" cy="17" r="17" fill="#ff6400" />
