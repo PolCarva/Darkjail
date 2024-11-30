@@ -10,10 +10,10 @@ $block_id = uniqid('quote-');
 $content_max_width = get_field('content_max_width') ?? false;
 ?>
 
-<section id="<?= $block_id ?>" class="<?php if ($content_max_width) echo 'w-full max-w-[80%]' ?>">
+<section id="<?= $block_id ?>">
 
     <?php if ($type === 'high_imact') : ?>
-        <div class="grid md:grid-cols-2">
+        <div class="grid md:grid-cols-2 <?php if ($content_max_width) echo 'w-full max-w-[80%]' ?>">
             <?php if ($image) {
                 get_template_part('template-parts/components/image', '', array(
                     'image_id' => $image["id"],
@@ -40,7 +40,7 @@ $content_max_width = get_field('content_max_width') ?? false;
             </div>
         </div>
     <?php elseif ($type === 'low_impact') : ?>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-2.5 md:gap-0.5">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-2.5 md:gap-0.5 <?php if ($content_max_width) echo 'w-full max-w-[80%]' ?>">
             <div>
                 <?= $text ?>
             </div>
