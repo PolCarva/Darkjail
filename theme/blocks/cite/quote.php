@@ -40,7 +40,7 @@ $content_max_width = get_field('content_max_width') ?? false;
             </div>
         </div>
     <?php elseif ($type === 'low_impact') : ?>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-2.5 md:gap-0.5 <?php if ($content_max_width) echo 'w-full max-w-[80%]' ?>">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-2.5 md:gap-1 <?php if ($content_max_width) echo 'w-full max-w-[80%]' ?>">
             <div>
                 <?= $text ?>
             </div>
