@@ -67,10 +67,10 @@ get_template_part('template-parts/layout/announcement-bar', 'content');
 			<?php
 			endif;
 			?>
-			<!-- <nav class="flex justify-end lg:hidden mobile-menu">
-				<input type="checkbox" id="menu-toggle" class="">
-				<label for="menu-toggle" id="mobile-menu-button" class="block h-8 w-8 pt-[9px] mr-4">
-					<div class="hamburger-icon w-full">
+			 <nav class="flex justify-end items-end lg:hidden mobile-menu">
+				<input type="checkbox" id="menu-toggle" class=" align-end">
+				<label for="menu-toggle" id="mobile-menu-button" class=" align-end self-end block h-8 w-8 pt-[9px] mr-4">
+					<div class="hamburger-icon self-end w-full min-h-10 flex flex-col gap-0.5 relative z-50">
 						<span class="bar w-full bg-white"></span>
 						<span class="bar w-full bg-white"></span>
 						<span class="bar w-full bg-white"></span>
@@ -78,7 +78,7 @@ get_template_part('template-parts/layout/announcement-bar', 'content');
 
 				</label>
 				<div id="mobile-menu"
-					class="absolute w-full max-w-svw py-24 px-4 mt-0 overflow-hidden transition-all duration-300 ease-in-out bg-white shadow-lg opacity-0 left-0 top-16 max-h-0">
+					class="absolute w-full max-w-svw py-24 px-4 mt-0 overflow-hidden transition-all duration-300 ease-in-out bg-black shadow-lg opacity-0 left-0 top-16 max-h-0">
 					<?php
 					// Use wp_nav_menu() or create a custom menu here
 					if (has_nav_menu('menu-1')) {
@@ -91,7 +91,7 @@ get_template_part('template-parts/layout/announcement-bar', 'content');
 						));
 					}
 					?>
-					<div class="flex flex-col items-center gap-[42px] mt-[42px]">
+				<!-- 	<div class="flex flex-col items-center gap-[42px] mt-[42px]">
 						<?php
 						get_template_part('template-parts/components/button', '', array(
 							'type' => 'secondary',
@@ -116,9 +116,9 @@ get_template_part('template-parts/layout/announcement-bar', 'content');
 							],
 						))
 						?>
-					</div>
+					</div> -->
 				</div>
-			</nav> -->
+			</nav>
 
 		</div>
 	</div>

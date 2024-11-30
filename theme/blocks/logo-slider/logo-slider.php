@@ -27,58 +27,27 @@ $amount_of_logos = count($logos);
 		<div
 			class="h-fit  overflow-x-hidden m-auto relative w-full <?php echo esc_attr($class_name); ?>">
 			<div class="flex items-center slide-track">
-				<?php foreach ($logos as $logo): ?>
-					<?php
-					$image_id = $logo['image'];
-					$negative_margin = $logo['negative_margin'] ?? '0';
-					?>
-					<div class="h-[50px] md:h-[68px] py-0 px-2 w-fit grid place-content-center" style="margin-inline: <?= $negative_margin ?>px;">
+				<?php for ($i = 0; $i < 2; $i++) : ?>
+					<?php foreach ($logos as $logo): ?>
 						<?php
-						if ($image_id):
-							get_template_part('template-parts/components/image', '', array(
-								'image_size' => 'large',
-								'image_id' => $image_id,
-								'image_class' => 'h-[50px] md:h-[68px] object-contain'
-							));
-						endif;
+						$image_id = $logo['image'];
+						$negative_margin = $logo['negative_margin'] ?? '0';
 						?>
-					</div>
-				<?php endforeach; ?>
+						<div class="h-[50px] md:h-[68px] py-0 px-2 w-fit grid place-content-center" style="margin-inline: <?= $negative_margin ?>px;">
+							<?php
+							if ($image_id):
+								get_template_part('template-parts/components/image', '', array(
+									'image_size' => 'large',
+									'image_id' => $image_id,
+									'image_class' => 'h-[50px] md:h-[68px] object-contain'
+								));
+							endif;
+							?>
+						</div>
+					<?php endforeach; ?>
+				<?php endfor; ?>
 
-				<?php foreach ($logos as $logo): ?>
-					<?php
-					$image_id = $logo['image'];
-					$negative_margin = $logo['negative_margin'] ?? '0';
-					?>
-					<div class="h-[50px] md:h-[68px] py-0 w-fit grid place-content-center" style="margin-inline: <?= $negative_margin ?>px;">
-						<?php
-						if ($image_id):
-							get_template_part('template-parts/components/image', '', array(
-								'image_size' => 'large',
-								'image_id' => $image_id,
-								'image_class' => 'h-[50px] md:h-[68px] object-contain'
-							));
-						endif;
-						?>
-					</div>
-				<?php endforeach; ?>
-				<?php foreach ($logos as $logo): ?>
-					<?php
-					$image_id = $logo['image'];
-					$negative_margin = $logo['negative_margin'] ?? '0';
-					?>
-					<div class="h-[68px] py-0 w-fit grid place-content-center" style="margin-inline: <?= $negative_margin ?>px;">
-						<?php
-						if ($image_id):
-							get_template_part('template-parts/components/image', '', array(
-								'image_size' => 'large',
-								'image_id' => $image_id,
-								'image_class' => 'h-[50px] md:h-[68px] object-contain'
-							));
-						endif;
-						?>
-					</div>
-				<?php endforeach; ?>
+
 			</div>
 		</div>
 	<?php endif; ?>

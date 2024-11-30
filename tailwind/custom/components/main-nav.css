@@ -1,11 +1,234 @@
-.menu-item-link {
-	@apply cursor-pointer text-white;
-}
-.menu-item-link::after {
-    @apply block h-0.5 w-full bg-white transform scale-x-0 transition-transform duration-300 ease-in-out;
-    content: '';
+/*Styles for the main nav */
+.main-nav .menu-item {
+	@apply relative font-teko transition;
 }
 
-.menu-item-link:hover::after {
-    @apply transform scale-x-100;
+.menu-item-link {
+    @apply font-teko uppercase transition font-medium tracking-wider text-lg;
 }
+
+.menu-item-link:hover {
+    @apply text-primary;
+}
+.main-nav {
+	@apply flex items-center justify-end h-full gap-8 min-w-[580px];
+}
+
+.main-nav ul {
+	@apply flex;
+}
+
+.main-nav li {
+	@apply !my-auto [&_span]:font-extrabold;
+}
+
+.main-nav > .menu-item {
+	@apply relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:h-[1px] after:w-0 after:bg-black after:transition-all disabled:opacity-50 focus:outline-none inline-flex items-center;
+}
+.main-nav > .menu-item:hover svg {
+	@apply rotate-180 -translate-y-[1px];
+}
+.main-nav > .menu-item:hover::after {
+	@apply w-full;
+}
+
+.main-nav .sub-menu:not(.child) {
+	@apply absolute block right-1/2 translate-x-1/2 z-10 invisible opacity-0 p-[22px] mt-0 bg-white top-[1.95rem] transition-all duration-300 text-black;
+}
+
+.main-nav .sub-menu:not(.child)::before {
+	content: '';
+	@apply absolute block right-1/2 translate-x-1/2 z-[5] opacity-0 w-1/2 p-[12px] mt-0  top-[-1.2rem];
+}
+
+.main-nav .back,
+.main-nav .parent-title {
+	display: none;
+}
+
+/* Show submenus when hovering over the parent menu item */
+.main-nav .menu-item > .sub-menu {
+	@apply w-40;
+}
+.main-nav .menu-item:hover > .sub-menu {
+	@apply visible transition-all duration-300 opacity-100 w-40;
+}
+
+.main-nav .menu-item > .sub-menu:not(.child) > li:not(:last-of-type).menu-item-has-children {
+	@apply !mb-6 md:!mb-[32px];
+}
+.main-nav .menu-item > .sub-menu:not(.child) > li:not(:last-of-type) {
+	@apply md:!mb-[14px];
+}
+.main-nav .menu-item > .sub-menu:not(.child) > li {
+	@apply gap-[14px];
+}
+.main-nav .menu-item > .sub-menu:not(.child) > .menu-item {
+	@apply flex flex-col items-start;
+}
+
+.main-nav .menu-item .sub-menu:not(.child) > .menu-item > .menu-item-link,
+.main-nav
+	.menu-item
+	.sub-menu:not(.child)
+	> .menu-item
+	> .sub-menu.child
+	.menu-item-link {
+	@apply transition-opacity;
+}
+.main-nav .menu-item .sub-menu:not(.child) > .menu-item > span.menu-item-link {
+	@apply font-normal;
+}
+.main-nav .sub-menu > .menu-item > .menu-item-link {
+	@apply hover:opacity-75;
+}
+/*
+	.main-nav .menu-item:hover > .sub-menu > li:hover > a {
+	@apply pl-1 transition-all duration-300 ease-in-out opacity-80;
+} */
+
+.main-nav li:last-of-type .sub-menu {
+	@apply right-0 left-auto;
+}
+
+.main-nav .menu-item > .sub-menu .sub-menu.child {
+	@apply flex flex-col gap-[14px];
+}
+
+.main-nav li:last-of-type .menu-item:hover .sub-menu {
+	@apply mr-20;
+}
+
+/******************************************************
+ * Mobile Menu
+ ******************************************************/
+
+#menu-toggle:checked + #mobile-menu-button + #mobile-menu {
+	height: 90dvh;
+	max-height: 100dvh;
+	overflow-y: auto; /* Add a vertical scrollbar if necessary */
+	opacity: 1;
+	scrollbar-gutter: stable; /* Save space for the scrollbar */
+}
+
+#menu-toggle:not(:checked) ~ #mobile-menu {
+	padding: 0 16px !important;
+}
+
+.hamburger-icon .bar {
+	display: block;
+	width: 16px;
+	height: 2px;
+	margin: 0;
+	border-radius: 4px;
+	background-color: #FFFFFF;
+	transition:
+		transform 0.3s ease-in-out,
+		width 0.3s ease-in-out,
+		opacity 0.3s ease-in-out;
+}
+
+#mobile-menu-button {
+	display: inline-block;
+	cursor: pointer;
+}
+
+#menu-toggle {
+	display: none;
+}
+
+#menu-toggle:checked + #mobile-menu-button > div {
+	display: block;
+}
+#menu-toggle:checked + #mobile-menu-button .hamburger-icon .bar:nth-child(1) {
+	width: 20px;
+	transform: rotate(-45deg) translate(-2px, 2px);
+}
+
+#menu-toggle:checked + #mobile-menu-button .hamburger-icon .bar:nth-child(2) {
+	opacity: 0;
+}
+
+#menu-toggle:checked + #mobile-menu-button .hamburger-icon .bar:nth-child(3) {
+	transform: rotate(45deg) translateY(-1px);
+}
+
+#menu-toggle:checked + #mobile-menu-button .hamburger-icon .bar + .bar {
+	width: 20px;
+}
+
+.mobile-menu {
+	@apply w-full;
+}
+
+.main-nav-mobile {
+	@apply flex flex-col justify-start items-center gap-[42px];
+}
+
+.main-nav-mobile .menu-item span,
+.main-nav-mobile .menu-item {
+	@apply w-full text-white;
+}
+.main-nav-mobile .menu-item .sub-menu > .menu-item {
+	@apply text-start;
+}
+.main-nav-mobile .menu-item .sub-menu.child > .menu-item {
+	@apply !font-semibold;
+}
+.main-nav-mobile .menu-item .sub-menu {
+	@apply flex flex-col gap-8;
+}
+.main-nav-mobile .menu-item .sub-menu.child {
+	@apply gap-4 mt-4;
+}
+
+/* .mobile-menu .main-nav-mobile > .menu-item.menu-item-has-children > a:after {
+	content: " >";
+	float: right;
+	font-weight: normal;
+	margin-left: 8px;
+} */
+
+.mobile-menu .mobile-arrow {
+	@apply transition-transform duration-300;
+}
+
+.mobile-menu .sub-menu:not(.child) {
+	@apply mx-auto w-full overflow-hidden px-[22px] max-h-0 bg-white rounded-[14px];
+	transition: all 0.3s ease-in-out;
+}
+.opened {
+	@apply !max-h-[500px] py-[22px] mt-3; /* Set a specific max-height value for animation */
+	transition: all 0.3s ease-in-out;
+}
+
+/* Hide the scrollbar on desktop for elements with the class .submenu */
+/* For Webkit-based browsers (Chrome, Safari) */
+.sub-menu::-webkit-scrollbar {
+	width: 0.5em;
+	background: transparent; /* You can use 'background: #fff;' to match the background color */
+}
+
+.sub-menu::-webkit-scrollbar-thumb {
+	background: transparent; /* You can use 'background: #fff;' to match the background color */
+}
+
+/* For Firefox */
+.sub-menu * {
+	scrollbar-width: thin;
+	scrollbar-color: transparent transparent; /* You can use 'scrollbar-color: #fff transparent;' to match the background color */
+}
+/* end mobile menu */
+
+/******************************************************
+ * Sticky header styles
+ ******************************************************/
+
+#masthead.sticky-nav {
+	@apply pb-4 lg:py-4;
+}
+#masthead.sticky-nav img {
+	@apply max-w-[137px];
+}
+
+
