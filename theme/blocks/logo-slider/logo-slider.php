@@ -32,7 +32,7 @@ $amount_of_logos = count($logos);
 					$image_id = $logo['image'];
 					$negative_margin = $logo['negative_margin'] ?? '0';
 					?>
-					<div class="h-[50px] md:h-[68px] py-0 w-fit grid place-content-center" style="margin-inline: <?= $negative_margin ?>px;">
+					<div class="h-[50px] md:h-[68px] py-0 px-2 w-fit grid place-content-center" style="margin-inline: <?= $negative_margin ?>px;">
 						<?php
 						if ($image_id):
 							get_template_part('template-parts/components/image', '', array(
