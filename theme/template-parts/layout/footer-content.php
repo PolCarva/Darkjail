@@ -18,7 +18,7 @@ $disclaimer = get_field('disclaimer', 'option');
 
 
 <footer id="colophon" class="flex flex-col gap-8 py-8 text-black">
-	<div class="w-full c-container">
+	<!-- <div class="w-full c-container">
 		<div
 			class="flex flex-col items-start justify-between w-full gap-12 lg:gap-[90px] p-4 bg-image md:flex-row md:p-12 rounded-[14px]">
 			<picture class="md:flex-[1_0_165px] h-fit w-fit max-w-[165px]">
@@ -53,7 +53,7 @@ $disclaimer = get_field('disclaimer', 'option');
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 	<div class="w-full text-center text-white">Desarrollado por <a href="https://www.linkedin.com/in/pablo-carvalho-gimenez" target="_blank" class="underline">Pablo Carvalho</a> © 2024</div>
 </footer>
 
