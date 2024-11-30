@@ -11,7 +11,7 @@ $remove_padding = get_field('remove_padding') ?? false;
 $position = get_field('position') ?? 'left';
 $text_align = get_field('text_align') ?? 'left';
 
-$text_color = get_field('text_color') ?? "#959595";
+$text_color = get_field('text_color') ?? "#FFFFFF";
 
 $text_styles = '';
 
