@@ -10,7 +10,7 @@ $block_id = uniqid('quote-');
 $content_max_width = get_field('content_max_width') ?? false;
 ?>
 
-<section id="<?= $block_id ?>" <?php if ($content_max_width) echo 'w-full max-w-[80%]' ?>>
+<section id="<?= $block_id ?>" class="<?php if ($content_max_width) echo 'w-full max-w-[80%]' ?>">
 
     <?php if ($type === 'high_imact') : ?>
         <div class="grid md:grid-cols-2">
