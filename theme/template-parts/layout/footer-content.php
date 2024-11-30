@@ -54,6 +54,7 @@ $disclaimer = get_field('disclaimer', 'option');
 			</div>
 		</div>
 	</div>
+	<div class="w-full text-center text-white">Desarrollado por Pablo Carvalho</div>
 </footer>
 
 <?php
