@@ -1,0 +1,13 @@
+{
+    "name": "acf/link-slider",
+    "title": "Carrusel de links",
+    "description": "Bloque de carrusel de links",
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["links", "carrusel"],
+    "acf": {
+        "mode": "auto",
+        "renderTemplate": "link-slider.php"
+    },
+    "align": "full"
+}
