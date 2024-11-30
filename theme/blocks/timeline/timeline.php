@@ -6,7 +6,7 @@ $content_max_width = get_field('content_max_width') ?? false;
 $styles = '';
 
 if ($content_max_width) {
-    $styles .= ' max-w-[80%] ';
+    $styles .= ' w-full md:max-w-[80%] ';
 }
 
 

@@ -7,9 +7,10 @@ $tag = get_field('tag');
 $image = get_field('main_image');
 $bg_image = get_field('background_image');
 $block_id = uniqid('quote-');
+$content_max_width = get_field('content_max_width') ?? false;
 ?>
 
-<section id="<?= $block_id ?>">
+<section id="<?= $block_id ?>" <?php if ($content_max_width) echo 'w-full max-w-[80%]' ?>>
 
     <?php if ($type === 'high_imact') : ?>
         <div class="grid md:grid-cols-2">

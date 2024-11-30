@@ -33,7 +33,7 @@ if ($text_align === 'right') {
 }
 
 if ($content_max_width) {
-    $text_styles .= ' max-w-[80%] ';
+    $text_styles .= ' w-full md:max-w-[80%] ';
 }
 
 $block_id = 'heading-and-text-' . uniqid();
