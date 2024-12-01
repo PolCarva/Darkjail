@@ -73,13 +73,34 @@ $block_id = uniqid("link-slider-");
         backdrop-filter: blur(5px);
     }
 
-    #<?= $block_id . " " ?>.swiper-slide-next+.swiper-slide-visible img {
+    #<?= $block_id . " " ?>.swiper-slide-active img {
         filter: saturate(1);
 
     }
 
-    #<?= $block_id . " " ?>.swiper-slide-next+.swiper-slide-visible .overlay {
+    #<?= $block_id . " " ?>.swiper-slide-active .overlay {
         backdrop-filter: blur(0px);
+    }
+
+    @media (min-width: 500px) {
+
+        #<?= $block_id . " " ?>.swiper-slide-active img {
+            filter: saturate(0);
+
+        }
+
+        #<?= $block_id . " " ?>.swiper-slide-active .overlay {
+            backdrop-filter: blur(5px);
+        }
+
+        #<?= $block_id . " " ?>.swiper-slide-next+.swiper-slide-visible img {
+            filter: saturate(1);
+
+        }
+
+        #<?= $block_id . " " ?>.swiper-slide-next+.swiper-slide-visible .overlay {
+            backdrop-filter: blur(0px);
+        }
     }
 </style>
 
@@ -90,9 +111,11 @@ $block_id = uniqid("link-slider-");
             init() {
                 new Swiper(this.$el, {
                     direction: 'horizontal',
-                    slidesPerView: 1.75,
+                    slidesPerView: 1.2,
                     initialSlide: 0,
                     effect: 'coverflow', // Activar el efecto Coverflow
+
+                    centeredSlides: false,
                     coverflowEffect: {
                         rotate: 0,
                         stretch: 0, // Desplaza las slides
@@ -100,11 +123,13 @@ $block_id = uniqid("link-slider-");
                         modifier: 1,
                         slideShadows: true,
                     },
-                    centeredSlides: false,
-
 
                     loop: true,
                     breakpoints: {
+                        500: {
+
+                            slidesPerView: 2.5,
+                        },
                         768: {
                             slidesPerView: 3.8,
                         },
