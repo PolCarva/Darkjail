@@ -69,7 +69,7 @@ get_template_part('template-parts/layout/announcement-bar', 'content');
 			?>
 			 <nav class="flex justify-end items-end lg:hidden mobile-menu">
 				<input type="checkbox" id="menu-toggle" class=" align-end">
-				<label for="menu-toggle" id="mobile-menu-button" class=" align-end self-end block h-8 w-8 pt-[9px] mr-4">
+				<label for="menu-toggle" id="mobile-menu-button" class="translate-x-[20px] align-end self-end block h-8 w-8 pt-[9px] mr-4">
 					<div class="hamburger-icon self-end w-full min-h-10 flex flex-col gap-0.5 relative z-50">
 						<span class="bar w-full bg-white"></span>
 						<span class="bar w-full bg-white"></span>
