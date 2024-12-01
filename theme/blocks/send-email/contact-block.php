@@ -55,6 +55,10 @@ $section_id = uniqid('contact-');
             }
         }
 
+        #wpforms-form-401 input::placeholder {
+            color: rgba(17, 17, 17, 1) !important;
+        }
+
         @media screen and (min-width: 768px) {
             #wpforms-form-401 .wpforms-submit-container {
                 height: 3.5rem !important;
