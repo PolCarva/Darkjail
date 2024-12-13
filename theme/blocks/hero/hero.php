@@ -9,8 +9,13 @@ $buttons = get_field('buttons');
 
 $next_date = get_field('next_date', "options");
 
-
 $block_id = uniqid('hero-');
+
+function is_video($mime_type)
+{
+    $video_mime_types = ['video/mp4', 'video/ogg', 'video/webm'];
+    return in_array($mime_type, $video_mime_types);
+}
 
 ?>
 
@@ -58,13 +63,21 @@ $block_id = uniqid('hero-');
         </div>
     </div>
     <div class="bg-black/20 absolute inset-0 z-10"></div>
-    <?php if ($main_image) {
-        get_template_part('template-parts/components/image', '', array(
-            'image_id' => $main_image,
-            'mobile_image_id' => $mobile_image,
-            'image_class' => 'absolute z-0 inset-0 w-full h-full object-cover',
-            'image_size' => 'extra-large',
-        ));
+    <?php
+    if ($main_image) {
+        $main_image_mime_type = get_post_mime_type($main_image);
+        if (is_video($main_image_mime_type)) {
+            echo '<video class="absolute z-0 inset-0 w-full h-full object-cover" autoplay muted loop>';
+            echo '<source src="' . wp_get_attachment_url($main_image) . '" type="' . $main_image_mime_type . '">';
+            echo '</video>';
+        } else {
+            get_template_part('template-parts/components/image', '', array(
+                'image_id' => $main_image,
+                'mobile_image_id' => $mobile_image,
+                'image_class' => 'absolute z-0 inset-0 w-full h-full object-cover',
+                'image_size' => 'extra-large',
+            ));
+        }
     }
     ?>
 
