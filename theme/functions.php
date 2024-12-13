@@ -300,20 +300,28 @@ add_filter('acf/load_field/name=event_selector', function ($field) {
 });
 
 
-function get_darkjail_results() {
-    global $wpdb;
-    $table_name = $wpdb->prefix . 'darkjail_results';
+function get_darkjail_results()
+{
+	global $wpdb;
+	$table_name = $wpdb->prefix . 'darkjail_results';
 
-    $event = isset($_GET['event']) ? sanitize_text_field($_GET['event']) : '';
+	$event = isset($_GET['event']) ? sanitize_text_field($_GET['event']) : '';
 
-    if (!$event) {
-        wp_send_json_error('Evento no especificado.');
-    }
+	if (!$event) {
+		wp_send_json_error('Evento no especificado.');
+	}
 
-    $results = $wpdb->get_results($wpdb->prepare(
-        "SELECT participants, phase, video_url FROM $table_name WHERE event = %s",
-        $event
-    ), ARRAY_A);
+	$results = $wpdb->get_results($wpdb->prepare(
+		"SELECT participants, phase, video_url FROM $table_name WHERE event = %s",
+		$event
+	), ARRAY_A);
 
-    wp_send_json($results);
+	wp_send_json($results);
+}
+
+
+function is_video($mime_type)
+{
+	$video_mime_types = ['video/mp4', 'video/ogg', 'video/webm'];
+	return in_array($mime_type, $video_mime_types);
 }

@@ -6,16 +6,9 @@ $subheading = get_field('subheading');
 $main_image = get_field('main_image');
 $mobile_image = get_field('mobile_image');
 $buttons = get_field('buttons');
-
 $next_date = get_field('next_date', "options");
 
 $block_id = uniqid('hero-');
-
-function is_video($mime_type)
-{
-    $video_mime_types = ['video/mp4', 'video/ogg', 'video/webm'];
-    return in_array($mime_type, $video_mime_types);
-}
 
 ?>
 
@@ -23,41 +16,34 @@ function is_video($mime_type)
     <div class="relative z-20 c-container w-full h-full">
         <div class="absolute text-white left-0 items-end bottom-20 px-4 md:px-5 lg:px-20">
             <h1 class="h1 flex flex-col text-white">
-                <?php echo $heading; ?>
-                <span class="block"><?php echo $second_line_heading; ?></span>
+                <?= $heading; ?>
+                <span class="block"><?= $second_line_heading; ?></span>
             </h1>
 
             <div class="my-3 [&_p]:text-[20px] [&_p]:lg:text-[30px] [&_p]:font-normal [&_p]:leading-none [&_p]:tracking-normal [&_p]:font-teko ">
-                <?php echo $subheading ?>
+                <?= $subheading ?>
             </div>
 
             <?php if ($buttons) { ?>
                 <div class="flex flex-col md:flex-row items-center mt-5 gap-4">
                     <?php foreach ($buttons as $index) {
                         $button = $index['button'];
-                        $button_text = $button['text'];
-                        $button_link = $button['link'];
-                        $button_type = $button['type'];
-
                         get_template_part('template-parts/components/button', '', array(
-                            'type' => $button_type,
+                            'type' => $button['type'],
                             'size' => 'medium',
                             'button' => array(
-                                'text' => $button_text,
-                                'url' => $button_link,
+                                'text' => $button['text'],
+                                'url' => $button['link'],
                                 'custom_class' => '',
                                 'container_class' => '',
                             )
                         ));
-                    }
-
-                    ?>
+                    } ?>
                 </div>
             <?php } ?>
 
         </div>
         <div class="absolute shadow-[10px_10px_0px_#FF6400] sm:w-auto px-10 w-max bg-white py-5 right-5 lg:right-20 md:py-5 md:px-20 bottom-0 translate-y-1/2 flex flex-col gap-2 justify-end z-20">
-
             <h2 class="h1 !text-[24px] lg:!text-[30px] md:!text-[30px] text-black text-center"><?= $next_date; ?></h2>
             <p class="h5 text-black uppercase text-center">PRÓXIMA FECHA</p>
         </div>
@@ -65,15 +51,22 @@ function is_video($mime_type)
     <div class="bg-black/20 absolute inset-0 z-10"></div>
     <?php
     if ($main_image) {
-        $main_image_mime_type = get_post_mime_type($main_image);
+        $main_image_mime_type = get_post_mime_type($main_image['ID']);
         if (is_video($main_image_mime_type)) {
-            echo '<video class="absolute z-0 inset-0 w-full h-full object-cover" autoplay muted loop>';
-            echo '<source src="' . wp_get_attachment_url($main_image) . '" type="' . $main_image_mime_type . '">';
-            echo '</video>';
+            $mobile_image_url = $mobile_image ? wp_get_attachment_url($mobile_image['ID']) : null;
+            ?>
+            <video class="absolute z-0 inset-0 w-full h-full object-cover hidden sm:block" autoplay muted loop>
+                <source src="<?= wp_get_attachment_url($main_image['ID']); ?>" type="<?= $main_image_mime_type; ?>">
+            </video>
+            <?php if ($mobile_image_url) { ?>
+                <video class="absolute z-0 inset-0 w-full h-full object-cover sm:hidden" autoplay muted loop>
+                    <source src="<?= $mobile_image_url; ?>" type="<?= get_post_mime_type($mobile_image['ID']); ?>">
+                </video>
+            <?php }
         } else {
             get_template_part('template-parts/components/image', '', array(
-                'image_id' => $main_image,
-                'mobile_image_id' => $mobile_image,
+                'image_id' => $main_image['ID'],
+                'mobile_image_id' => $mobile_image ? $mobile_image['ID'] : null,
                 'image_class' => 'absolute z-0 inset-0 w-full h-full object-cover',
                 'image_size' => 'extra-large',
             ));
