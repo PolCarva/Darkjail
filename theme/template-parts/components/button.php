@@ -36,27 +36,27 @@ $container_class = $button['container_class'] ?? 'h-fit w-fit';
 $type ??= 'primary';
 $size ??= 'medium';
 
-// bg-primary-blue rounded-full text-white hover:bg-custom-secondary hover:text-white py-2 px-6 font-semibold uppercase tracking-wider focus:outline-none
+// bg-primary-blue  text-white hover:bg-custom-secondary hover:text-white py-2 px-6 font-semibold uppercase tracking-wider focus:outline-none
 $classes = '';
 $svg_color = '';
 
 // make a switch case for the button type
 switch ($type) {
 	case 'primary':
-		$classes = '!text-white bg-black hover:bg-[#000] border border-black hover:border-[#000] transition-all disabled:opacity-40 rounded-full focus:outline-none';
+		$classes = '!text-white font-bold bg-primary hover:bg-primary-500 transition-all disabled:opacity-40  focus:outline-none';
 		break;
 	case 'secondary';
-		$classes = '!text-black bg-transparent border border-black hover:border-black/50 transition-all disabled:opacity-50 rounded-full focus:outline-none inline-flex items-center gap-3';
+		$classes = '!text-white bg-transparent border border-primary hover:border-primary-500 hover:bg-primary-500 hover:!text-white transition-all disabled:opacity-50  focus:outline-none inline-flex items-center gap-3';
 		break;
 	case 'secondary-white';
-		$classes = '!text-black bg-white border border-white hover:border-black/50 transition-all disabled:opacity-50 rounded-full focus:outline-none inline-flex items-center gap-3';
+		$classes = '!text-black bg-white border border-white hover:border-black/50 transition-all disabled:opacity-50  focus:outline-none inline-flex items-center gap-3';
 		break;
 	case 'icon-text';
-		$classes = '!text-white bg-black hover:bg-[#000] transition-all disabled:opacity-50 rounded-full focus:outline-none inline-flex items-center gap-3';
+		$classes = '!text-white bg-black hover:bg-[#000] transition-all disabled:opacity-50  focus:outline-none inline-flex items-center gap-3';
 		$svg_color = '#FFFFFF';
 		break;
 	case 'secondary-icon':
-		$classes = '!text-black bg-white border border-black hover:border-black/50 transition-all disabled:opacity-50 rounded-full focus:outline-none inline-flex items-center gap-3';
+		$classes = '!text-black bg-white border border-black hover:border-black/50 transition-all disabled:opacity-50  focus:outline-none inline-flex items-center gap-3';
 		$svg_color = '#000000';
 		break;
 	case 'ghost':
@@ -64,7 +64,7 @@ switch ($type) {
 		$svg_color = '#000000';
 		break;
 	default:
-		$classes = '!text-white bg-black hover:bg-[#000] transition-all disabled:opacity-40 rounded-full focus:outline-none';
+		$classes = '!text-white bg-black hover:bg-[#000] transition-all disabled:opacity-40  focus:outline-none';
 		break;
 }
 
@@ -97,7 +97,7 @@ if (!empty($text) && !empty($url)) {
 					<path d="M13 8H3" stroke="<?= $svg_color ?>" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
 				</svg>
 			<?php endif; ?>
-			<span class="text-center md:whitespace-nowrap">
+			<span class="text-center md:whitespace-nowrap !font-bold">
 				<?= esc_html($text); ?>
 			</span>
 		</a>
@@ -113,7 +113,7 @@ if (!empty($text) && !empty($url)) {
 					<path d="M13 8H3" stroke="<?= $svg_color ?>" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
 				</svg>
 			<?php endif; ?>
-			<span class="text-center md:whitespace-nowrap">
+			<span class="text-center md:whitespace-nowrap !font-bold">
 				<?= esc_html($text); ?>
 			</span>
 		</button>

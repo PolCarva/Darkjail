@@ -17,7 +17,7 @@
 @font-face {
 	font-family: 'Heebo';
 	font-style: normal;
-	font-weight: 100;
+	font-weight: 100 900;
 	src: url('./heebo/Heebo-VariableFont_wght.ttf') format('woff');
 	font-display: swap;
 }
@@ -26,7 +26,7 @@
 @font-face {
 	font-family: 'Teko';
 	font-style: normal;
-	font-weight: 100;
+	font-weight: 100 900;
 	src: url('./teko/Teko-VariableFont_wght.ttf') format('woff');
 	font-display: swap;
 }

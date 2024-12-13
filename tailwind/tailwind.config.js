@@ -87,6 +87,9 @@ module.exports = {
 					950: '#4f0000',
 				},
 			},
+			screens: {
+				'xs': '380px',
+			},
 		},
 	},
 	corePlugins: {
