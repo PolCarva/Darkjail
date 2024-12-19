@@ -14,7 +14,7 @@ $block_id = uniqid('hero-');
 
 <section id="<?= $block_id ?>" class="w-full min-h-[80svh] md:min-h-[60svh] lg:min-h-[86svh] grid relative mb-24 md:mb-20">
     <div class="relative z-20 c-container w-full h-full">
-        <div class="absolute text-white left-0 items-end bottom-1/2 translate-y-1/2 md:translate-y-0 md:bottom-20 px-4 md:px-5 lg:px-20">
+        <div class="absolute w-full text-white left-0 items-end bottom-1/2 translate-y-1/2 md:translate-y-0 md:bottom-20 px-4 md:px-5 lg:px-20">
             <h1 class="h1 flex flex-col items-center justify-center md:items-start md:justify-start text-white">
                 <?= $heading; ?>
                 <span class="block"><?= $second_line_heading; ?></span>
