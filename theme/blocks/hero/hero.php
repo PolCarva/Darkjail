@@ -34,8 +34,8 @@ $block_id = uniqid('hero-');
                             'button' => array(
                                 'text' => $button['text'],
                                 'url' => $button['link'],
-                                'custom_class' => 'font-bold',
-                                'container_class' => '',
+                                'custom_class' => 'font-bold w-full !items-center md:w-auto text-center',
+                                'container_class' => 'w-full md:w-auto text-center',
                             )
                         ));
                     } ?>

@@ -97,7 +97,7 @@ if (!empty($text) && !empty($url)) {
 					<path d="M13 8H3" stroke="<?= $svg_color ?>" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
 				</svg>
 			<?php endif; ?>
-			<span class="text-center md:whitespace-nowrap !font-bold">
+			<span class="text-center md:whitespace-nowrap w-full !font-bold">
 				<?= esc_html($text); ?>
 			</span>
 		</a>
@@ -113,7 +113,7 @@ if (!empty($text) && !empty($url)) {
 					<path d="M13 8H3" stroke="<?= $svg_color ?>" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
 				</svg>
 			<?php endif; ?>
-			<span class="text-center md:whitespace-nowrap !font-bold">
+			<span class="text-center md:whitespace-nowrap w-full !font-bold">
 				<?= esc_html($text); ?>
 			</span>
 		</button>

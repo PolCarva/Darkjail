@@ -1,0 +1,13 @@
+{
+    "name": "acf/random-words",
+    "title": "Palabras aleatorias",
+    "description": "Bloque de palabras aleatorias",
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["random-words", "words"],
+    "acf": {
+        "mode": "auto",
+        "renderTemplate": "random-words.php"
+    },
+    "align": "full"
+}
