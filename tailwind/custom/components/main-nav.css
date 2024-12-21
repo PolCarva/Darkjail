@@ -1,10 +1,10 @@
 /*Styles for the main nav */
 .main-nav .menu-item {
-	@apply relative font-teko transition;
+	@apply relative font-teko transition text-center;
 }
 
 .menu-item-link {
-    @apply font-teko uppercase transition font-medium tracking-wider text-lg;
+    @apply font-teko uppercase transition font-medium tracking-wider text-center text-lg w-full block md:inline mx-auto;
 }
 
 .menu-item-link:hover {
@@ -30,6 +30,10 @@
 }
 .main-nav > .menu-item:hover::after {
 	@apply w-full;
+}
+
+.main-nav .sub-menu .menu-item .menu-item-link {
+	@apply text-black ;
 }
 
 .main-nav .sub-menu:not(.child) {
@@ -80,7 +84,7 @@
 	@apply font-normal;
 }
 .main-nav .sub-menu > .menu-item > .menu-item-link {
-	@apply hover:opacity-75;
+	@apply text-black hover:text-primary transition;
 }
 /*
 	.main-nav .menu-item:hover > .sub-menu > li:hover > a {
@@ -170,7 +174,7 @@
 	@apply w-full text-white;
 }
 .main-nav-mobile .menu-item .sub-menu > .menu-item {
-	@apply text-start;
+	@apply text-start text-black hover:text-primary;
 }
 .main-nav-mobile .menu-item .sub-menu.child > .menu-item {
 	@apply !font-semibold;
@@ -194,7 +198,7 @@
 }
 
 .mobile-menu .sub-menu:not(.child) {
-	@apply mx-auto w-full overflow-hidden px-[22px] max-h-0 bg-white rounded-[14px];
+	@apply mx-auto w-full overflow-hidden px-[22px] max-h-0 bg-white;
 	transition: all 0.3s ease-in-out;
 }
 .opened {

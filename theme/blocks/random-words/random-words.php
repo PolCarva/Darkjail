@@ -17,8 +17,8 @@ if ($random_words) {
 <div id="remove-footer"></div>
 <div class="flex flex-col items-center justify-center h-[70vh] w-[98svw] bg-black text-white text-2xl relative">
     <!-- Start Button -->
-    <div id="start-overlay" class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-80 z-50">
-        <button id="start-button" class="p-4 bg-gray-700 hover:bg-gray-600 text-white rounded-lg text-xl h1">Start</button>
+    <div id="start-overlay" class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-80 z-10">
+        <button id="start-button" class="p-4 bg-gray-700 hover:bg-gray-600 text-white rounded-lg text-xl h1">Empezar</button>
     </div>
 
     <div class="random-word h1 opacity-0 transition-opacity duration-500 absolute">
