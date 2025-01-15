@@ -33,10 +33,6 @@
 			AOS.init({
 				once: true,
 				duration: <?php echo $animations_duration ?? 500 ?>,
-				disable: function() {
-					var maxWidth = 1040;
-					return window.innerWidth < maxWidth;
-				}
 			});
 		});
 
