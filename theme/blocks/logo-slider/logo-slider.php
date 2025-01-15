@@ -21,7 +21,7 @@ $speed = get_field('speed') ?? 50;
 $amount_of_logos = count($logos);
 
 ?>
-<div id="<?php echo esc_attr($block_id); ?>"
+<div data-aos="fade-in" id="<?php echo esc_attr($block_id); ?>"
 	class="mask-borders <?php echo esc_attr($class_name); ?>">
 	<?php if ($logos): ?>
 		<div
