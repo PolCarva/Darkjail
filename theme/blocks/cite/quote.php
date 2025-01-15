@@ -41,11 +41,11 @@ $content_max_width = get_field('content_max_width') ?? false;
         </div>
     <?php elseif ($type === 'low_impact') : ?>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-2.5 md:gap-1 <?php if ($content_max_width) echo 'w-full max-w-[80%]' ?>">
-            <div>
+            <div data-aos="fade-right">
                 <?= $text ?>
             </div>
 
-            <div class="flex gap-2 items-center md:justify-center">
+            <div class="flex gap-2 items-center md:justify-center" data-aos="fade-right" data-aos-delay="100">
                 <p class="h5"><?= $name ?></p>
                 <?php if ($tag["link"]) : ?>
                     <a href="<?= $tag['link'] ?>" class="!no-underline small text-white"> -<?= $tag["tag_text"] ?></a>

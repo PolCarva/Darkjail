@@ -41,9 +41,11 @@ $block_id = 'heading-and-text-' . uniqid();
 ?>
 
 <div id="<?= $block_id ?>" class="w-full h-fit flex flex-col gap-1 <?= $text_styles ?> <?php echo $remove_padding ? '' : 'c-container ' ?>">
-    <span class="subtitle-1 text-primary"><?php echo esc_html($subtitle) ?></span>
-    <?php echo $title ?>
-    <p style="color: <?= $text_color ?>; font-size: 18px;"><?php echo esc_html($text) ?></p>
+    <span data-aos="fade-right" data-aos-delay="100" class="subtitle-1 text-primary"><?php echo esc_html($subtitle) ?></span>
+    <div data-aos="fade-right" >
+        <?php echo $title ?>
+    </div>
+    <p data-aos="fade-right" data-aos-delay="100" style="color: <?= $text_color ?>; font-size: 18px;"><?php echo esc_html($text) ?></p>
     <?php
     get_template_part('template-parts/styles/margin-styles', '', array(
         'section_id' => $block_id,

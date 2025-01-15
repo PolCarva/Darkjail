@@ -20,7 +20,7 @@ if ($youtube_url):
     $block_id = 'youtube-video-' . uniqid();
 ?>
 
-    <section id="<?= $block_id ?>" class="c-container__sm max-w-sceen-lg mx-auto mt-10"
+    <section data-aos="fade-in" id="<?= $block_id ?>" class="c-container__sm max-w-sceen-lg mx-auto mt-10"
         <?php if (!is_admin()): // Solo aplicar Alpine.js si no estamos en el editor 
         ?>
         x-data="{ open: false, embedUrl: '' }"
