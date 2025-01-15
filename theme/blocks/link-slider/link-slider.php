@@ -32,7 +32,7 @@ $block_id = uniqid("link-slider-");
                         </div>
                         <!-- Título y Ver mas -->
                         <div class="absolute inset-0 flex flex-col justify-center items-center">
-                            <h3 class=" h2 font-extrabold text-white font-bold text-center px-2"><?= $title ?></h3>
+                            <h3 class=" h2 font-extrabold text-white text-center px-3 md:px-2"><?= $title ?></h3>
                             <div class="flex items-center py-2 font-heebo px-4 font-semibold bg-primary transition hover:bg-primary-700">
                                 <span class="text-white">Ver más</span>
                             </div>
@@ -44,13 +44,14 @@ $block_id = uniqid("link-slider-");
 
         </div>
 
-        <div class="link-slider__prev hidden md:block absolute top-1/2 -translate-y-1/2 left-5 z-10">
-            <svg class="rotate-180 drop-shadow-[0px_0px_5px_#11111140]" width="24" height="41" viewBox="0 0 24 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div class="link-slider__prevblock absolute top-1/2 -translate-y-1/2 left-5 z-10">
+            <svg class="rotate-180  scale-50 md:scale-100 
+             drop-shadow-[0px_0px_5px_#11111140]" width="24" height="41" viewBox="0 0 24 41" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M22.4665 18.4085C23.0211 18.9632 23.3327 19.7156 23.3327 20.5C23.3327 21.2844 23.0211 22.0368 22.4665 22.5915L5.73125 39.3268C5.45835 39.6094 5.13192 39.8348 4.77099 39.9898C4.41006 40.1448 4.02187 40.2265 3.62906 40.2299C3.23626 40.2333 2.8467 40.1584 2.48314 40.0097C2.11957 39.8609 1.78926 39.6413 1.5115 39.3635C1.23373 39.0857 1.01406 38.7554 0.865317 38.3919C0.71657 38.0283 0.641718 37.6387 0.645132 37.2459C0.648547 36.8531 0.730156 36.4649 0.885199 36.104C1.04024 35.7431 1.26561 35.4166 1.54816 35.1437L16.1919 20.5L1.54817 5.85625C1.00928 5.2983 0.711099 4.55102 0.71784 3.77535C0.72458 2.99969 1.03571 2.2577 1.5842 1.7092C2.1327 1.1607 2.87469 0.849577 3.65036 0.842837C4.42602 0.836096 5.17331 1.13428 5.73125 1.67316L22.4665 18.4085Z" fill="white" />
             </svg>
         </div>
-        <div class="link-slider__next absolute hidden md:block top-1/2 -translate-y-1/2 right-5 z-10">
-            <svg class="drop-shadow-[0px_0px_5px_#11111140]" width="24" height="41" viewBox="0 0 24 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div class="link-slider__next absolute block top-1/2 -translate-y-1/2 right-5 z-10">
+            <svg class="scale-50 md:scale-100  drop-shadow-[0px_0px_5px_#11111140]" width="24" height="41" viewBox="0 0 24 41" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M22.4665 18.4085C23.0211 18.9632 23.3327 19.7156 23.3327 20.5C23.3327 21.2844 23.0211 22.0368 22.4665 22.5915L5.73125 39.3268C5.45835 39.6094 5.13192 39.8348 4.77099 39.9898C4.41006 40.1448 4.02187 40.2265 3.62906 40.2299C3.23626 40.2333 2.8467 40.1584 2.48314 40.0097C2.11957 39.8609 1.78926 39.6413 1.5115 39.3635C1.23373 39.0857 1.01406 38.7554 0.865317 38.3919C0.71657 38.0283 0.641718 37.6387 0.645132 37.2459C0.648547 36.8531 0.730156 36.4649 0.885199 36.104C1.04024 35.7431 1.26561 35.4166 1.54816 35.1437L16.1919 20.5L1.54817 5.85625C1.00928 5.2983 0.711099 4.55102 0.71784 3.77535C0.72458 2.99969 1.03571 2.2577 1.5842 1.7092C2.1327 1.1607 2.87469 0.849577 3.65036 0.842837C4.42602 0.836096 5.17331 1.13428 5.73125 1.67316L22.4665 18.4085Z" fill="white" />
             </svg>
 

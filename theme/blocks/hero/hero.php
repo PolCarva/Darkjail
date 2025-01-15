@@ -25,7 +25,7 @@ $block_id = uniqid('hero-');
             </div>
 
             <?php if ($buttons) { ?>
-                <div class="flex mx-auto md:mx-0 justify-center md:justify-start flex-col w-fit md:flex-row items-center mt-5 gap-4">
+                <div class="flex mx-auto md:mx-0 justify-stretch md:justify-start flex-col w-full md:w-fit md:flex-row items-center mt-5 gap-4">
                     <?php foreach ($buttons as $index) {
                         $button = $index['button'];
                         get_template_part('template-parts/components/button', '', array(
@@ -34,8 +34,8 @@ $block_id = uniqid('hero-');
                             'button' => array(
                                 'text' => $button['text'],
                                 'url' => $button['link'],
-                                'custom_class' => 'font-bold w-full !items-center md:w-auto text-center',
-                                'container_class' => 'w-full md:w-auto text-center',
+                                'custom_class' => 'font-bold !w-full !items-center md:w-auto text-center',
+                                'container_class' => '!w-full md:w-auto text-center',
                             )
                         ));
                     } ?>

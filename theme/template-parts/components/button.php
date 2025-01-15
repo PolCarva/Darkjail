@@ -43,7 +43,7 @@ $svg_color = '';
 // make a switch case for the button type
 switch ($type) {
 	case 'primary':
-		$classes = '!text-white font-bold bg-primary hover:bg-primary-500 transition-all disabled:opacity-40  focus:outline-none';
+		$classes = '!text-white font-bold bg-primary hover:bg-primary-500 transition-all disabled:opacity-40  focus:outline-none inline-flex items-center gap-3';
 		break;
 	case 'secondary';
 		$classes = '!text-white bg-transparent border border-primary hover:border-primary-500 hover:bg-primary-500 hover:!text-white transition-all disabled:opacity-50  focus:outline-none inline-flex items-center gap-3';
