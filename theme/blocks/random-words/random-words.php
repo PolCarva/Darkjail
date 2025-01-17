@@ -47,9 +47,30 @@ if ($random_words) {
                 Your browser does not support the audio element.
             </audio>
             <div id="custom-controls" class="flex items-center space-x-4">
-                <button id="prev-track" class="p-2 bg-gray-700 hover:bg-gray-600 rounded">⏮️</button>
-                <button id="play-pause" class="p-2 bg-gray-700 hover:bg-gray-600 rounded">▶️</button>
-                <button id="next-track" class="p-2 bg-gray-700 hover:bg-gray-600 rounded">⏭️</button>
+                <button id="prev-track" class="p-2 grid place-content-center bg-gray-700 size-[44px] hover:bg-gray-600 rounded text-primary rotate-180">
+                    <svg width="24" height="26" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.14702 22.576L16.7014 14.8039C18.4329 13.8129 18.4329 12.1883 16.7014 11.1961L3.14581 3.42396C1.41428 2.43064 0 3.24357 0 5.22781V20.7722C0 22.7564 1.4167 23.5694 3.14581 22.576H3.14702Z" fill="currentColor" />
+                        <path d="M22 2L22 24" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+                    </svg>
+
+
+                </button>
+                <button id="play-pause" class="p-2 bg-gray-700 size-[44px] grid place-content-center hover:bg-gray-600 rounded text-primary">
+                    <svg width="22" height="24" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4.35292 22.9489L19.7447 14.0623C21.7109 12.9293 21.7109 11.0717 19.7447 9.93729L4.35155 1.05066C2.3853 -0.0850852 0.779297 0.844415 0.779297 3.11316V20.8864C0.779297 23.1552 2.38805 24.0847 4.35155 22.9489H4.35292Z" fill="currentColor" />
+                    </svg>
+
+
+                </button>
+                <button id="next-track" class="p-2 grid place-content-center bg-gray-700 size-[44px] hover:bg-gray-600 rounded text-primary">
+                    <svg width="24" height="26" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.14702 22.576L16.7014 14.8039C18.4329 13.8129 18.4329 12.1883 16.7014 11.1961L3.14581 3.42396C1.41428 2.43064 0 3.24357 0 5.22781V20.7722C0 22.7564 1.4167 23.5694 3.14581 22.576H3.14702Z" fill="currentColor" />
+                        <path d="M22 2L22 24" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+                    </svg>
+
+
+
+                </button>
             </div>
         <?php endif; ?>
     </div>
@@ -143,16 +164,25 @@ if ($random_words) {
             audioPlayer.src = tracks[index].src;
             audioPlayer.load();
             audioPlayer.play();
-            playPauseButton.textContent = '⏸️';
+            playPauseButton.innerHTML = ` <svg width="22" height="24" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4.35292 22.9489L19.7447 14.0623C21.7109 12.9293 21.7109 11.0717 19.7447 9.93729L4.35155 1.05066C2.3853 -0.0850852 0.779297 0.844415 0.779297 3.11316V20.8864C0.779297 23.1552 2.38805 24.0847 4.35155 22.9489H4.35292Z" fill="currentColor" />
+                    </svg>`;
         }
 
         playPauseButton.addEventListener('click', () => {
             if (audioPlayer.paused) {
                 audioPlayer.play();
-                playPauseButton.textContent = '⏸️';
+                playPauseButton.innerHTML = `<svg width="22" height="26" viewBox="0 0 22 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M18.3333 25.8332C17.325 25.8332 16.4621 25.4745 15.7447 24.757C15.0272 24.0396 14.6679 23.1761 14.6667 22.1665V3.83317C14.6667 2.82484 15.026 1.96195 15.7447 1.24451C16.4633 0.527062 17.3262 0.167729 18.3333 0.166507C19.3404 0.165285 20.2039 0.524618 20.9238 1.24451C21.6437 1.9644 22.0024 2.82728 22 3.83317V22.1665C22 23.1748 21.6413 24.0383 20.9238 24.757C20.2064 25.4757 19.3429 25.8344 18.3333 25.8332ZM3.66667 25.8332C2.65833 25.8332 1.79544 25.4745 1.078 24.757C0.360555 24.0396 0.00122222 23.1761 0 22.1665V3.83317C0 2.82484 0.359333 1.96195 1.078 1.24451C1.79667 0.527062 2.65956 0.167729 3.66667 0.166507C4.67378 0.165285 5.53728 0.524618 6.25717 1.24451C6.97706 1.9644 7.33578 2.82728 7.33333 3.83317V22.1665C7.33333 23.1748 6.97461 24.0383 6.25717 24.757C5.53972 25.4757 4.67622 25.8344 3.66667 25.8332Z" fill="currentColor"/>
+</svg>
+
+
+`;
             } else {
                 audioPlayer.pause();
-                playPauseButton.textContent = '▶️';
+                playPauseButton.innerHTML = ` <svg width="22" height="24" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4.35292 22.9489L19.7447 14.0623C21.7109 12.9293 21.7109 11.0717 19.7447 9.93729L4.35155 1.05066C2.3853 -0.0850852 0.779297 0.844415 0.779297 3.11316V20.8864C0.779297 23.1552 2.38805 24.0847 4.35155 22.9489H4.35292Z" fill="currentColor" />
+                    </svg>`;
             }
         });
 
