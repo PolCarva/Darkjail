@@ -1,10 +1,10 @@
 /*Styles for the main nav */
 .main-nav .menu-item {
-	@apply relative font-teko transition text-center;
+	@apply relative font-work font-medium transition text-center;
 }
 
 .menu-item-link {
-    @apply font-teko uppercase transition font-medium tracking-wider text-center text-lg w-full block md:inline mx-auto;
+    @apply font-work uppercase transition font-medium tracking-wider text-center text-lg w-full block md:inline mx-auto;
 }
 
 .menu-item-link:hover {

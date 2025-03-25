@@ -150,11 +150,11 @@ h5, .h5 {
 }
 
 .subtitle-1 {
-	@apply text-[16px] md:text-[18px] lg:text-[30px] font-normal uppercase leading-none tracking-normal font-teko;
+	@apply text-[16px] md:text-[18px] lg:text-[30px] font-medium uppercase leading-none tracking-normal font-work;
 }
 
 .subtitle-2 {
-	@apply text-[18px] md:text-[20px] font-normal uppercase leading-none tracking-normal font-teko;
+	@apply text-[18px] md:text-[20px] font-medium uppercase leading-none tracking-normal font-work;
 }
 
 small, .small {

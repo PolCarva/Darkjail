@@ -20,7 +20,7 @@ $block_id = uniqid('hero-');
                 <span class="block"><?= $second_line_heading; ?></span>
             </h1>
 
-            <div class="my-3 [&_p]:text-[20px] [&_p]:lg:text-[30px] [&_p]:font-normal [&_p]:leading-none [&_p]:tracking-normal [&_p]:font-teko ">
+            <div class="my-3 [&_p]:text-[20px] [&_p]:lg:text-[30px] [&_p]:font-normal [&_p]:leading-none [&_p]:tracking-normal [&_p]:font-work ">
                 <?= $subheading ?>
             </div>
 
