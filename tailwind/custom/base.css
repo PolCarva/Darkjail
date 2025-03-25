@@ -160,3 +160,8 @@ h5, .h5 {
 small, .small {
 	@apply text-[12px] font-light tracking-normal leading-none font-work;
 }
+
+
+body {
+	@apply antialiased;
+}
