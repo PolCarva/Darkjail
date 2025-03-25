@@ -56,7 +56,7 @@ if ($selected_event) :
                                 <p class="text-sm text-gray-700"><?= esc_html($match->phase) ?></p>
                                 <span class="!text-black w-fit self-end !no-underline hover:underline mt-2 inline-block">
                                     <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="17" cy="17" r="17" fill="#ff6400" />
+                                        <circle cx="17" cy="17" r="17" fill="#E40002" />
                                         <path d="M23.3749 16.264C23.9416 16.5911 23.9416 17.4091 23.3749 17.7362L14.4499 22.8891C13.8832 23.2162 13.1749 22.8073 13.1749 22.1529L13.1749 11.8472C13.1749 11.1929 13.8832 10.784 14.4499 11.1111L23.3749 16.264Z" fill="white" />
                                     </svg>
                                 </span>

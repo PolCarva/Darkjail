@@ -1,24 +1,33 @@
 /**
  * Custom `@font-face` rules
  *
- * These will be added immediately before Tailwind’s `base` layer.
+ * These will be added immediately before Tailwind's `base` layer.
  */
 
-/* Syne Variable Font */
+/* Cook Gothif Font */
 @font-face {
-	font-family: 'Syne';
+	font-family: 'Cook Gothif';
 	font-style: normal;
-	font-weight: 100 900;
-	src: url('./syne/Syne-VariableFont_wght.ttf') format('truetype'); 
+	font-weight: normal;
+	src: url('./cook_gothif/Cook Gothif.otf') format('opentype');
 	font-display: swap;
-  }
+}
 
-/* Add Heebo */
+/* Work Sans Variable Font */
 @font-face {
-	font-family: 'Heebo';
+	font-family: 'Work Sans';
 	font-style: normal;
 	font-weight: 100 900;
-	src: url('./heebo/Heebo-VariableFont_wght.ttf') format('woff');
+	src: url('./work_sans/WorkSans-VariableFont_wght.ttf') format('truetype');
+	font-display: swap;
+}
+
+/* Work Sans Italic Variable Font */
+@font-face {
+	font-family: 'Work Sans';
+	font-style: italic;
+	font-weight: 100 900;
+	src: url('./work_sans/WorkSans-Italic-VariableFont_wght.ttf') format('truetype');
 	font-display: swap;
 }
 

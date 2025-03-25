@@ -33,7 +33,7 @@ $block_id = uniqid("link-slider-");
                         <!-- Título y Ver mas -->
                         <div class="absolute inset-0 flex flex-col justify-center items-center">
                             <h3 class=" h2 font-extrabold text-white text-center px-3 md:px-2"><?= $title ?></h3>
-                            <div class="flex items-center py-2 font-heebo px-4 font-semibold bg-primary transition hover:bg-primary-700">
+                            <div class="flex items-center py-2 font-work px-4 font-semibold bg-primary transition hover:bg-primary-700">
                                 <span class="text-white">Ver más</span>
                             </div>
                         </div>
