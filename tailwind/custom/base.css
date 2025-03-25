@@ -130,7 +130,7 @@ h6:not(.c-container h6):not(.c-container__sm h6) {
 }
 
 h1, .h1 {
-	@apply text-[28px] xs:text-[36px] sm:text-[40px] uppercase md:text-[50px] lg:text-[65px] xl:text-[75px] leading-none tracking-2 font-extrabold font-cook;
+	@apply text-[38px] xs:text-[64px] sm:text-[80px] uppercase md:text-[50px] lg:text-[65px] xl:text-[75px] leading-none tracking-2 font-extrabold font-cook;
 }
 
 h2, .h2 {
