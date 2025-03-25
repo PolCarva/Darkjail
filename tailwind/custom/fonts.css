@@ -9,7 +9,7 @@
 	font-family: 'Cook Gothif';
 	font-style: normal;
 	font-weight: normal;
-	src: url('./cook_gothif/CookGothif.ttf') format('truetype');
+	src: url('./cook_gothif/CookGothif.woff2') format('woff2');
 	font-display: swap;
 }
 
