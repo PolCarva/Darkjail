@@ -41,6 +41,15 @@
 	font-display: swap;
 }
 
+/* Add Anton */
+@font-face {
+	font-family: 'Anton';
+	font-style: normal;
+	font-weight: normal;
+	src: url('./anton/Anton-Regular.ttf') format('truetype');
+	font-display: swap;
+}
+
 * {
 	font-variant-ligatures: none;
   }

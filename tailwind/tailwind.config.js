@@ -15,6 +15,7 @@ module.exports = {
 				work: ['Work Sans', 'sans-serif'],
 				'work-italic': ['Work Sans', 'italic', 'sans-serif'],
 				teko: ['Teko', 'sans-serif'],
+				anton: ['Anton', 'sans-serif'],
 			},
 			colors: {
 				primary: {
